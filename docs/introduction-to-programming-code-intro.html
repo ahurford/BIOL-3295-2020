@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Quantitative skills for biology</title>
-  <meta name="description" content="Quantitative skills for biology" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <title>Chapter 5 Introduction to programming (#code-intro) | Quantitative skills for biology</title>
+  <meta name="description" content="Chapter 5 Introduction to programming (#code-intro) | Quantitative skills for biology" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Quantitative skills for biology" />
+  <meta property="og:title" content="Chapter 5 Introduction to programming (#code-intro) | Quantitative skills for biology" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Quantitative skills for biology" />
+  <meta property="og:description" content="Chapter 5 Introduction to programming (#code-intro) | Quantitative skills for biology" />
   <meta name="github-repo" content="ahurford/quantitative-training-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Quantitative skills for biology" />
+  <meta name="twitter:title" content="Chapter 5 Introduction to programming (#code-intro) | Quantitative skills for biology" />
   
-  <meta name="twitter:description" content="Quantitative skills for biology" />
+  <meta name="twitter:description" content="Chapter 5 Introduction to programming (#code-intro) | Quantitative skills for biology" />
   
 
 
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="howto.html"/>
+<link rel="prev" href="rstudio.html"/>
+<link rel="next" href="rintro.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,41 +51,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -127,7 +152,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="rstudio.html"><a href="rstudio.html#viewer-tab"><i class="fa fa-check"></i>Viewer tab</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="code-intro.html"><a href="code-intro.html"><i class="fa fa-check"></i><b>5</b> Introduction to programming</a></li>
+<li class="chapter" data-level="5" data-path="introduction-to-programming-code-intro.html"><a href="introduction-to-programming-code-intro.html"><i class="fa fa-check"></i><b>5</b> Introduction to programming (#code-intro)</a></li>
 <li class="chapter" data-level="6" data-path="rintro.html"><a href="rintro.html"><i class="fa fa-check"></i><b>6</b> Introduction to R</a><ul>
 <li class="chapter" data-level="6.1" data-path="rintro.html"><a href="rintro.html#workflow"><i class="fa fa-check"></i><b>6.1</b> Workflow</a></li>
 <li class="chapter" data-level="6.2" data-path="rintro.html"><a href="rintro.html#working-directory"><i class="fa fa-check"></i><b>6.2</b> Working directory</a></li>
@@ -155,15 +180,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.5" data-path="help.html"><a href="help.html#debugging"><i class="fa fa-check"></i><b>7.5</b> Debugging</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="howtoask.html"><a href="howtoask.html"><i class="fa fa-check"></i><b>8</b> How to ask for help</a></li>
-<li class="chapter" data-level="9" data-path="style.html"><a href="style.html"><i class="fa fa-check"></i><b>9</b> Best practices</a><ul>
-<li class="chapter" data-level="9.1" data-path="style.html"><a href="style.html#basics"><i class="fa fa-check"></i><b>9.1</b> Basics</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="style.html"><a href="style.html#file-organization"><i class="fa fa-check"></i><b>9.1.1</b> File organization</a></li>
-<li class="chapter" data-level="9.1.2" data-path="style.html"><a href="style.html#comments-1"><i class="fa fa-check"></i><b>9.1.2</b> Comments</a></li>
-<li class="chapter" data-level="9.1.3" data-path="style.html"><a href="style.html#spacing"><i class="fa fa-check"></i><b>9.1.3</b> Spacing</a></li>
-<li class="chapter" data-level="9.1.4" data-path="style.html"><a href="style.html#names"><i class="fa fa-check"></i><b>9.1.4</b> Names</a></li>
+<li class="chapter" data-level="9" data-path="best-practices-style.html"><a href="best-practices-style.html"><i class="fa fa-check"></i><b>9</b> Best practices (#style)</a><ul>
+<li class="chapter" data-level="9.0.1" data-path="best-practices-style.html"><a href="best-practices-style.html#comments-1"><i class="fa fa-check"></i><b>9.0.1</b> Comments</a></li>
+<li class="chapter" data-level="9.0.2" data-path="best-practices-style.html"><a href="best-practices-style.html#spacing"><i class="fa fa-check"></i><b>9.0.2</b> Spacing</a></li>
+<li class="chapter" data-level="9.0.3" data-path="best-practices-style.html"><a href="best-practices-style.html#names"><i class="fa fa-check"></i><b>9.0.3</b> Names</a></li>
+<li class="chapter" data-level="9.1" data-path="best-practices-style.html"><a href="best-practices-style.html#exampletemplate"><i class="fa fa-check"></i><b>9.1</b> Example/Template</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="best-practices-style.html"><a href="best-practices-style.html#checklist"><i class="fa fa-check"></i><b>9.1.1</b> Checklist</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="style.html"><a href="style.html#template"><i class="fa fa-check"></i><b>9.2</b> Template</a></li>
-<li class="chapter" data-level="9.3" data-path="style.html"><a href="style.html#checklist"><i class="fa fa-check"></i><b>9.3</b> Checklist</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="data-entry.html"><a href="data-entry.html"><i class="fa fa-check"></i><b>10</b> Entering and loading data</a><ul>
 <li class="chapter" data-level="10.1" data-path="data-entry.html"><a href="data-entry.html#entering-data"><i class="fa fa-check"></i><b>10.1</b> Entering data</a></li>
@@ -185,7 +208,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.7" data-path="graph.html"><a href="graph.html#pch"><i class="fa fa-check"></i><b>11.7</b> pch cheatsheet</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>12</b> Data and metadata</a><ul>
-<li class="chapter" data-level="12.1" data-path="data.html"><a href="data.html#data"><i class="fa fa-check"></i><b>12.1</b> Data</a><ul>
+<li class="chapter" data-level="12.1" data-path="data.html"><a href="data.html#data-1"><i class="fa fa-check"></i><b>12.1</b> Data</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="data.html"><a href="data.html#data-guidelines"><i class="fa fa-check"></i><b>12.1.1</b> Data guidelines</a></li>
 <li class="chapter" data-level="12.1.2" data-path="data.html"><a href="data.html#database-structure-guidelines"><i class="fa fa-check"></i><b>12.1.2</b> Database structure guidelines</a></li>
 </ul></li>
@@ -244,22 +267,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Quantitative skills for biology</h1>
-</div>
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Many biology-relevant skills are now performed using computers: statistical analyses, mathematical modelling, managing and reformatting data, visualizing data, identifying genes from DNA sequences, constructing 3D models of proteins, and making phylogenies. Quantitative skills and best practices in data science are now being incorporated throughout the biology major.</p>
-<p>Teaching quantitative skills is necessary since a survey reported that more than 90% of ecologists found that, in retrospect, their training in statistics and mathematics, during their undergraduate biology major, was too low <span class="citation">(Barraquand et al. 2014)</span>. This same study found that practicing ecologists recommended that 30% of coursework during a biology major be dedicated to quantitative training.</p>
-<p>Today’s biologists use various software, particularly Microsoft Office, R, Python, and ArcGIS. In graduate research, many biologists use quantitative tools to do things like developing mathematical models to predict disease spread or population growth, apply bioinformatics analyses to genetics data to look at genetic relatedness between individuals, or use computer programming to model the structure of protein molecules.</p>
-<p>Much of this quantitative training manual teaches data manipulation and visualization in R. Our choice of R is for the following reasons:</p>
-<ol style="list-style-type: decimal">
-<li><p>A valued skill: As of March 2019, R is the <a href="http://r4stats.com/articles/popularity/">fifth ranked software</a> listed in job advertisements for Data Scientists. Python is the number one ranked software, but R is a popular statistical software and is widespread in biology due to the need to analyze the results of experiments using statistics.</p></li>
-<li><p>Reproducibility: R is a scripting software, so unlike <em>point and click</em> softwares, the steps to produce a data analysis or figure are fully reproducible.</p></li>
-<li><p>Accessibility: R is free, unlike many statistical software packages that are quite expensive. This means that researchers or organizations, such as environmental NGOs, can still do sophisticated analysis with limited budgets.</p></li>
-<li><p>No limits: R has a large user community, and contributed packages allow you to do almost anything. R packages range from <a href="https://rviews.rstudio.com/2017/10/09/population-modeling-in-r/">serious</a> to <a href="https://www.r-bloggers.com/useless-but-fun-r-packages/">fun</a>).</p></li>
-<li><p>Popularity: A survey of studies from 30 ecology journals found that in 2017, 58% of articles used R as the primary tool to generate their results <span class="citation">(Lai et al. 2019)</span>.</p></li>
-</ol>
+<div id="introduction-to-programming-code-intro" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Introduction to programming (#code-intro)</h1>
 
 </div>
             </section>
@@ -267,8 +276,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-
-<a href="howto.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rintro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -299,7 +308,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-code-intro.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -323,7 +332,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
