@@ -1,0 +1,77 @@
+# How to ask for help {#howtoask}
+
+The key to getting a useful answer to your R problem is asking a short but complete question. Frequently, this means to provide a reproducible example, which will allow someone else to reproduce your problem by copying and pasting your code. Four things make an example reproducible: a description of your R environment, required packages, code, and data. In BIOL 1001 and 1002, we provide the data that you will be using in the exercises, so it is unlike that your issue is related to the data. Hence, we emphasize the other components of asking a good question instead. We encourage you to follow the following steps:
+
+1. Do your homework before asking. This step varies depending on where your problem is: 
+    1. If you have installation issues, double-check that you followed the instructions on Section \@ref(install) and have downloaded and installed the correct versions of R and RStudio. 
+    1. If you have trouble with coding, first, locate the lines of code where the problem occurs. Copy your code from the beginning up to where the issue occurs. Then, start a new RStudio session, paste and run the code. Starting fresh will help you see if the same issue arises or if it was solved by removing unused elements. 
+    1. If the problem is caused by a function/command not running or not giving the expected output, follow Chapter \@ref(help) and read the help for the relevant functions/commands and how to use them. 
+    1. If you receive an error message or a warning, search the web by copying and pasting the output of R. It is likely that your R question has already been answered in websites like [Stack Overflow](https://stackoverflow.com/). You can even search Twitter using '#rstats'.
+    1. Finally, read over Section \@ref(faq) and other posts in the lab's Discussion List to see if anyone else had a similar problem and how they solved it.  
+  <br/>
+  
+1. Write down your problem, succinctly. Try to simplify your problem as much as possible. You can often answer your question by thinking clearly and going through the simplification process. Remember that you need to report the facts, so please do not write 'R crashed' or 'function xyz doesn't work'. Write exactly what happened, including any error messages R prompted. If you think that a function/command is not behaving sensibly, it's more productive and polite to first, read the relevant documentation (see the previous step), and then ask why it acts the way it does.
+
+1. Provide a short, reproducible example. First, try to locate which lines exactly result in the error. By doing this, you will often find out what the problem is by yourself. Please, do not copy and paste a whole function/chunk of code that gives an error. What is most useful is an accurate description of what commands you type until the problem happens. Do your best to remove everything that is not related to the problem. The shorter your code is, the easier it is to understand.
+
+1. Ensure your code is easy for others to read. Make sure you have used spaces and your variable names are concise, but informative. This is also a good moment to check that your problem is not related to a typo in the name of an object. Remember that in R capitalization matters (e.g. `X` is not the same as `x`). Use comments often to explain what you did and to indicate where your problem is. When you copy from the R console, take a few seconds to remove any '>' and '+'. For example, if your code looks like this:
+
+```{r, eval = FALSE}
+> x <- matrix(1:8, nrow=4, ncol=2,
+       dimnames=list(c("A","B","C","D"), c("x","y")))
+> x
+  x y
+A 1 5
+B 2 6
+C 3 7
+D 4 8
+```
+
+|         We cannot copy and paste it directly. By removing the “>”, you save us time in responding your 
+|         question. You should also use `#` for outputs and comments, like this:
+
+```{r, eval = FALSE}
+# First, I define a matrix:
+x <- matrix(1:8, nrow=4, ncol=2,
+       dimnames=list(c("A","B","C","D"), c("x","y")))
+x
+# x y
+#A 1 5
+#B 2 6
+#C 3 7
+#D 4 8
+```
+
+
+5. Check that you have made a reproducible example by starting up a new RStudio session, pasting your code from the step above and running it. In this way, you are sure that you made a piece of code that we can run to see the problem. Anyone should be able to copy and paste your code and data and get the same issue.
+
+6. We need some facts about your machine, operating system, and version of R. To get this information, type the following command in the console: `sessionInfo()`. Paste the full output in your question. When mentioning version numbers, always use the complete version number, e.g., '2.6.1', instead of '2.6', and mention the platform (Windows, Linux, MacOS X, with their versions). We also need to check which version of RStudio you are using. For this, type in the console `rstudioapi::versionInfo()` and provide the full output in your question. If you have a package-specific problem, you should give its version by providing the output of `packageVersion("name of the package")`.
+
+7. Before putting all of your code in an email, we encourage you to post it on the lab's Discussion List. By doing this, we can help multiple people that may have the same problem at the same time. It also helps us to reply faster because we do not have to answer similar questions many times. Reading and commenting online is an essential component of learning programming, and it is one of the assets that makes R useful, more accessible and fun. The Discussion List is our small R community, and when you post on the Discussion List, we learn together.
+
+8. Write a specific, informative subject line. Please do not write: 'question', 'Lab 2' or 'R crashed'. Good examples are: 'R Studio: "Error: …"', 'Q3, "Error in plot.xy(xy, type, ...) : invalid plot type 1"', or 'q10, outliers and percentiles'. 
+
+9. Use good manners. Rudeness is not acceptable. Be tolerant. Sometimes *read the manual* is the appropriate response to your question. An answer that is concise and technically accurate is just that, it is not intended as pedantic or an affront. Please do not complain or say that you want to drop out if you cannot finish the lab; this tends to create negative attitudes that are not useful when answering your questions. Remember that we are trying to help you learn. 
+
+10. Example of a good question:
+
+Subject: transform matrix to dataframe of specific dimensions.
+
+```{r, eval = FALSE}
+# If I have a matrix x as follows:
+x <- matrix(1:8, nrow=4, ncol=2,
+       dimnames=list(c("A","B","C","D"), c("x","y")))
+x
+```
+How can I turn it into a dataframe with eight rows, and three
+  columns named 'row', 'col', and 'value', which have the
+  dimension names as the values of 'row' and 'col'? 
+```{r, eval = FALSE}
+# example of desired output
+# x_transformed
+#     row col value 
+#       A   x     1
+#       B   x     2
+#       C   x     3
+#       ...
+```
