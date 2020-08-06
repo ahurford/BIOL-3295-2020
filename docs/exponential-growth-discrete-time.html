@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="protection-island-1-1.html"/>
-
+<link rel="prev" href="what-is-a-population.html"/>
+<link rel="next" href="getting-started-with-r.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -140,17 +140,53 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="exponential-growth---discrete-time" class="section level1">
+<h1><span class="header-section-number">3</span> Exponential growth - discrete time</h1>
+<div id="required-reading" class="section level2">
+<h2><span class="header-section-number">3.1</span> Required reading</h2>
+<p>Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p1-3. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619">Link</a></p>
+</div>
+<div id="questions-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Questions</h2>
+<p>Submit your answers to Brightspace</p>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(\lambda = 5\)</span> in equation (3) (see the required reading). Explain the meaning of <span class="math inline">\(\lambda = 5\)</span>.</p></li>
+<li><p>Suppose the number of lilypads during week 7 is 150. Let <span class="math inline">\(\lambda = 5\)</span>, and assume that the units of <span class="math inline">\(t\)</span> are weeks. Use equation (3) to calculate the number of lilypads in week 8.</p></li>
+<li><p>Use your answer to question 2. to calculate the number of lilypads in week 9.</p></li>
+<li><p>Equation (4) for the required reading assumes that <span class="math inline">\(N_0=1\)</span>, however, this formula can be generalized such that</p></li>
+</ol>
+<p><span class="math display">\[
+N_t = N_0\lambda^t
+\]</span></p>
+<p>where <span class="math inline">\(N_t\)</span> is the population size at time, <span class="math inline">\(t\)</span>. Define time such that <span class="math inline">\(t=0\)</span> is week 7 and <span class="math inline">\(t\)</span> is then the number of weeks since week 7. Use the the equation above to answer question 3 and confirm that the answer is the same (i.e., find the population size for week 9, when <span class="math inline">\(\lambda=5\)</span> and the population size for week 7 is 150).</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Use the formula from question 4 to find the population size for week 15, where <span class="math inline">\(N_0\)</span> and <span class="math inline">\(\lambda\)</span> are the same as question 4.</p></li>
+<li><p>It is important to note that all mathematical formulas should have the same units on both sides of the equals sign and for each term that is added or subtracted. The units of the population size, <span class="math inline">\(N_t\)</span>, at time, <span class="math inline">\(t\)</span>, are number. The geometric growth rate, <span class="math inline">\(\lambda\)</span> is unitless. Choose a formula from the required reading and give the units for each of the terms to show that both sides of the equals have the same units. For example, for the equation that appears in question 4, we have:</p></li>
+</ol>
+<span class="math display">\[\begin{eqnarray*}
+N_t &amp; = &amp; N_0 \lambda^t \\
+\left(\mbox{number}\right)&amp; =&amp;(\mbox{number}) (\mbox{unitless})^{weeks}\\
+\left(\mbox{number}\right)&amp; =&amp; \left(\mbox{number}\right)\\
+\end{eqnarray*}\]</span>
+Note that:
+<span class="math display">\[\begin{eqnarray*}
+(\mbox{unitless}) \times (\mbox{quantity with units}) &amp; = &amp; (\mbox{quantity with units}) \\ (\mbox{unitless})^{(\mbox{quantity})}&amp; =&amp; (\mbox{unitless})
+\end{eqnarray*}\]</span>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Although not stated in the reading, <span class="math inline">\(\lambda = 1 + b - d\)</span> where <span class="math inline">\(b\)</span> is the per capita birth rate over one time step (i.e. one week for this example), and <span class="math inline">\(d\)</span> is the fraction of the lilypad population that dies over one time step. The number 1 is considered unitless, what must the units of <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> be?</p></li>
+<li><p>In the reading, <span class="math inline">\(\lambda = 2\)</span>. Given that <span class="math inline">\(\lambda = 1 + b - d\)</span>, what are some possible values of <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span>.</p></li>
+<li><p>[True or False] For discrete time exponential growth (as per the reading), the change in population size from one week to the next depends not so much on the per capita birth rate, but on the difference between the per capita birth rate and the per capita death rate.</p></li>
+</ol>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="protection-island-1-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="what-is-a-population.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="getting-started-with-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

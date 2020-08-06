@@ -1,13 +1,18 @@
 bookdown::gitbook:
-  css: style.css
   config:
     toc:
-      before: |
-        <li><a href="./">Quantitative skills for biology</a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
-    download: ["epub"]
+      collapse: subsection
+      scroll_highlight: no
+      before: null
+      after: null
+    toolbar:
+      null
+    edit : null
+    download: yes
+    search: no
+    info: no
+    fontsettings: null
+    sharing: null
 
 bookdown::epub_book: default
 

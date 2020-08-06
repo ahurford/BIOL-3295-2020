@@ -1,0 +1,34 @@
+# Protection Island 1
+
+The information below is taken from the following source:
+Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
+
+a.	Pheasant chicks are born during the summer.
+b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35.
+c.	November 10, 1938 a census estimated 110 pheasants.
+d.	October 13, 1939 a census estimated 400 pheasants.
+e.	Between the 1938 and 1939 censuses, Newcomb observed that 17 adult birds died.
+f.	During the 1938 nesting season: 5.86 eggs/nest. 83.57% of eggs hatched.
+g.	During the 1939 nesting season: 8.73 eggs/nest. 64.58% hatched.
+h.	During the 1939 nesting season: Average number of chicks per clutch was 6.93.$^1$ 
+i.	You can assume the sex ratio is 50:50 male to female. Pheasants are a sexually reproducing species.
+
+$^1$ Note that g. and h. appear to be contradictory.
+
+## Questions
+
+1.	Ideally, the census points should be exactly 1 year apart. When does the census occur on Protection Island? How does this relate to the biology of the pheasant?
+
+2.
+
+2.	Graph the population size (y-axis) versus time (x-axis). You may draw the graph by hand or use a software of your choice. 
+
+3.	d is the fraction of population that dies each year. What is d for the ring-tailed pheasant population on Protection Island? Write down any assumptions you have made.
+4.	b is the per capita number of births each year. What is the value of b? Write down any assumptions you have made.
+5.	What is the value of λ? Is the population growing?
+6.	Choose a value of N0 and use your estimated λ to predict future population sizes assuming geometric growth. Add these predictions to your plot. Add a legend to distinguish between the observed and the predicted population sizes.
+7.	How do the observed and the predicted values of the population size compare? Give a reason why these may not match up exactly.
+8.	Find the value of t when the population size is equal to 1000? What year does this correspond to?
+9.	Estimate the doubling time of the pheasant population. State your assumptions for this calculation.
+10.	The geometric growth model is called ‘discrete time’. This equation is appropriate for populations that have regular, pulse reproduction, for example, pheasants that reproduce once per year in the summer. Can you think of examples of other species that reproduce like this?
+11.	Can you think of any species that reproduce continuously throughout the year? These species are better modelled with a continuous time model.
