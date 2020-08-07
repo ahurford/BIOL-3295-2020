@@ -10,7 +10,7 @@ b.	In May 1937, 10 pheasants were introduced to the island. Before the next bree
 c.	November 10, 1938 a census estimated 110 pheasants.
 d.	October 13, 1939 a census estimated 400 pheasants.
 
-1. Read and complete all the exercises in Chapter 11 of Quantitative skills for biology [Link](https://ahurford.github.io/quantitative-training-guide/) 
+1. Read and complete all the exercises in Chapters _6.3 Variables and assignment_ to _6.10 R packaages_ and _11 Making graphs in R_ of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) 
 2. All the examples of making a graph in Chapter 11 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) have lists of _numbers_ as the values that are plotted on the axes. We would like to make a graph of the data listed in b.-d., however, we will face a problem since the x-axis values are dates, rather than numbers. We will consider two possible solutions:
 
 i. Use a built-in `R` function, so that dates can be plotted on the x-axis; and
@@ -40,6 +40,8 @@ x <- as.Date(c("2012-01-31", "2012-03-05", "2013-01-11"), format = "%Y-%m-%d")
 
 Having completed Chapter 11 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) and having learned how to work with dates, you should now be able to make plot using the information in b.-d. above. The graph you hand in needs to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
 
+You should write an R script to do this...
+
 3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
 
 Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) regarding installing packages. Install the package `chron` using either the `Install` button on the `Packages` tab, or by using the command `install.packages("chron")` in the `Console` window. Note that the package is only available for use once you check the box on the `Packages` tab or by running the following command in the `Console`:
@@ -64,16 +66,24 @@ julian(1,1,1971)
 julian(1,1,1969)
 ```
 
-Which argument position of `julian()` function corresponds to the month?
+Which argument position of `julian()` function corresponds to the month? Note also that by default the origin (such that the returned value is 0) is set to January 1, 1970. Experiment by running the following lines of code:
 
+```{r,eval=FALSE}
+julian(1,1,2000)
+julian(1,1,2000, origin = c(1,1,1970))
+julian(1,1,2000, origin = c(1,1,2000))
+```
 
-1. Read and complete all the exercises in Chapter 11 of:
-Quantitative skills for biology [Link](https://ahurford.github.io/quantitative-training-guide/)
+Finally, we need to make our figure. Recall that the plot function requires vectors of equal length for the x- and y-axes. Make a vector of the days since a reference as follows:
 
-Graph the population size (y-axis) versus time (x-axis). You will need to convert the dates into days since a specific reference point.
+```{r,eval=FALSE}
+ref.day = c(1,1,2000)
+x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
+```
 
-1.	For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year. Provide 1-3 sentences discussing the timing of the census points for Protection Island.
+If you run into problems you can query the value of `x` in your console, and you can use `length(x)` to check the length of `x`.
 
-2. 
+As for question 2. you need to hand in a graph with descriptive axes and with a figure caption.
 
-2.	
+4.	For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year. Provide 1-3 sentences discussing the timing of the census points for Protection Island.
+

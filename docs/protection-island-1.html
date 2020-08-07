@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title></title>
   <meta name="description" content="" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -152,7 +152,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>October 13, 1939 a census estimated 400 pheasants.</li>
 </ol>
 <ol style="list-style-type: decimal">
-<li>Read and complete all the exercises in Chapter 11 of Quantitative skills for biology <a href="https://ahurford.github.io/quantitative-training-guide/">Link</a></li>
+<li>Read and complete all the exercises in Chapters <em>6.3 Variables and assignment</em> to <em>6.10 R packaages</em> and <em>11 Making graphs in R</em> of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a></li>
 <li>All the examples of making a graph in Chapter 11 of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a> have lists of <em>numbers</em> as the values that are plotted on the axes. We would like to make a graph of the data listed in b.-d., however, we will face a problem since the x-axis values are dates, rather than numbers. We will consider two possible solutions:</li>
 </ol>
 <ol style="list-style-type: lower-roman">
@@ -168,19 +168,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Section 6.9 of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a> describes how to make a vector. We need to make a vector of the dates so that we can make our plot. For example,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2012-01-31&quot;</span>, <span class="st">&quot;2012-03-05&quot;</span>, <span class="st">&quot;2013-01-11&quot;</span>), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>)</code></pre></div>
 <p>Having completed Chapter 11 of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a> and having learned how to work with dates, you should now be able to make plot using the information in b.-d. above. The graph you hand in needs to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as <em>Microsoft Word</em>.</p>
+<p>You should write an R script to do this…</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the <code>julian()</code> function, which is part of the <code>chron</code> package.</li>
 </ol>
-<p>Read Section <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?as.POSIXlt</code></pre></div>
-<ol style="list-style-type: decimal">
-<li>Read and complete all the exercises in Chapter 11 of: Quantitative skills for biology <a href="https://ahurford.github.io/quantitative-training-guide/">Link</a></li>
-</ol>
-<p>Graph the population size (y-axis) versus time (x-axis). You will need to convert the dates into days since a specific reference point.</p>
-<ol style="list-style-type: decimal">
-<li><p>For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year. Provide 1-3 sentences discussing the timing of the census points for Protection Island.</p></li>
-<li></li>
-<li></li>
+<p>Read Section 4.4 of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a> regarding installing packages. Install the package <code>chron</code> using either the <code>Install</code> button on the <code>Packages</code> tab, or by using the command <code>install.packages(&quot;chron&quot;)</code> in the <code>Console</code> window. Note that the package is only available for use once you check the box on the <code>Packages</code> tab or by running the following command in the <code>Console</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(<span class="st">&quot;chron&quot;</span>)</code></pre></div>
+<p>After the <code>chron</code> package is loaded we can then query the <code>julian</code> function,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?julian</code></pre></div>
+<p>or use an internet search. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1970</span>)
+<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1970</span>)
+<span class="kw">julian</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1970</span>)
+<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1971</span>)
+<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1969</span>)</code></pre></div>
+<p>Which argument position of <code>julian()</code> function corresponds to the month? Note also that by default the origin (such that the returned value is 0) is set to January 1, 1970. Experiment by running the following lines of code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>)
+<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>, <span class="dt">origin =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1970</span>))
+<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>, <span class="dt">origin =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>))</code></pre></div>
+<p>Finally, we need to make our figure. Recall that the plot function requires vectors of equal length for the x- and y-axes. Make a vector of the days since a reference as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ref.day =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>)
+x =<span class="st"> </span><span class="kw">c</span>(<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>, <span class="dt">origin =</span> ref.day), <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2002</span>, <span class="dt">origin =</span> ref.day))</code></pre></div>
+<p>If you run into problems you can query the value of <code>x</code> in your console, and you can use <code>length(x)</code> to check the length of <code>x</code>.</p>
+<p>As for question 2. you need to hand in a graph with descriptive axes and with a figure caption.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year. Provide 1-3 sentences discussing the timing of the census points for Protection Island.</li>
 </ol>
 
 </div>
