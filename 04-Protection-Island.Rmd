@@ -40,12 +40,31 @@ x <- as.Date(c("2012-01-31", "2012-03-05", "2013-01-11"), format = "%Y-%m-%d")
 
 Having completed Chapter 11 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) and having learned how to work with dates, you should now be able to make plot using the information in b.-d. above. The graph you hand in needs to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
 
-3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `as.POSIXlt()` function. You can learn how to use this function using an internet search or by typing the following into your `Console`: 
+3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
+
+Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) regarding installing packages. Install the package `chron` using either the `Install` button on the `Packages` tab, or by using the command `install.packages("chron")` in the `Console` window. Note that the package is only available for use once you check the box on the `Packages` tab or by running the following command in the `Console`:
 
 ```{r,eval=FALSE}
-?as.POSIXlt
+require("chron")
 ```
 
+After the `chron` package is loaded we can then query the `julian` function,
+
+```{r,eval=FALSE}
+?julian
+```
+
+or use an internet search. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:
+
+```{r,eval=FALSE}
+julian(1,1,1970)
+julian(1,2,1970)
+julian(2,1,1970)
+julian(1,1,1971)
+julian(1,1,1969)
+```
+
+Which argument position of `julian()` function corresponds to the month?
 
 
 1. Read and complete all the exercises in Chapter 11 of:

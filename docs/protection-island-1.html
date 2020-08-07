@@ -169,8 +169,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2012-01-31&quot;</span>, <span class="st">&quot;2012-03-05&quot;</span>, <span class="st">&quot;2013-01-11&quot;</span>), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d&quot;</span>)</code></pre></div>
 <p>Having completed Chapter 11 of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a> and having learned how to work with dates, you should now be able to make plot using the information in b.-d. above. The graph you hand in needs to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as <em>Microsoft Word</em>.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the <code>as.POSIXlt()</code> function. You can learn how to use this function using an internet search or by typing the following into your <code>Console</code>:</li>
+<li>Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the <code>julian()</code> function, which is part of the <code>chron</code> package.</li>
 </ol>
+<p>Read Section <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?as.POSIXlt</code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Read and complete all the exercises in Chapter 11 of: Quantitative skills for biology <a href="https://ahurford.github.io/quantitative-training-guide/">Link</a></li>
