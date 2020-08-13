@@ -14,3 +14,11 @@ github-repo: https://github.com/ahurford/BIOL-3295-Fall-2020
 
 ## Reading papers
 
+## Handing in your work
+
+### Making figures to hand-in {#figures}
+The graphs you hand in need to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
+
+### Writing R scripts to hand-in {#RScript}
+To write your own R scripts follow the guidelines described in Chapter 9 [Best Practices](https://ahurford.github.io/quantitative-training-guide/style.html) of _Quantitative training in Biology_. If you are asked to hand in your R script this means you need to submit an `.R` file to your dropbox on brightspace.
+

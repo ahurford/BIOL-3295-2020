@@ -2,9 +2,9 @@
 
 ## Required reading
 
-You are required to read and complete all the exercises in Chapters 1, 3, and 4 of: 
+You are required to read and complete all the exercises in Chapters 1 [_Introduction_](https://ahurford.github.io/quantitative-training-guide/), 3 [_R and RStudio_](https://ahurford.github.io/quantitative-training-guide/install.html), and 4 [_Finding your way around RStudio_](https://ahurford.github.io/quantitative-training-guide/rstudio.html) of: 
 
-Quantitative skills for biology [Link](https://ahurford.github.io/quantitative-training-guide/)
+_Quantitative skills for biology_ [https://ahurford.github.io/quantitative-training-guide/](https://ahurford.github.io/quantitative-training-guide/)
 
 When you are finished you should have `R` and `RStudio` installed on your computer, or you should be familar with running `RStudio Cloud`.
 

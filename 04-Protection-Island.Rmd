@@ -1,21 +1,27 @@
 # Protection Island 1
 
-## Questions
-
 The information below is taken from the following source:
 Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
 
 a.	Pheasant chicks are born during the summer.
-b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35.
+b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35 pheasants.
 c.	November 10, 1938 a census estimated 110 pheasants.
 d.	October 13, 1939 a census estimated 400 pheasants.
 
-1. Read and complete all the exercises in Chapters _6.3 Variables and assignment_ to _6.10 R packaages_ and _11 Making graphs in R_ of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) 
-2. All the examples of making a graph in Chapter 11 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) have lists of _numbers_ as the values that are plotted on the axes. We would like to make a graph of the data listed in b.-d., however, we will face a problem since the x-axis values are dates, rather than numbers. We will consider two possible solutions:
+## Questions
 
-i. Use a built-in `R` function, so that dates can be plotted on the x-axis; and
+1. Read and complete all the exercises in Chapters 6.3 [_Variables and assignment_](https://ahurford.github.io/quantitative-training-guide/rintro.html#variables-and-assignment) to 6.10 [_R packages_](https://ahurford.github.io/quantitative-training-guide/rintro.html#r-packages) and 11 [_Making graphs in R_](https://ahurford.github.io/quantitative-training-guide/graph.html) of _Quantitative skills for biology_
 
-ii. Convert the dates to number of days since a reference date. Now the dates are numbers and these values can be plotted on the x-axis.
+<strong> HAND IN </strong>
+
+- <strong> Answer all questions marked  HAND IN in the reading </strong>
+
+
+2. To make a graph of the data listed in b.-d., we need to learn how to work with dates. We will consider two possible approaches:
+
+i. Use a built-in `R` function to convert dates to a format that can be plotted (this question); and
+
+ii. Convert the dates to number of days since a reference date. Now the dates are numbers and these values can be plotted on the x-axis of a graph (question 3).
 
 In this question, we will proceed with option i. The function we will use is `as.Date()`. You can learn how to use this function using an internet search or by typing the following into your `Console`:
 
@@ -23,24 +29,32 @@ In this question, we will proceed with option i. The function we will use is `as
 ?as.Date
 ```
 
-These files can be difficult to understand. A good way to proceed is to experiment with the function in the `Console`. Try these:
+These files can be difficult to understand (see [R Help files](https://ahurford.github.io/quantitative-training-guide/help.html#how-to-interpret-r-help-files). A good way to proceed is to experiment with the function in the `Console`. Try these:
 
 ```{r,eval=FALSE}
 as.Date(2012-01-31, format = %Y-%m-%d)
 as.Date("2012-01-31", format = "%Y-%m-%d")
 ```
 
-Note that only the second command is error-free. The first command fails needs to contain `""` because the date argument for the `as.Date()` function must be a character string (see `?character`). It is also possible to omit the format argument and just code `as.Date("2012-01-31")`. The help file notes that when the format argument is not specified, the help file states that formats will be tried one by one and an error will be returned if none work. It is advisable to specify the format, as allowing the function to infer the format could introduce errors.
+Note that only the second command is error-free. The first command fails because the date argument for the `as.Date()` function must be a character string, i.e., must be enclosed in `""` (see `?character`).
 
-Section 6.9 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) describes how to make a vector. We need to make a vector of the dates so that we can make our plot. For example,
+It is also possible to omit the format argument and just code: `as.Date("2012-01-31")`. The help file notes that when the format argument is not specified, that formats will be tried one by one and an error will be returned if none work. It is advisable to specify the format, as allowing the function to infer the format could introduce errors.
+
+Chapter 6.9 [Data structures](https://ahurford.github.io/quantitative-training-guide/rintro.html#data-structures) describes how to make a vector (note a vector is a list of numbers rather than just a single number). We need to make a vector of the dates so that we can make our plot. For example,
 
 ```{r,eval=FALSE}
 x <- as.Date(c("2012-01-31", "2012-03-05", "2013-01-11"), format = "%Y-%m-%d")
 ```
 
-Having completed Chapter 11 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) and having learned how to work with dates, you should now be able to make plot using the information in b.-d. above. The graph you hand in needs to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
+Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quantitative-training-guide/graph.html), and having learned how to work with dates, you should now be able to write an R script to make plot using the information in b.-d. above.
 
-You should write an R script to do this...
+<strong> HAND IN </strong>
+
+- <strong> A graph and figure caption, which has dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. 
+</strong>
+
+- <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information.
+</strong>
 
 3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
 
@@ -50,13 +64,13 @@ Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io
 require("chron")
 ```
 
-After the `chron` package is loaded we can then query the `julian` function,
+After the `chron` package is loaded, we can then query the `julian` function,
 
 ```{r,eval=FALSE}
 ?julian
 ```
 
-or use an internet search. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:
+or use an internet search to better understand how to use it. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:
 
 ```{r,eval=FALSE}
 julian(1,1,1970)
@@ -66,7 +80,7 @@ julian(1,1,1971)
 julian(1,1,1969)
 ```
 
-Which argument position of `julian()` function corresponds to the month? Note also that by default the origin (such that the returned value is 0) is set to January 1, 1970. Experiment by running the following lines of code:
+Which argument position of `julian()` function corresponds to the month? Note also that by default the origin (the origin is the value of 0) is set to January 1, 1970. Experiment by running the following lines of code:
 
 ```{r,eval=FALSE}
 julian(1,1,2000)
