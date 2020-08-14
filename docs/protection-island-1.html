@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="getting-started-with-r.html"/>
-<link rel="next" href="protection-island-1-1.html"/>
+<link rel="next" href="protection-island-2.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -123,8 +123,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5" data-path="protection-island-1.html"><a href="protection-island-1.html"><i class="fa fa-check"></i><b>5</b> Protection Island 1</a><ul>
 <li class="chapter" data-level="5.1" data-path="protection-island-1.html"><a href="protection-island-1.html#questions-3"><i class="fa fa-check"></i><b>5.1</b> Questions</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="protection-island-1-1.html"><a href="protection-island-1-1.html"><i class="fa fa-check"></i><b>6</b> Protection Island 1</a><ul>
-<li class="chapter" data-level="6.1" data-path="protection-island-1-1.html"><a href="protection-island-1-1.html#questions-4"><i class="fa fa-check"></i><b>6.1</b> Questions</a></li>
+<li class="chapter" data-level="6" data-path="protection-island-2.html"><a href="protection-island-2.html"><i class="fa fa-check"></i><b>6</b> Protection Island 2</a><ul>
+<li class="chapter" data-level="6.1" data-path="protection-island-2.html"><a href="protection-island-2.html#questions-4"><i class="fa fa-check"></i><b>6.1</b> Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -189,15 +189,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>Read Section 4.4 of <a href="https://ahurford.github.io/quantitative-training-guide/">Quantitative skills for biology</a> regarding installing packages. Install the package <code>chron</code> using either the <code>Install</code> button on the <code>Packages</code> tab, or by using the command <code>install.packages(&quot;chron&quot;)</code> in the <code>Console</code> window. Note that the package is only available for use once you check the box on the <code>Packages</code> tab or by running the following command in the <code>Console</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(<span class="st">&quot;chron&quot;</span>)</code></pre></div>
-<p>After the <code>chron</code> package is loaded we can then query the <code>julian</code> function,</p>
+<p>After the <code>chron</code> package is loaded, we can then query the <code>julian</code> function,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?julian</code></pre></div>
-<p>or use an internet search. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:</p>
+<p>or use an internet search to better understand how to use it. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1970</span>)
 <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1970</span>)
 <span class="kw">julian</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1970</span>)
 <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1971</span>)
 <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1969</span>)</code></pre></div>
-<p>Which argument position of <code>julian()</code> function corresponds to the month? Note also that by default the origin (such that the returned value is 0) is set to January 1, 1970. Experiment by running the following lines of code:</p>
+<p>Which argument position of <code>julian()</code> function corresponds to the month? Note also that by default the origin (the origin is the value of 0) is set to January 1, 1970. Experiment by running the following lines of code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>)
 <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>, <span class="dt">origin =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1970</span>))
 <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>, <span class="dt">origin =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>))</code></pre></div>
@@ -205,10 +205,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ref.day =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>)
 x =<span class="st"> </span><span class="kw">c</span>(<span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>, <span class="dt">origin =</span> ref.day), <span class="kw">julian</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2002</span>, <span class="dt">origin =</span> ref.day))</code></pre></div>
 <p>If you run into problems you can query the value of <code>x</code> in your console, and you can use <code>length(x)</code> to check the length of <code>x</code>.</p>
-<p>As for question 2. you need to hand in a graph with descriptive axes and with a figure caption.</p>
+<p><strong> HAND IN </strong></p>
+<ul>
+<li><strong>As for question 2. you need to hand in a graph with descriptive axes and with a figure caption. </strong></li>
+</ul>
 <ol start="4" style="list-style-type: decimal">
-<li>For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year. Provide 1-3 sentences discussing the timing of the census points for Protection Island.</li>
+<li>For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year.</li>
 </ol>
+<p><strong> HAND IN </strong></p>
+<ul>
+<li><strong>Provide 1-3 sentences discussing the timing of the census points for Protection Island. </strong></li>
+</ul>
 
 </div>
 </div>
@@ -218,7 +225,7 @@ x =<span class="st"> </span><span class="kw">c</span>(<span class="kw">julian</s
         </div>
       </div>
 <a href="getting-started-with-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="protection-island-1-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="protection-island-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
