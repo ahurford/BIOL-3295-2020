@@ -1,4 +1,4 @@
-# Protection Island 1
+# Friday Sept 18: Protection Island 1
 
 The information below is taken from the following source:
 Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
@@ -10,7 +10,7 @@ d.	October 13, 1939 a census estimated 400 pheasants.
 
 ## Questions
 
-1. Read and complete all the exercises in Chapters 6.3 [_Variables and assignment_](https://ahurford.github.io/quantitative-training-guide/rintro.html#variables-and-assignment) to 6.10 [_R packages_](https://ahurford.github.io/quantitative-training-guide/rintro.html#r-packages) and 11 [_Making graphs in R_](https://ahurford.github.io/quantitative-training-guide/graph.html) of _Quantitative skills for biology_
+1. Read and complete all the exercises in Chapters 6.3 [_Variables and assignment_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#variables-and-assignment) to 6.10 [_R packages_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages) and 11 [_Making graphs in R_](https://ahurford.github.io/quant-guide-all-courses/graph.html) of _Quantitative skills for biology_
 
 <strong> HAND IN </strong>
 
@@ -29,7 +29,7 @@ In this question, we will proceed with option i. The function we will use is `as
 ?as.Date
 ```
 
-These files can be difficult to understand (see [R Help files](https://ahurford.github.io/quantitative-training-guide/help.html#how-to-interpret-r-help-files). A good way to proceed is to experiment with the function in the `Console`. Try these:
+These files can be difficult to understand (see [R Help files](https://ahurford.github.io/quant-guide-all-courses/help.html#how-to-interpret-r-help-files). A good way to proceed is to experiment with the function in the `Console`. Try these:
 
 ```{r,eval=FALSE}
 as.Date(2012-01-31, format = %Y-%m-%d)
@@ -40,13 +40,13 @@ Note that only the second command is error-free. The first command fails because
 
 It is also possible to omit the format argument and just code: `as.Date("2012-01-31")`. The help file notes that when the format argument is not specified, that formats will be tried one by one and an error will be returned if none work. It is advisable to specify the format, as allowing the function to infer the format could introduce errors.
 
-Chapter 6.9 [Data structures](https://ahurford.github.io/quantitative-training-guide/rintro.html#data-structures) describes how to make a vector (note a vector is a list of numbers rather than just a single number). We need to make a vector of the dates so that we can make our plot. For example,
+Chapter 6.9 [Data structures](https://ahurford.github.io/quant-guide-all-courses/rintro.html#data-structures) describes how to make a vector (note a vector is a list of numbers rather than just a single number). We need to make a vector of the dates so that we can make our plot. For example,
 
 ```{r,eval=FALSE}
 x <- as.Date(c("2012-01-31", "2012-03-05", "2013-01-11"), format = "%Y-%m-%d")
 ```
 
-Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quantitative-training-guide/graph.html), and having learned how to work with dates, you should now be able to write an R script to make plot using the information in b.-d. above.
+Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quant-guide-all-courses/graph.html), and having learned how to work with dates, you should now be able to write an R script to make plot using the information in b.-d. above.
 
 <strong> HAND IN </strong>
 
@@ -58,7 +58,7 @@ Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quan
 
 3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
 
-Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io/quantitative-training-guide/) regarding installing packages. Install the package `chron` using either the `Install` button on the `Packages` tab, or by using the command `install.packages("chron")` in the `Console` window. Note that the package is only available for use once you check the box on the `Packages` tab or by running the following command in the `Console`:
+Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io/quant-guide-all-courses/) regarding installing packages. Install the package `chron` using either the `Install` button on the `Packages` tab, or by using the command `install.packages("chron")` in the `Console` window. Note that the package is only available for use once you check the box on the `Packages` tab or by running the following command in the `Console`:
 
 ```{r,eval=FALSE}
 require("chron")

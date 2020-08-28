@@ -1,4 +1,4 @@
-# Protection Island 2
+# Tues Sept 22: Protection Island 2
 
 Here is some additional information also taken from:
 Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
@@ -133,7 +133,7 @@ lines(seq(1,4), seq(1,4))
 
 ```{r}
 ref.day = c(1,1,2000)
-x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
+#x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
 ```
 
 

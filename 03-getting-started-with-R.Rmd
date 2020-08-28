@@ -1,10 +1,10 @@
-# Getting started with R
+# Thurs Sept 17: Getting started with R
 
 ## Required reading
 
-You are required to read and complete all the exercises in Chapters 1 [_Introduction_](https://ahurford.github.io/quantitative-training-guide/), 3 [_R and RStudio_](https://ahurford.github.io/quantitative-training-guide/install.html), and 4 [_Finding your way around RStudio_](https://ahurford.github.io/quantitative-training-guide/rstudio.html) of: 
+You are required to read and complete all the exercises in Chapters 1 [_Introduction_](https://ahurford.github.io/quant-guide-all-courses/), 3 [_R and RStudio_](https://ahurford.github.io/quant-guide-all-courses/install.html), and 4 [_Finding your way around RStudio_](https://ahurford.github.io/quant-guide-all-courses/rstudio.html) of: 
 
-_Quantitative skills for biology_ [https://ahurford.github.io/quantitative-training-guide/](https://ahurford.github.io/quantitative-training-guide/)
+_Quantitative skills for biology_ [https://ahurford.github.io/quant-guide-all-courses/](https://ahurford.github.io/quant-guide-all-courses/)
 
 When you are finished you should have `R` and `RStudio` installed on your computer, or you should be familar with running `RStudio Cloud`.
 
