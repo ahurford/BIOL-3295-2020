@@ -1,3 +1,2 @@
-# Friday Oct 2: Density dependence 4
-
+# Fri Oct 2: Solving the discrete time models with density dependence using a computer
 

@@ -1,3 +1,7 @@
-# Tuesday Oct 1: Density dependence 3
+# Thursday Oct 1: Data and the logistic equation
 
+Density dependence + data
 
+## Questions
+1. Question 1.9 on p12 of Vandermeer and Gordon.
+2. Question 1.10 on p12 of Vandermeer and Gordon.

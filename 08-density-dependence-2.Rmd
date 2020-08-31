@@ -1,3 +1,4 @@
-# Tuesday Sept 29: Density dependence 2
+# Tuesday Sept 29: Solving the logistic growth equation using a computer
 
 
+Numerical solutions to CT logistic growth
