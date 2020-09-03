@@ -1,4 +1,9 @@
-# Fri Oct 9: Balsam fir
+# Tues Oct 20: Stage-structured models
+
+- The idea of stage-structured models.
+- Multiplying matrices.
+- Eigenvalues of 2 x 2 matrix
+
 
 
 

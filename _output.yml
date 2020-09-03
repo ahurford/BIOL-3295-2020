@@ -5,6 +5,7 @@ bookdown::gitbook:
       scroll_highlight: no
       before: null
       after: null
+      toc_depth: 1
     toolbar:
       null
     edit : null
