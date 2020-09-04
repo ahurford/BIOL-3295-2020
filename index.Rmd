@@ -1,7 +1,10 @@
 --- 
 site: bookdown::bookdown_site
-output: bookdown::gitbook
-
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+  bookdown::pdf_book:
+    keep_tex: yes
 documentclass: book
 bibliography: [references.bib]
 biblio-style: apalike
@@ -11,14 +14,13 @@ github-repo: https://github.com/ahurford/BIOL-3295-Fall-2020
 
 # Thurs Sept 10: Syllabus
 
-The last day to drop the course without academic prejudice is Nov. 4.
+The last day to drop the course without academic prejudice is Wednesday Nov. 4.
 
 ## Grading
 
 - 27 assignments - 50%
 - Midterm - 15%
 - Final Project - 35%
-
 
 ## Handing in your work
 
