@@ -1,0 +1,610 @@
+--- 
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+  bookdown::pdf_book:
+    keep_tex: yes
+documentclass: book
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: false 
+github-repo: https://github.com/ahurford/BIOL-3295-Fall-2020
+---
+
+## Instructor Information
+Instructor: Dr. Amy Hurford
+Due to the university restrictions around COVID-19 the best way to contact me is by email: ahurford-at-mun-dot-ca. I will try to respond within 24 hours.
+
+## Course Information	
+Lecture	Lab		
+TR 12.00-12.50pm
+F 1-1.50pm	SN-4117, 4116F and 3000
+SN-2067	
+
+### Course description:
+Population and Evolutionary Ecology is an introduction to the theory and principles of evolutionary ecology and population dynamics. Pre-requisites: BIOL 2600; at least one of BIOL 2010, 2122 or 2210.
+	
+Course format:
+Prior to lecture. Readings are to be completed before some lectures (see 1.1 Lecture Schedule and 1.3 Readings for more details).
+
+Lecture. There are 3 x 50 minute lectures each week. Lectures will be a combination of me lecturing and you problem solving, running simulations, and analyzing data to understand how to answer research questions in population and evolutionary ecology.
+-	Plan to bring a laptop computer with the recommended software installed (see 1.5 Software for installation instructions). 
+
+Labs. There are 8 x 3 hour labs. See 1.2 Lab Schedule.
+
+Course expectations: Any students that are disruptive, violating university policies, or acting in a potentially unsafe way will be warned and asked to leave.
+	    
+Learning goals
+-	Understand key concepts
+-	Perform calculations
+-	Know how to gain knowledge and assess information sources
+-	Gain some experience running simulations and coding 
+
+Required Text and Readings
+-	I will conduct a computing resources survey on the first day of class. Please notify me if you have limited access to computing resources.
+-	All readings are available online via the links in 1.3 Readings, or can be accessed via the library website.
+-	Brightspace – will be used: a) to make announcements (in addition to in class); b) for class-related emails; c) to disseminate grades; d) for students to post questions on the readings.
+-	Github – Lecture slides, Labs, and other resources will be available to download at https://github.com/ahurford/BIOL-3295
+
+
+Late assignments, labs, and missed midterms, and final exams will be accommodated as described by University Regulation 6.7.3 and 6.7.5 (see https://www.mun.ca/regoff/calendar/sectionNo=REGS-0474 for Regulations). The Final exam will cover all Lecture material and readings, but not Labs. Specific regulations governing final examinations are described by University Regulation 6.8. Lecture participation is highly recommended and practice problems completed during lectures may appear on Assignments.
+
+
+
+# Thurs Sept 10: Syllabus
+
+The last day to drop the course without academic prejudice is Wednesday Nov. 4.
+
+## Grading
+
+- 27 assignments - 50%
+- Midterm - 15%
+- Final Project - 35%
+
+## Handing in your work
+
+### Making figures to hand-in {#figures}
+The graphs you hand in need to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
+
+### Writing R scripts to hand-in {#RScript}
+To write your own R scripts follow the guidelines described in Chapter 7 [Best Practices](https://ahurford.github.io/quant-guide-all-courses/style.html) of _Quantitative training in Biology_. If you are asked to hand in your R script this means you need to submit an `.R` file to your dropbox on brightspace.
+
+
+<!--chapter:end:index.Rmd-->
+
+# Friday Sept 11: Sept What is a population?
+
+Submit your answers to the Questions to Brightspace.
+
+## To hand-in
+
+1. Give a definition of a population from a textbook or peer-reviewed publication. Provide the citation.
+
+1. Write 1 paragraph describing why the definition of a population matters?
+
+1. Find a peer-reviewed paper where a population is studied. Write 1 paragraph discussing how a population is defined in the study.
+
+## Resources
+
+Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619)
+
+The Princeton Guide to Ecology, edited by Simon A. Levin, et al., Princeton University Press, 2009. ProQuest Ebook Central, [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=557123)
+
+Gunn, A., Russell, D. and Eamer, J. 2011. Northern caribou population trends in Canada. Canadian Biodiversity: Ecosystem Status and Trends 2010, Technical Thematic Report No. 10. Canadian Councils of Resource Ministers. Ottawa, ON. iv + 71 p. [Link](https://biodivcanada.chm-cbd.net/ecosystem-status-trends-2010/technical-report-10)
+
+Sacchi, R., Gentilli, A., Razzetti, E., Barbieri, F., 2002. Effects of building features on density and flock distribution of feral pigeons Columba livia var. domestica in an urban environment. Can. J. Zool. 80, 48-54. [Link](https://doi.org/10.1139/z01-202)
+
+<!--chapter:end:01-popn.Rmd-->
+
+# Tues Sept 15: Exponential growth - discrete time
+
+## Required reading
+Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p1-3. [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619)
+
+## Questions
+Submit your answers to Brightspace
+
+1. Let $\lambda = 5$ in equation (3) (see the required reading). Explain the meaning of $\lambda = 5$.
+
+2. Suppose the number of lilypads during week 7 is 150. Let $\lambda = 5$, and assume that the units of $t$ are weeks. Use equation (3) to calculate the number of lilypads in week 8. 
+
+3. Use your answer to question 2. to calculate the number of lilypads in week 9.
+
+4. Equation (4) for the required reading assumes that $N_0=1$, however, this formula can be generalized such that
+
+\[
+N_t = N_0\lambda^t
+\]
+
+where $N_t$ is the population size at time, $t$. Define time such that $t=0$ is week 7 and $t$ is then the number of weeks since week 7. Use the the equation above to answer question 3 and confirm that the answer is the same (i.e., find the population size for week 9, when $\lambda=5$ and the population size for week 7 is 150).
+
+5. Use the formula from question 4 to find the population size for week 15, where $N_0$ and $\lambda$ are the same as question 4.
+
+6. It is important to note that all mathematical formulas should have the same units on both sides of the equals sign and for each term that is added or subtracted. The units of the population size, $N_t$, at time, $t$, are number. The geometric growth rate, $\lambda$ is unitless. Choose a formula from the required reading and give the units for each of the terms to show that both sides of the equals have the same units. For example, for the equation that appears in question 4, we have:
+
+\begin{eqnarray*}
+N_t & = & N_0 \lambda^t \\
+\left(\mbox{number}\right)& =&(\mbox{number}) (\mbox{unitless})^{weeks}\\
+\left(\mbox{number}\right)& =& \left(\mbox{number}\right)\\
+\end{eqnarray*}
+
+Note that:
+\begin{eqnarray*}
+(\mbox{unitless}) \times (\mbox{quantity with units}) & = & (\mbox{quantity with units}) \\ (\mbox{unitless})^{(\mbox{quantity})}& =& (\mbox{unitless})
+\end{eqnarray*}
+
+7. Although not stated in the reading, $\lambda = 1 + b - d$ where $b$ is the per capita birth rate over one time step (i.e. one week for this example), and $d$ is the fraction of the lilypad population that dies over one time step. The number 1 is considered unitless, what must the units of $b$ and $d$ be?
+
+8. In the reading, $\lambda = 2$. Given that $\lambda = 1 + b - d$, what are some possible values of $b$ and $d$.
+
+9. [True or False] For discrete time exponential growth (as per the reading), the change in population size from one week to the next depends not so much on the per capita birth rate, but on the difference between the per capita birth rate and the per capita death rate.
+
+<!--chapter:end:02-exp-dt.Rmd-->
+
+# Thurs Sept 17: Getting started with R
+
+## Required reading
+
+You are required to read and complete all the exercises in Chapters 1 [_Introduction_](https://ahurford.github.io/quant-guide-all-courses/), 3 [_R and RStudio_](https://ahurford.github.io/quant-guide-all-courses/install.html), and 4 [_Finding your way around RStudio_](https://ahurford.github.io/quant-guide-all-courses/rstudio.html) of: 
+
+_Quantitative skills for biology_ [https://ahurford.github.io/quant-guide-all-courses/](https://ahurford.github.io/quant-guide-all-courses/)
+
+When you are finished you should have `R` and `RStudio` installed on your computer, or you should be familar with running `RStudio Cloud`.
+
+## Questions
+1. Write 1 paragraph describing your experience completing the the exercises. 
+
+<!--chapter:end:03-getting-started-with-R.Rmd-->
+
+# Friday Sept 18: Protection Island 1
+
+The information below is taken from the following source:
+Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
+
+a.	Pheasant chicks are born during the summer.
+b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35 pheasants.
+c.	November 10, 1938 a census estimated 110 pheasants.
+d.	October 13, 1939 a census estimated 400 pheasants.
+
+## Questions
+
+1. Read and complete all the exercises in Chapters 6.3 [_Variables and assignment_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#variables-and-assignment) to 6.10 [_R packages_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages) and 11 [_Making graphs in R_](https://ahurford.github.io/quant-guide-all-courses/graph.html) of _Quantitative skills for biology_
+
+<strong> HAND IN </strong>
+
+- <strong> Answer all questions marked  HAND IN in the reading </strong>
+
+
+2. To make a graph of the data listed in b.-d., we need to learn how to work with dates. We will consider two possible approaches:
+
+i. Use a built-in `R` function to convert dates to a format that can be plotted (this question); and
+
+ii. Convert the dates to number of days since a reference date. Now the dates are numbers and these values can be plotted on the x-axis of a graph (question 3).
+
+In this question, we will proceed with option i. The function we will use is `as.Date()`. You can learn how to use this function using an internet search or by typing the following into your `Console`:
+
+```{r,eval=FALSE}
+?as.Date
+```
+
+These files can be difficult to understand (see [R Help files](https://ahurford.github.io/quant-guide-all-courses/help.html#how-to-interpret-r-help-files). A good way to proceed is to experiment with the function in the `Console`. Try these:
+
+```{r,eval=FALSE}
+as.Date(2012-01-31, format = %Y-%m-%d)
+as.Date("2012-01-31", format = "%Y-%m-%d")
+```
+
+Note that only the second command is error-free. The first command fails because the date argument for the `as.Date()` function must be a character string, i.e., must be enclosed in `""` (see `?character`).
+
+It is also possible to omit the format argument and just code: `as.Date("2012-01-31")`. The help file notes that when the format argument is not specified, that formats will be tried one by one and an error will be returned if none work. It is advisable to specify the format, as allowing the function to infer the format could introduce errors.
+
+Chapter 6.9 [Data structures](https://ahurford.github.io/quant-guide-all-courses/rintro.html#data-structures) describes how to make a vector (note a vector is a list of numbers rather than just a single number). We need to make a vector of the dates so that we can make our plot. For example,
+
+```{r,eval=FALSE}
+x <- as.Date(c("2012-01-31", "2012-03-05", "2013-01-11"), format = "%Y-%m-%d")
+```
+
+Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quant-guide-all-courses/graph.html), and having learned how to work with dates, you should now be able to write an R script to make plot using the information in b.-d. above.
+
+<strong> HAND IN </strong>
+
+- <strong> A graph and figure caption, which has dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. 
+</strong>
+
+- <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information.
+</strong>
+
+3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
+
+Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io/quant-guide-all-courses/) regarding installing packages. Install the package `chron` using either the `Install` button on the `Packages` tab, or by using the command `install.packages("chron")` in the `Console` window. Note that the package is only available for use once you check the box on the `Packages` tab or by running the following command in the `Console`:
+
+```{r,eval=FALSE}
+require("chron")
+```
+
+After the `chron` package is loaded, we can then query the `julian` function,
+
+```{r,eval=FALSE}
+?julian
+```
+
+or use an internet search to better understand how to use it. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:
+
+```{r,eval=FALSE}
+julian(1,1,1970)
+julian(1,2,1970)
+julian(2,1,1970)
+julian(1,1,1971)
+julian(1,1,1969)
+```
+
+Which argument position of `julian()` function corresponds to the month? Note also that by default the origin (the origin is the value of 0) is set to January 1, 1970. Experiment by running the following lines of code:
+
+```{r,eval=FALSE}
+julian(1,1,2000)
+julian(1,1,2000, origin = c(1,1,1970))
+julian(1,1,2000, origin = c(1,1,2000))
+```
+
+Finally, we need to make our figure. Recall that the plot function requires vectors of equal length for the x- and y-axes. Make a vector of the days since a reference as follows:
+
+```{r,eval=FALSE}
+ref.day = c(1,1,2000)
+x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
+```
+
+If you run into problems you can query the value of `x` in your console, and you can use `length(x)` to check the length of `x`.
+
+<strong> HAND IN </strong>
+
+- <strong> As for question 2. you need to hand in a graph with descriptive axes and with a figure caption. The y-axis on your graph is population size and the x-axis will be created using the `julian()` function. Be sure to label the x-axis differently than you did in question 2. </strong>
+
+- <strong> You also need to produce an R Script that makes the figure described above. See \@ref(RScript) for more information. Name this file _protection-island-q3.R_
+</strong>
+
+4.	For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year.
+
+<strong> HAND IN </strong>
+
+- <strong>Provide 1-3 sentences discussing the timing of the census points for Protection Island.
+</strong>
+
+<!--chapter:end:04-Protection-Island.Rmd-->
+
+# Tues Sept 22: Protection Island 2
+
+Here is some additional information also taken from:
+Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
+
+a.	Pheasant chicks are born during the summer.
+b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35.
+c.	November 10, 1938 a census estimated 110 pheasants.
+d.	October 13, 1939 a census estimated 400 pheasants.
+e.	Between the 1938 and 1939 censuses, Newcomb observed that 17 adult birds died.
+f.	During the 1938 nesting season: 5.86 eggs/nest. 83.57% of eggs hatched.
+g.	During the 1939 nesting season: 8.73 eggs/nest. 64.58% hatched.
+h.	During the 1939 nesting season: Average number of chicks per clutch was 6.93.$^1$ 
+i.	You can assume the sex ratio is 50:50 male to female. Pheasants are a sexually reproducing species.
+
+$^1$ Note that g. and h. appear to be contradictory.
+
+## Questions
+
+1.	Let $d$ be the fraction of population that dies each year. What is $d$ for the ring-tailed pheasant population on Protection Island? Write down any assumptions you have made.
+
+4.	$b$ is the per capita number of births each year. What is the value of $b$? Write down any assumptions you have made.
+
+5.	Recall that $\lambda = 1 + b-d$. What is the value of $\lambda$? Is this population is exected to grow over time?
+
+6.	Lets assume that the pheasant population on Protection Island grows geoemetrically (i.e. exponentially) where the geometric growth rate, $\lambda$, is the value that you estimated in 5. Lets predict the population size each May beginning with May 1937. Let $N_0 = 10$ and let $t$ be the number of years since May 1937. Recall that when a population grows geometrically,
+
+\[N_{t} = N_0 \lambda^t \]
+
+You can use `R` to do this calculation as follows (you should use your value of $\lambda$ from question 5):
+
+```{r,eval=FALSE}
+t <-1
+N0 <-10
+lambda <-3
+N0*lambda^t
+```
+
+where since $t = 1$ the result of `N0*lambda^t` is $N_{t+1}$, with $t=1$, such that `N0*lambda^t` is the value of $N_{t+1}=N_2$: the population size two years after May 1937. You can change the value of $t$ and repeat the calculation. Unless you have cleared your workshop it won't be necessary to re-input $N_0 = 10$ and $\lambda = 3$. As such, you can calculate $N_3$ with the following commands:
+
+```{r,eval=FALSE}
+t <-2
+N0*lambda^t
+```
+
+<strong> HAND IN </strong>
+
+- Use `R` to predict the value of the pheasant population size every year up until May 1940.
+
+7. The approach to calculating the pheasant population size in Question 6 is not very organized. In this question, we will learn how to make a data frame, use a for loop, and use the function `rbind()`.
+
+
+Read [Data structures]( https://ahurford.github.io/quantitative-training-guide/rintro.html#data-structures) in _Quantitative training for biology_.
+
+Create a one row dataframe called `df`:
+
+```{r,eval=FALSE}
+df <- data.frame(time = 0, popn.size = 10)
+```
+
+Query `df` in your `Console` to see the data frame you have created. We would like to add successive values of the population size that we calculate to the data frame. To do this we use the `rbind()` function, which binds rows together.
+
+```{r,eval=FALSE}
+new.result <- data.frame(time = 1, popn.size = 20)
+df <- rbind(df, new.result)
+```
+
+Here the `rbind()` function takes the `df` dataframe and adds the `new.result` data frame as a new row onto the bottom. Note that the code above _overwrites_ the value of `df`: that is, `new.result` is added to the bottom of the `df` dataframe (containing only one row), and the result is called `df` (which now has two rows), and the old dataframe `df` (with one row) is overwritten. As such, each time you run the command `df <- rbind(df, new.result)` another row is added to `df`. Try the following:
+
+```{r,eval=FALSE}
+new.result <- data.frame(time = 1, popn.size = 20)
+df <- rbind(df, new.result)
+df <- rbind(df, new.result)
+df <- rbind(df, new.result)
+```
+
+If you query the value of `df` you can see that the several rows, all with identical values have been added because we have run the command `df <- rbind(df, new.result)` multiple times while the value of `new.result` is unchanged. Now let's change the value of `new.result` between each time we run the `df <- rbind(df, new.result)` command.
+
+```{r,eval=FALSE}
+new.result <- data.frame(time = 1, popn.size = 20)
+df <- rbind(df, new.result)
+new.result <- data.frame(time = 2, popn.size = 30)
+df <- rbind(df, new.result)
+```
+
+Finally, when we do calculations for a sequence of values, it is easier to code this using a `for` loop.
+
+```{r,eval=FALSE}
+lambda <- 1.2
+N0 <- 10
+df <- data.frame(time = 0, popn.size = 10)
+for(t in seq(1,4,1)){
+  val <- N0*lambda^t
+  new.result <- data.frame(time = t, popn.size = val)
+  df <- rbind(df, new.result)
+}
+```
+
+To understand the above code, after copy and pasting it into your `Console`, query the value of `df`: you should see predicted population sizes up until 4 years after May 1937. Now, lets try to understand `seq(1,4,1)`. Let's learn about the `seq()` function by trying it out in the `Console`. What is the result of each of these?
+
+```{r,eval=FALSE}
+seq(-10,10)
+seq(-10,5,0.1)
+```
+
+The `for` loop works by beginning with `t` equal to the first value of the sequence and stepping through each value until the final value. The code is written so that quantities that depend on `t` are inside the `for` loop (i.e., enclosed with in the `{}` and those that do not depend on `t` are outside the `for` loop). Note that `val` changes for different values of `t`, `new.result` changes for different values of `t` (because `new.result` has `time = t` and `pop.size = val`, where `val` depends on `t`). Finally, `df` also depends on `t`, because `new.result` depends on `t`. In contrast, `N0` and `lambda` do not change with `t`, so it is more efficient to place the allocated values for these parameters outside of the loop.
+
+We can also plot the results of our calculations:
+
+```{r}
+lambda <- 2
+N0 <- 10
+df <- data.frame(time = 0, popn.size = 10)
+for(t in seq(1,4,1)){
+  val <- N0*lambda^t
+  new.result <- data.frame(time = t, popn.size = val)
+  df <- rbind(df, new.result)
+}
+plot(df$time, df$popn.size, typ = "l", xlab = "years since May 1937", ylab = "Population size")
+```
+
+If you already have an existing plot you can add new lines using `lines()`. For example,
+
+
+```{r}
+plot(seq(1,4), c(1,3,4,2), ylab = "y-axis", xlab = "x-axis")
+lines(seq(1,4), seq(1,4))
+```
+
+<strong> HAND IN </strong>
+
+- <strong> Write an R scipt that builds on the file you have previously make _protection-island-q3.R_. Use the `lines()` command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:
+
+```{r}
+ref.day = c(1,1,2000)
+#x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
+```
+
+
+8.	The geometric growth model is called ‘discrete time’. This equation is appropriate for populations that have regular, pulse reproduction, for example, pheasants that reproduce once per year in the summer. Can you think of examples of other species that reproduce like this?
+
+9.	Can you think of any species that reproduce continuously throughout the year? These species are better modelled with a continuous time model.
+
+<!--chapter:end:05-Protection-Island-2.Rmd-->
+
+# Thursday Sept 24: Doubling times
+
+
+
+<!--chapter:end:06-doubling-times.Rmd-->
+
+# Friday Sept 25: Density dependence and logistic growth
+
+## Required reading
+Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p9-17. [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619)
+
+## Questions
+
+1. What is the equation for continous time logistic growth? Define all the symbols in the equation.
+
+1. What does dN/dt mean?
+
+1. Equibrium values
+
+<!--chapter:end:07-density-dependence-1.Rmd-->
+
+# Tuesday Sept 29: Solving the logistic growth equation using a computer
+
+Numerical solutions to CT logistic growth
+
+<!--chapter:end:08-density-dependence-2.Rmd-->
+
+# Thursday Oct 1: Data and the logistic equation
+
+Density dependence + data
+
+## Questions
+1. Question 1.9 on p12 of Vandermeer and Gordon.
+2. Question 1.10 on p12 of Vandermeer and Gordon.
+
+<!--chapter:end:09-density-dependence-3.Rmd-->
+
+# Fri Oct 2: Discrete time models with density dependence using a computer
+
+
+<!--chapter:end:10-density-dependence-4.Rmd-->
+
+# Tues Oct 6: Solving the discrete time models with density dependence using a computer
+
+
+
+<!--chapter:end:11-density-dependence-5.Rmd-->
+
+# Thurs Oct 8: Analysis of discrete time models
+
+
+
+
+<!--chapter:end:12-density-dependence-6.Rmd-->
+
+# Fri Oct 9: Density-yield and density dependence in births versus deaths
+
+
+
+
+<!--chapter:end:13-density-yield.Rmd-->
+
+# Thurs Oct 15: Balsam fir
+
+
+
+
+<!--chapter:end:14-balsam-fir.Rmd-->
+
+# Tues Oct 20: Stage-structured models
+
+- The idea of stage-structured models.
+- Multiplying matrices.
+- Eigenvalues of 2 x 2 matrix
+
+
+
+
+
+<!--chapter:end:15-age-structure.Rmd-->
+
+# Thurs Oct 22: Stage-structured dynamics
+
+- Eigenvalues and eigenvectors
+- Diagrams
+
+
+
+
+<!--chapter:end:16-age-structure-2.Rmd-->
+
+# Fri Oct 23: Yellow columbine
+
+
+
+
+<!--chapter:end:17-age-structure-3.Rmd-->
+
+# Tues 27-Thur 29: Midterm [due Fri Nov 6 at 5pm]
+
+What is chaos?
+Do real populations exhibit chaos? Discuss the evidence for and against. Provide citations.
+
+
+<!--chapter:end:18-midterm.Rmd-->
+
+# Fri Oct 30: Evolutionary ecology
+
+
+
+
+<!--chapter:end:19-evol-ecol.Rmd-->
+
+# Tues Nov 3: Evolutionary ecology
+
+
+
+
+<!--chapter:end:20-evol-ecol.Rmd-->
+
+# Thurs Nov 5: Evolutionary ecology
+
+
+
+
+<!--chapter:end:21-evol-ecol.Rmd-->
+
+# Fri Nov 6: Evolutionary ecology
+
+
+
+
+<!--chapter:end:22-evol-ecol.Rmd-->
+
+# Tues Nov 10: Evolutionary ecology
+
+
+
+
+<!--chapter:end:23-evol-ecol.Rmd-->
+
+# Thurs Nov 12: Evolutionary ecology
+
+
+
+
+<!--chapter:end:24-evol-ecol.Rmd-->
+
+# Fri Nov 13: Evolutionary ecology
+
+
+
+
+<!--chapter:end:25-evol-ecol.Rmd-->
+
+# Tues Nov 17: Evolutionary ecology
+
+
+
+
+<!--chapter:end:26-evol-ecol.Rmd-->
+
+# Thurs Nov 19: Evolutionary ecology
+
+
+
+
+<!--chapter:end:27-evol-ecol.Rmd-->
+
+# Fri Nov 20: Evolutionary ecology
+
+
+
+
+<!--chapter:end:28-evol-ecol.Rmd-->
+
+# Population biology project ideas
+
+
+
+
+<!--chapter:end:31-pop-bio-proj.Rmd-->
+
+\backmatter
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:99-references.Rmd-->
+

@@ -1,0 +1,72 @@
+--- 
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+  bookdown::pdf_book:
+    keep_tex: yes
+documentclass: book
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: false 
+github-repo: https://github.com/ahurford/BIOL-3295-Fall-2020
+---
+
+## Instructor Information
+Instructor: Dr. Amy Hurford
+Due to the university restrictions around COVID-19 the best way to contact me is by email: ahurford-at-mun-dot-ca. I will try to respond within 24 hours.
+
+## Course Information	
+Lecture	Lab		
+TR 12.00-12.50pm
+F 1-1.50pm	SN-4117, 4116F and 3000
+SN-2067	
+
+### Course description:
+Population and Evolutionary Ecology is an introduction to the theory and principles of evolutionary ecology and population dynamics. Pre-requisites: BIOL 2600; at least one of BIOL 2010, 2122 or 2210.
+	
+Course format:
+Prior to lecture. Readings are to be completed before some lectures (see 1.1 Lecture Schedule and 1.3 Readings for more details).
+
+Lecture. There are 3 x 50 minute lectures each week. Lectures will be a combination of me lecturing and you problem solving, running simulations, and analyzing data to understand how to answer research questions in population and evolutionary ecology.
+-	Plan to bring a laptop computer with the recommended software installed (see 1.5 Software for installation instructions). 
+
+Labs. There are 8 x 3 hour labs. See 1.2 Lab Schedule.
+
+Course expectations: Any students that are disruptive, violating university policies, or acting in a potentially unsafe way will be warned and asked to leave.
+	    
+Learning goals
+-	Understand key concepts
+-	Perform calculations
+-	Know how to gain knowledge and assess information sources
+-	Gain some experience running simulations and coding 
+
+Required Text and Readings
+-	I will conduct a computing resources survey on the first day of class. Please notify me if you have limited access to computing resources.
+-	All readings are available online via the links in 1.3 Readings, or can be accessed via the library website.
+-	Brightspace – will be used: a) to make announcements (in addition to in class); b) for class-related emails; c) to disseminate grades; d) for students to post questions on the readings.
+-	Github – Lecture slides, Labs, and other resources will be available to download at https://github.com/ahurford/BIOL-3295
+
+
+Late assignments, labs, and missed midterms, and final exams will be accommodated as described by University Regulation 6.7.3 and 6.7.5 (see https://www.mun.ca/regoff/calendar/sectionNo=REGS-0474 for Regulations). The Final exam will cover all Lecture material and readings, but not Labs. Specific regulations governing final examinations are described by University Regulation 6.8. Lecture participation is highly recommended and practice problems completed during lectures may appear on Assignments.
+
+
+
+# Thurs Sept 10: Syllabus
+
+The last day to drop the course without academic prejudice is Wednesday Nov. 4.
+
+## Grading
+
+- 27 assignments - 50%
+- Midterm - 15%
+- Final Project - 35%
+
+## Handing in your work
+
+### Making figures to hand-in {#figures}
+The graphs you hand in need to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
+
+### Writing R scripts to hand-in {#RScript}
+To write your own R scripts follow the guidelines described in Chapter 7 [Best Practices](https://ahurford.github.io/quant-guide-all-courses/style.html) of _Quantitative training in Biology_. If you are asked to hand in your R script this means you need to submit an `.R` file to your dropbox on brightspace.
+
