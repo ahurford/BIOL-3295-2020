@@ -37,7 +37,7 @@ Course expectations: Any students that are disruptive, violating university poli
 I consider your completed assignments to be a portfolio of your knowledge in population and evolutionary ecology. You will also get some exposure to coding in `R`. It takes a while to become proficient in a programming language, but all the time you spend coding helps you towards becoming proficient. Some students may enjoy this aspect of the course and subsequently continue to build their programming abilities. The content emphasizes a deeper understanding of fewer concepts, and building your ability to learn more on your own.
 
 ## Required Text and Resources
-The course materials are all (here)[].
+The course materials are all (here)[https://ahurford.github.io/BIOL-3295-Fall-2020/]. In addition you will need a computer to install `R` and `RStudio`. This will be covered on 
 
 
 Late assignments, labs, and missed midterms, and final exams will be accommodated as described by University Regulation 6.7.3 and 6.7.5 (see https://www.mun.ca/regoff/calendar/sectionNo=REGS-0474 for Regulations). The Final exam will cover all Lecture material and readings, but not Labs. Specific regulations governing final examinations are described by University Regulation 6.8. Lecture participation is highly recommended and practice problems completed during lectures may appear on Assignments.
