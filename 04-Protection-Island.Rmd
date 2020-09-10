@@ -55,5 +55,3 @@ Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quan
 
 - <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information. [5 marks]
 </strong>
-
-[10 marks]
