@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tues-nov-3-evolutionary-ecology.html"/>
-<link rel="next" href="fri-nov-6-evolutionary-ecology.html"/>
+<link rel="prev" href="tues-sept-22-protection-island-2.html"/>
+<link rel="next" href="fri-sept-25-doubling-times.html"/>
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -188,17 +188,109 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="thurs-nov-5-evolutionary-ecology" class="section level1">
-<h1><span class="header-section-number">22</span> Thurs Nov 5: Evolutionary ecology</h1>
+<div id="thurs-sept-24-protection-island-3" class="section level1">
+<h1><span class="header-section-number">7</span> Thurs Sept 24: Protection Island 3</h1>
+<p>Here is some additional information also taken from: Newcomb, HR. 1940. <a href="https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en">Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca</a>, Washington. MS thesis. Oregon State University.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Pheasant chicks are born during the summer.</li>
+<li>In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35.</li>
+<li>November 10, 1938 a census estimated 110 pheasants.</li>
+<li>October 13, 1939 a census estimated 400 pheasants.</li>
+<li>Between the 1938 and 1939 censuses, Newcomb observed that 17 adult birds died.</li>
+<li>During the 1938 nesting season: 5.86 eggs/nest. 83.57% of eggs hatched.</li>
+<li>During the 1939 nesting season: 8.73 eggs/nest. 64.58% hatched.</li>
+<li>During the 1939 nesting season: Average number of chicks per clutch was 6.93.<span class="math inline">\(^1\)</span></li>
+<li>You can assume the sex ratio is 50:50 male to female. Pheasants are a sexually reproducing species.</li>
+</ol>
+<p><span class="math inline">\(^1\)</span> Note that g. and h. appear to be contradictory.</p>
+<div id="questions-5" class="section level2">
+<h2><span class="header-section-number">7.1</span> Questions</h2>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(d\)</span> be the fraction of population that dies each year. What is <span class="math inline">\(d\)</span> for the ring-tailed pheasant population on Protection Island? Write down any assumptions you have made.</p></li>
+<li><p><span class="math inline">\(b\)</span> is the per capita number of births each year. What is the value of <span class="math inline">\(b\)</span>? Write down any assumptions you have made.</p></li>
+<li><p>Recall that <span class="math inline">\(\lambda = 1 + b-d\)</span>. What is the value of <span class="math inline">\(\lambda\)</span>? Is this population is exected to grow over time?</p></li>
+<li><p>Lets assume that the pheasant population on Protection Island grows geoemetrically (i.e. exponentially) where the geometric growth rate, <span class="math inline">\(\lambda\)</span>, is the value that you estimated in 5. Lets predict the population size each May beginning with May 1937. Let <span class="math inline">\(N_0 = 10\)</span> and let <span class="math inline">\(t\)</span> be the number of years since May 1937. Recall that when a population grows geometrically,</p></li>
+</ol>
+<p><span class="math display">\[N_{t} = N_0 \lambda^t \]</span></p>
+<p>You can use <code>R</code> to do this calculation as follows (you should use your value of <span class="math inline">\(\lambda\)</span> from question 5):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t &lt;-<span class="dv">1</span>
+N0 &lt;-<span class="dv">10</span>
+lambda &lt;-<span class="dv">3</span>
+N0*lambda^t</code></pre></div>
+<p>where since <span class="math inline">\(t = 1\)</span> the result of <code>N0*lambda^t</code> is <span class="math inline">\(N_{t+1}\)</span>, with <span class="math inline">\(t=1\)</span>, such that <code>N0*lambda^t</code> is the value of <span class="math inline">\(N_{t+1}=N_2\)</span>: the population size two years after May 1937. You can change the value of <span class="math inline">\(t\)</span> and repeat the calculation. Unless you have cleared your workshop it won’t be necessary to re-input <span class="math inline">\(N_0 = 10\)</span> and <span class="math inline">\(\lambda = 3\)</span>. As such, you can calculate <span class="math inline">\(N_3\)</span> with the following commands:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t &lt;-<span class="dv">2</span>
+N0*lambda^t</code></pre></div>
+<p><strong> HAND IN </strong></p>
+<ul>
+<li>Use <code>R</code> to predict the value of the pheasant population size every year up until May 1940.</li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li>The approach to calculating the pheasant population size in Question 6 is not very organized. In this question, we will learn how to make a data frame, use a for loop, and use the function <code>rbind()</code>.</li>
+</ol>
+<p>Read <a href="https://ahurford.github.io/quantitative-training-guide/rintro.html#data-structures">Data structures</a> in <em>Quantitative training for biology</em>.</p>
+<p>Create a one row dataframe called <code>df</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">0</span>, <span class="dt">popn.size =</span> <span class="dv">10</span>)</code></pre></div>
+<p>Query <code>df</code> in your <code>Console</code> to see the data frame you have created. We would like to add successive values of the population size that we calculate to the data frame. To do this we use the <code>rbind()</code> function, which binds rows together.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">1</span>, <span class="dt">popn.size =</span> <span class="dv">20</span>)
+df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)</code></pre></div>
+<p>Here the <code>rbind()</code> function takes the <code>df</code> dataframe and adds the <code>new.result</code> data frame as a new row onto the bottom. Note that the code above <em>overwrites</em> the value of <code>df</code>: that is, <code>new.result</code> is added to the bottom of the <code>df</code> dataframe (containing only one row), and the result is called <code>df</code> (which now has two rows), and the old dataframe <code>df</code> (with one row) is overwritten. As such, each time you run the command <code>df &lt;- rbind(df, new.result)</code> another row is added to <code>df</code>. Try the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">1</span>, <span class="dt">popn.size =</span> <span class="dv">20</span>)
+df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)</code></pre></div>
+<p>If you query the value of <code>df</code> you can see that the several rows, all with identical values have been added because we have run the command <code>df &lt;- rbind(df, new.result)</code> multiple times while the value of <code>new.result</code> is unchanged. Now let’s change the value of <code>new.result</code> between each time we run the <code>df &lt;- rbind(df, new.result)</code> command.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">1</span>, <span class="dt">popn.size =</span> <span class="dv">20</span>)
+df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">2</span>, <span class="dt">popn.size =</span> <span class="dv">30</span>)
+df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)</code></pre></div>
+<p>Finally, when we do calculations for a sequence of values, it is easier to code this using a <code>for</code> loop.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lambda &lt;-<span class="st"> </span><span class="fl">1.2</span>
+N0 &lt;-<span class="st"> </span><span class="dv">10</span>
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">0</span>, <span class="dt">popn.size =</span> <span class="dv">10</span>)
+for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>)){
+  val &lt;-<span class="st"> </span>N0*lambda^t
+  new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> t, <span class="dt">popn.size =</span> val)
+  df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+}</code></pre></div>
+<p>To understand the above code, after copy and pasting it into your <code>Console</code>, query the value of <code>df</code>: you should see predicted population sizes up until 4 years after May 1937. Now, lets try to understand <code>seq(1,4,1)</code>. Let’s learn about the <code>seq()</code> function by trying it out in the <code>Console</code>. What is the result of each of these?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(-<span class="dv">10</span>,<span class="dv">10</span>)
+<span class="kw">seq</span>(-<span class="dv">10</span>,<span class="dv">5</span>,<span class="fl">0.1</span>)</code></pre></div>
+<p>The <code>for</code> loop works by beginning with <code>t</code> equal to the first value of the sequence and stepping through each value until the final value. The code is written so that quantities that depend on <code>t</code> are inside the <code>for</code> loop (i.e., enclosed with in the <code>{}</code> and those that do not depend on <code>t</code> are outside the <code>for</code> loop). Note that <code>val</code> changes for different values of <code>t</code>, <code>new.result</code> changes for different values of <code>t</code> (because <code>new.result</code> has <code>time = t</code> and <code>pop.size = val</code>, where <code>val</code> depends on <code>t</code>). Finally, <code>df</code> also depends on <code>t</code>, because <code>new.result</code> depends on <code>t</code>. In contrast, <code>N0</code> and <code>lambda</code> do not change with <code>t</code>, so it is more efficient to place the allocated values for these parameters outside of the loop.</p>
+<p>We can also plot the results of our calculations:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lambda &lt;-<span class="st"> </span><span class="dv">2</span>
+N0 &lt;-<span class="st"> </span><span class="dv">10</span>
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">0</span>, <span class="dt">popn.size =</span> <span class="dv">10</span>)
+for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>)){
+  val &lt;-<span class="st"> </span>N0*lambda^t
+  new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> t, <span class="dt">popn.size =</span> val)
+  df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+}
+<span class="kw">plot</span>(df$time, df$popn.size, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;years since May 1937&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Population size&quot;</span>)</code></pre></div>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p>If you already have an existing plot you can add new lines using <code>lines()</code>. For example,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>), <span class="dt">ylab =</span> <span class="st">&quot;y-axis&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x-axis&quot;</span>)
+<span class="kw">lines</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>))</code></pre></div>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><strong> HAND IN </strong></p>
+<ul>
+<li><strong> Write an R scipt that builds on the file you have previously make <em>protection-island-q3.R</em>. Use the <code>lines()</code> command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ref.day =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2000</span>)
+<span class="co">#x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))</span></code></pre></div>
+<ol start="8" style="list-style-type: decimal">
+<li><p>The geometric growth model is called ‘discrete time’. This equation is appropriate for populations that have regular, pulse reproduction, for example, pheasants that reproduce once per year in the summer. Can you think of examples of other species that reproduce like this?</p></li>
+<li><p>Can you think of any species that reproduce continuously throughout the year? These species are better modelled with a continuous time model.</p></li>
+</ol>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="tues-nov-3-evolutionary-ecology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="fri-nov-6-evolutionary-ecology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tues-sept-22-protection-island-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fri-sept-25-doubling-times.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,34 @@
+# Final project ideas
+
+[DRAFT]
+
+For your final project you may choose either:
+
+1. Review paper: Read and synthesize information on a new topic in population and evolutionary ecology that we have not considered in class.
+
+or,
+
+2. Analysis: Download and visualize a dataset relevant to population and evolutionary ecology. Discuss your graphs in the context of a principle in population and evolutionary ecology.
+
+Use [Dias et al. 1996](https://www-sciencedirect-com.qe2a-proxy.mun.ca/science/article/pii/0169534796100379?via%3Dihub) _Sources and sinks in population biology_ as a guide for what a final project that is a _Review_ should aspire to look like. 
+
+If you choose to do a final project that is an _Analysis_ you should use some of the exercises we have completed for class as a guide (for example, the Doubling time, Protection Island, Yellow columbine, or balsam fir analyses). Note that you will need to write your final project as a report, rather than a series of questions.
+
+Some examples of final project topics are:
+
+Review paper:
+- Population dynamics in warming environments.
+- Population dynamics in seasonal environments.
+- Spatial population dynamics.
+- Metapopulations.
+
+Analysis:
+
+## How to read scientific papers
+Please consult [How to Read a Scientific Paper (2014)](https://www.research4life.org/blog/how-to-read-a-scientific-paper/) for the recommended approach to ‘reading’ journal articles. Steps 1,2, and 4 are good advice, but step 3 may not be relevant for some readings.
+
+## Sources for datasets
+
+## Grading Rubric: Review
+
+## Grading Rubric: Analysis

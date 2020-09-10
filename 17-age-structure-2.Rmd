@@ -1,4 +1,4 @@
-# Thurs Oct 22: Stage-structured dynamics
+# Fri Oct 23: Stage-structured dynamics
 
 - Eigenvalues and eigenvectors
 - Diagrams

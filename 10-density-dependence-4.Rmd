@@ -1,2 +1,0 @@
-# Fri Oct 2: Discrete time models with density dependence using a computer
-

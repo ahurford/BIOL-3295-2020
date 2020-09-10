@@ -1,4 +1,4 @@
-# Tues Oct 20: Stage-structured models
+# Thurs Oct 22: Stage-structured models
 
 - The idea of stage-structured models.
 - Multiplying matrices.

@@ -16,6 +16,7 @@ d.	October 13, 1939 a census estimated 400 pheasants.
 
 - <strong> Answer all questions marked  HAND IN in the reading </strong>
 
+[5 marks]
 
 2. To make a graph of the data listed in b.-d., we need to learn how to work with dates. We will consider two possible approaches:
 
@@ -50,11 +51,13 @@ Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quan
 
 <strong> HAND IN </strong>
 
-- <strong> A graph and figure caption, which has dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. 
+- <strong> A graph and figure caption, which has dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. [10 marks]
 </strong>
 
-- <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information.
+- <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information. [5 marks]
 </strong>
+
+[10 marks]
 
 3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
 
@@ -80,7 +83,7 @@ julian(1,1,1971)
 julian(1,1,1969)
 ```
 
-Which argument position of `julian()` function corresponds to the month? Note also that by default the origin (the origin is the value of 0) is set to January 1, 1970. Experiment by running the following lines of code:
+Which argument position of the `julian()` function corresponds to the month? Note also that by default the origin (the origin is when the returned value is 0) is set to January 1, 1970. Experiment by running the following lines of code:
 
 ```{r,eval=FALSE}
 julian(1,1,2000)
@@ -88,7 +91,7 @@ julian(1,1,2000, origin = c(1,1,1970))
 julian(1,1,2000, origin = c(1,1,2000))
 ```
 
-Finally, we need to make our figure. Recall that the plot function requires vectors of equal length for the x- and y-axes. Make a vector of the days since a reference as follows:
+Finally, we need to make our figure. Recall that the plot function requires vectors of equal length for the x- and y-axes. Make a vector of the days since a reference date as follows:
 
 ```{r,eval=FALSE}
 ref.day = c(1,1,2000)
@@ -99,9 +102,10 @@ If you run into problems you can query the value of `x` in your console, and you
 
 <strong> HAND IN </strong>
 
-- <strong> As for question 2. you need to hand in a graph with descriptive axes and with a figure caption. The y-axis on your graph is population size and the x-axis will be created using the `julian()` function. Be sure to label the x-axis differently than you did in question 2. </strong>
+- <strong> As for question 2. you need to hand in a graph with descriptive axes and with a figure caption. The y-axis on your graph is population size and the x-axis will be created using the `julian()` function. Be sure to label the x-axis differently than you did in question 2. [10 marks] </strong>
 
-- <strong> You also need to produce an R Script that makes the figure described above. See \@ref(RScript) for more information. Name this file _protection-island-q3.R_
+
+- <strong> You also need to produce an R Script that makes the figure described above. See \@ref(RScript) for more information. Name this file _protection-island-q3.R_ [5 marks]
 </strong>
 
 4.	For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year.

@@ -19,7 +19,7 @@ github-repo: https://github.com/ahurford/BIOL-3295-Fall-2020
 Instructor: Dr. Amy Hurford\
 Office: Teaching remotely\
 Email: ahurford@mun.ca\
-I will try to reply to emails within 24 hours (excluding evenings, weekends and holidays). I am always available during the lecture times. Please email to request a meeting for a different time.
+I will try to reply to emails within 24 hours (excluding evenings, weekends and holidays). I am always available during the lecture times. Please email to request a meeting for a different time. Please check my [schedule](https://amyhurford.weebly.com/) and suggest a time I am free that works for you.
 
 ## Course Information	
 TR 12.00-12.50pm\

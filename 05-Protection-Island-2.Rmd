@@ -1,142 +1,116 @@
 # Tues Sept 22: Protection Island 2
 
-Here is some additional information also taken from:
+The information below is taken from the following source:
 Newcomb, HR. 1940. [Ring-necked pheasant studies on Protection Island in the Strait of Juan de Fuca](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en), Washington. MS thesis. Oregon State University.
 
 a.	Pheasant chicks are born during the summer.
-b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35.
+b.	In May 1937, 10 pheasants were introduced to the island. Before the next breeding season there were 35 pheasants.
 c.	November 10, 1938 a census estimated 110 pheasants.
 d.	October 13, 1939 a census estimated 400 pheasants.
-e.	Between the 1938 and 1939 censuses, Newcomb observed that 17 adult birds died.
-f.	During the 1938 nesting season: 5.86 eggs/nest. 83.57% of eggs hatched.
-g.	During the 1939 nesting season: 8.73 eggs/nest. 64.58% hatched.
-h.	During the 1939 nesting season: Average number of chicks per clutch was 6.93.$^1$ 
-i.	You can assume the sex ratio is 50:50 male to female. Pheasants are a sexually reproducing species.
-
-$^1$ Note that g. and h. appear to be contradictory.
 
 ## Questions
 
-1.	Let $d$ be the fraction of population that dies each year. What is $d$ for the ring-tailed pheasant population on Protection Island? Write down any assumptions you have made.
-
-4.	$b$ is the per capita number of births each year. What is the value of $b$? Write down any assumptions you have made.
-
-5.	Recall that $\lambda = 1 + b-d$. What is the value of $\lambda$? Is this population is exected to grow over time?
-
-6.	Lets assume that the pheasant population on Protection Island grows geoemetrically (i.e. exponentially) where the geometric growth rate, $\lambda$, is the value that you estimated in 5. Lets predict the population size each May beginning with May 1937. Let $N_0 = 10$ and let $t$ be the number of years since May 1937. Recall that when a population grows geometrically,
-
-\[N_{t} = N_0 \lambda^t \]
-
-You can use `R` to do this calculation as follows (you should use your value of $\lambda$ from question 5):
-
-```{r,eval=FALSE}
-t <-1
-N0 <-10
-lambda <-3
-N0*lambda^t
-```
-
-where since $t = 1$ the result of `N0*lambda^t` is $N_{t+1}$, with $t=1$, such that `N0*lambda^t` is the value of $N_{t+1}=N_2$: the population size two years after May 1937. You can change the value of $t$ and repeat the calculation. Unless you have cleared your workshop it won't be necessary to re-input $N_0 = 10$ and $\lambda = 3$. As such, you can calculate $N_3$ with the following commands:
-
-```{r,eval=FALSE}
-t <-2
-N0*lambda^t
-```
+1. Read and complete all the exercises in Chapters 6.3 [_Variables and assignment_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#variables-and-assignment) to 6.10 [_R packages_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages) and 11 [_Making graphs in R_](https://ahurford.github.io/quant-guide-all-courses/graph.html) of _Quantitative skills for biology_
 
 <strong> HAND IN </strong>
 
-- Use `R` to predict the value of the pheasant population size every year up until May 1940.
+- <strong> Answer all questions marked  HAND IN in the reading </strong>
 
-7. The approach to calculating the pheasant population size in Question 6 is not very organized. In this question, we will learn how to make a data frame, use a for loop, and use the function `rbind()`.
+[5 marks]
 
+2. To make a graph of the data listed in b.-d., we need to learn how to work with dates. We will consider two possible approaches:
 
-Read [Data structures]( https://ahurford.github.io/quantitative-training-guide/rintro.html#data-structures) in _Quantitative training for biology_.
+i. Use a built-in `R` function to convert dates to a format that can be plotted (this question); and
 
-Create a one row dataframe called `df`:
+ii. Convert the dates to number of days since a reference date. Now the dates are numbers and these values can be plotted on the x-axis of a graph (question 3).
 
-```{r,eval=FALSE}
-df <- data.frame(time = 0, popn.size = 10)
-```
-
-Query `df` in your `Console` to see the data frame you have created. We would like to add successive values of the population size that we calculate to the data frame. To do this we use the `rbind()` function, which binds rows together.
+In this question, we will proceed with option i. The function we will use is `as.Date()`. You can learn how to use this function using an internet search or by typing the following into your `Console`:
 
 ```{r,eval=FALSE}
-new.result <- data.frame(time = 1, popn.size = 20)
-df <- rbind(df, new.result)
+?as.Date
 ```
 
-Here the `rbind()` function takes the `df` dataframe and adds the `new.result` data frame as a new row onto the bottom. Note that the code above _overwrites_ the value of `df`: that is, `new.result` is added to the bottom of the `df` dataframe (containing only one row), and the result is called `df` (which now has two rows), and the old dataframe `df` (with one row) is overwritten. As such, each time you run the command `df <- rbind(df, new.result)` another row is added to `df`. Try the following:
+These files can be difficult to understand (see [R Help files](https://ahurford.github.io/quant-guide-all-courses/help.html#how-to-interpret-r-help-files). A good way to proceed is to experiment with the function in the `Console`. Try these:
 
 ```{r,eval=FALSE}
-new.result <- data.frame(time = 1, popn.size = 20)
-df <- rbind(df, new.result)
-df <- rbind(df, new.result)
-df <- rbind(df, new.result)
+as.Date(2012-01-31, format = %Y-%m-%d)
+as.Date("2012-01-31", format = "%Y-%m-%d")
 ```
 
-If you query the value of `df` you can see that the several rows, all with identical values have been added because we have run the command `df <- rbind(df, new.result)` multiple times while the value of `new.result` is unchanged. Now let's change the value of `new.result` between each time we run the `df <- rbind(df, new.result)` command.
+Note that only the second command is error-free. The first command fails because the date argument for the `as.Date()` function must be a character string, i.e., must be enclosed in `""` (see `?character`).
+
+It is also possible to omit the format argument and just code: `as.Date("2012-01-31")`. The help file notes that when the format argument is not specified, that formats will be tried one by one and an error will be returned if none work. It is advisable to specify the format, as allowing the function to infer the format could introduce errors.
+
+Chapter 6.9 [Data structures](https://ahurford.github.io/quant-guide-all-courses/rintro.html#data-structures) describes how to make a vector (note a vector is a list of numbers rather than just a single number). We need to make a vector of the dates so that we can make our plot. For example,
 
 ```{r,eval=FALSE}
-new.result <- data.frame(time = 1, popn.size = 20)
-df <- rbind(df, new.result)
-new.result <- data.frame(time = 2, popn.size = 30)
-df <- rbind(df, new.result)
+x <- as.Date(c("2012-01-31", "2012-03-05", "2013-01-11"), format = "%Y-%m-%d")
 ```
 
-Finally, when we do calculations for a sequence of values, it is easier to code this using a `for` loop.
-
-```{r,eval=FALSE}
-lambda <- 1.2
-N0 <- 10
-df <- data.frame(time = 0, popn.size = 10)
-for(t in seq(1,4,1)){
-  val <- N0*lambda^t
-  new.result <- data.frame(time = t, popn.size = val)
-  df <- rbind(df, new.result)
-}
-```
-
-To understand the above code, after copy and pasting it into your `Console`, query the value of `df`: you should see predicted population sizes up until 4 years after May 1937. Now, lets try to understand `seq(1,4,1)`. Let's learn about the `seq()` function by trying it out in the `Console`. What is the result of each of these?
-
-```{r,eval=FALSE}
-seq(-10,10)
-seq(-10,5,0.1)
-```
-
-The `for` loop works by beginning with `t` equal to the first value of the sequence and stepping through each value until the final value. The code is written so that quantities that depend on `t` are inside the `for` loop (i.e., enclosed with in the `{}` and those that do not depend on `t` are outside the `for` loop). Note that `val` changes for different values of `t`, `new.result` changes for different values of `t` (because `new.result` has `time = t` and `pop.size = val`, where `val` depends on `t`). Finally, `df` also depends on `t`, because `new.result` depends on `t`. In contrast, `N0` and `lambda` do not change with `t`, so it is more efficient to place the allocated values for these parameters outside of the loop.
-
-We can also plot the results of our calculations:
-
-```{r}
-lambda <- 2
-N0 <- 10
-df <- data.frame(time = 0, popn.size = 10)
-for(t in seq(1,4,1)){
-  val <- N0*lambda^t
-  new.result <- data.frame(time = t, popn.size = val)
-  df <- rbind(df, new.result)
-}
-plot(df$time, df$popn.size, typ = "l", xlab = "years since May 1937", ylab = "Population size")
-```
-
-If you already have an existing plot you can add new lines using `lines()`. For example,
-
-
-```{r}
-plot(seq(1,4), c(1,3,4,2), ylab = "y-axis", xlab = "x-axis")
-lines(seq(1,4), seq(1,4))
-```
+Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quant-guide-all-courses/graph.html), and having learned how to work with dates, you should now be able to write an R script to make plot using the information in b.-d. above.
 
 <strong> HAND IN </strong>
 
-- <strong> Write an R scipt that builds on the file you have previously make _protection-island-q3.R_. Use the `lines()` command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:
+- <strong> A graph and figure caption, which has dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. [10 marks]
+</strong>
 
-```{r}
+- <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information. [5 marks]
+</strong>
+
+[10 marks]
+
+3. Next, we try approach ii. to make the graph. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
+
+Read Section 4.4 of [Quantitative skills for biology](https://ahurford.github.io/quant-guide-all-courses/) regarding installing packages. Install the package `chron` using either the `Install` button on the `Packages` tab, or by using the command `install.packages("chron")` in the `Console` window. Note that the package is only available for use once you check the box on the `Packages` tab or by running the following command in the `Console`:
+
+```{r,eval=FALSE}
+require("chron")
+```
+
+After the `chron` package is loaded, we can then query the `julian` function,
+
+```{r,eval=FALSE}
+?julian
+```
+
+or use an internet search to better understand how to use it. As the help files can be difficult to understand, another approach to is to try out the function. Try the following:
+
+```{r,eval=FALSE}
+julian(1,1,1970)
+julian(1,2,1970)
+julian(2,1,1970)
+julian(1,1,1971)
+julian(1,1,1969)
+```
+
+Which argument position of the `julian()` function corresponds to the month? Note also that by default the origin (the origin is when the returned value is 0) is set to January 1, 1970. Experiment by running the following lines of code:
+
+```{r,eval=FALSE}
+julian(1,1,2000)
+julian(1,1,2000, origin = c(1,1,1970))
+julian(1,1,2000, origin = c(1,1,2000))
+```
+
+Finally, we need to make our figure. Recall that the plot function requires vectors of equal length for the x- and y-axes. Make a vector of the days since a reference date as follows:
+
+```{r,eval=FALSE}
 ref.day = c(1,1,2000)
-#x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
+x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))
 ```
 
+If you run into problems you can query the value of `x` in your console, and you can use `length(x)` to check the length of `x`.
 
-8.	The geometric growth model is called ‘discrete time’. This equation is appropriate for populations that have regular, pulse reproduction, for example, pheasants that reproduce once per year in the summer. Can you think of examples of other species that reproduce like this?
+<strong> HAND IN </strong>
 
-9.	Can you think of any species that reproduce continuously throughout the year? These species are better modelled with a continuous time model.
+- <strong> As for question 2. you need to hand in a graph with descriptive axes and with a figure caption. The y-axis on your graph is population size and the x-axis will be created using the `julian()` function. Be sure to label the x-axis differently than you did in question 2. [10 marks] </strong>
+
+
+- <strong> You also need to produce an R Script that makes the figure described above. See \@ref(RScript) for more information. Name this file _protection-island-q3.R_ [5 marks]
+</strong>
+
+4.	For the discrete time exponential (geometric) growth model, ideally the census points should be a fixed amount of time apart, i.e., a day, a week, or a year.
+
+<strong> HAND IN </strong>
+
+- <strong>Provide 1-3 sentences discussing the timing of the census points for Protection Island.
+</strong>

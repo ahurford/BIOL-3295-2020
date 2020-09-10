@@ -1,4 +1,6 @@
-# Friday Sept 25: Density dependence and logistic growth
+# Tue Sept 29: Density dependence and logistic growth
+
+[DRAFT]
 
 ## Required reading
 Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p9-17. [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619)
