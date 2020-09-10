@@ -433,8 +433,12 @@ installed on your computer, or you should be familar with running
   question and submitting an answer.{]}
 \end{enumerate}
 
-\chapter{Friday Sept 18: Protection Island
-1}\label{friday-sept-18-protection-island-1}
+\chapter{Fri Sept 18: Protection Island
+1}\label{fri-sept-18-protection-island-1}
+
+Today's exercise will be challenging. You should aim to complete this
+exercise before the next class. This exercise is due by Fri Sept 22.
+There will be a lot of carryover to the next exercise.
 
 The information below is taken from the following source: Newcomb, HR.
 1940.
@@ -471,15 +475,11 @@ Washington. MS thesis. Oregon State University.
   graphs in R}} of \emph{Quantitative skills for biology}
 \end{enumerate}
 
- HAND IN
-
 \begin{itemize}
 \tightlist
 \item
-   Answer all questions marked HAND IN in the reading 
+  Answer all questions marked HAND IN in the reading {[}5 marks{]}
 \end{itemize}
-
-{[}5 marks{]}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -494,11 +494,11 @@ Washington. MS thesis. Oregon State University.
 \def\labelenumi{\roman{enumi}.}
 \item
   Use a built-in \texttt{R} function to convert dates to a format that
-  can be plotted (this question); and
+  can be plotted (todays class); and
 \item
   Convert the dates to number of days since a reference date. Now the
   dates are numbers and these values can be plotted on the x-axis of a
-  graph (question 3).
+  graph (next class).
 \end{enumerate}
 
 In this question, we will proceed with option i. The function we will
@@ -571,16 +571,17 @@ above.
 
 {[}10 marks{]}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Next, we try approach ii. to make the graph. Under approach ii. we
-  will work with the dates by converting them to the number of days
-  since a reference date. To do this we will use the \texttt{julian()}
-  function, which is part of the \texttt{chron} package.
-\end{enumerate}
+\chapter{Tues Sept 22: Protection Island
+2}\label{tues-sept-22-protection-island-2}
+
+Continuing from last week, today we will try approach ii. to make the
+graph of the number of pheasants on Protection Island as it changes with
+time. Under approach ii. we will work with the dates by converting them
+to the number of days since a reference date. To do this we will use the
+\texttt{julian()} function, which is part of the \texttt{chron} package.
+
+Today's questions are due by Tues Sept 29, however, ideally you will
+have them completed for the next class.
 
 Read Section 4.4 of
 \href{https://ahurford.github.io/quant-guide-all-courses/}{Quantitative
@@ -648,290 +649,22 @@ the days since a reference date as follows:
 If you run into problems you can query the value of \texttt{x} in your
 console, and you can use \texttt{length(x)} to check the length of
 \texttt{x}.
-
- HAND IN
-
-\begin{itemize}
-\item
-   As for question 2. you need to hand in a graph with descriptive axes
-  and with a figure caption. The y-axis on your graph is population size
-  and the x-axis will be created using the \texttt{julian()} function.
-  Be sure to label the x-axis differently than you did in question 2.
-  {[}10 marks{]} 
-\item
-   You also need to produce an R Script that makes the figure described
-  above. See \ref{RScript} for more information. Name this file
-  \emph{protection-island-q3.R} {[}5 marks{]} 
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  For the discrete time exponential (geometric) growth model, ideally
-  the census points should be a fixed amount of time apart, i.e., a day,
-  a week, or a year.
-\end{enumerate}
-
- HAND IN
-
-\begin{itemize}
-\tightlist
-\item
-  Provide 1-3 sentences discussing the timing of the census points for
-  Protection Island. 
-\end{itemize}
-
-\chapter{Tues Sept 22: Protection Island
-2}\label{tues-sept-22-protection-island-2}
-
-The information below is taken from the following source: Newcomb, HR.
-1940.
-\href{https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/js956j801?locale=en}{Ring-necked
-pheasant studies on Protection Island in the Strait of Juan de Fuca},
-Washington. MS thesis. Oregon State University.
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Pheasant chicks are born during the summer.
-\item
-  In May 1937, 10 pheasants were introduced to the island. Before the
-  next breeding season there were 35 pheasants.
-\item
-  November 10, 1938 a census estimated 110 pheasants.
-\item
-  October 13, 1939 a census estimated 400 pheasants.
-\end{enumerate}
 
 \section{Questions}\label{questions-4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Read and complete all the exercises in Chapters 6.3
-  \href{https://ahurford.github.io/quant-guide-all-courses/rintro.html\#variables-and-assignment}{\emph{Variables
-  and assignment}} to 6.10
-  \href{https://ahurford.github.io/quant-guide-all-courses/rintro.html\#r-packages}{\emph{R
-  packages}} and 11
-  \href{https://ahurford.github.io/quant-guide-all-courses/graph.html}{\emph{Making
-  graphs in R}} of \emph{Quantitative skills for biology}
+  You need to hand in a graph with descriptive axes and with a figure
+  caption. The y-axis on your graph is population size and the x-axis
+  will be created using the \texttt{julian()} function. Be sure to label
+  the x-axis differently than you did for the previous assignment. {[}10
+  marks{]}
+\item
+  You also need to produce an R Script that makes the figure described
+  above. See \ref{RScript} for more information. Save this file as
+  \emph{protection-island.R} {[}5 marks{]}
 \end{enumerate}
-
- HAND IN
-
-\begin{itemize}
-\tightlist
-\item
-   Answer all questions marked HAND IN in the reading 
-\end{itemize}
-
-{[}5 marks{]}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  To make a graph of the data listed in b.-d., we need to learn how to
-  work with dates. We will consider two possible approaches:
-\end{enumerate}
-
-\begin{enumerate}
-\def\labelenumi{\roman{enumi}.}
-\item
-  Use a built-in \texttt{R} function to convert dates to a format that
-  can be plotted (this question); and
-\item
-  Convert the dates to number of days since a reference date. Now the
-  dates are numbers and these values can be plotted on the x-axis of a
-  graph (question 3).
-\end{enumerate}
-
-In this question, we will proceed with option i. The function we will
-use is \texttt{as.Date()}. You can learn how to use this function using
-an internet search or by typing the following into your
-\texttt{Console}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?as.Date}
-\end{Highlighting}
-\end{Shaded}
-
-These files can be difficult to understand (see
-\href{https://ahurford.github.io/quant-guide-all-courses/help.html\#how-to-interpret-r-help-files}{R
-Help files}. A good way to proceed is to experiment with the function in
-the \texttt{Console}. Try these:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{as.Date}\NormalTok{(}\DecValTok{2012-01-31}\NormalTok{, }\DataTypeTok{format =} \NormalTok{%Y-%m-%d)}
-\KeywordTok{as.Date}\NormalTok{(}\StringTok{"2012-01-31"}\NormalTok{, }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Note that only the second command is error-free. The first command fails
-because the date argument for the \texttt{as.Date()} function must be a
-character string, i.e., must be enclosed in \texttt{""} (see
-\texttt{?character}).
-
-It is also possible to omit the format argument and just code:
-\texttt{as.Date("2012-01-31")}. The help file notes that when the format
-argument is not specified, that formats will be tried one by one and an
-error will be returned if none work. It is advisable to specify the
-format, as allowing the function to infer the format could introduce
-errors.
-
-Chapter 6.9
-\href{https://ahurford.github.io/quant-guide-all-courses/rintro.html\#data-structures}{Data
-structures} describes how to make a vector (note a vector is a list of
-numbers rather than just a single number). We need to make a vector of
-the dates so that we can make our plot. For example,
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"2012-01-31"}\NormalTok{, }\StringTok{"2012-03-05"}\NormalTok{, }\StringTok{"2013-01-11"}\NormalTok{), }\DataTypeTok{format =} \StringTok{"%Y-%m-%d"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Having completed Chapter 11
-\href{https://ahurford.github.io/quant-guide-all-courses/graph.html}{Making
-graphs in R}, and having learned how to work with dates, you should now
-be able to write an R script to make plot using the information in b.-d.
-above.
-
- HAND IN
-
-\begin{itemize}
-\item
-   A graph and figure caption, which has dates on the x-axis and the
-  pheasant population size on the y-axis drawing from the information
-  provided in b.-d. You will need to guess the date of `before the
-  breeding season' as stated in b. and you should disclose the value of
-  this guess in the figure caption. See \ref{figures} for more
-  information. {[}10 marks{]} 
-\item
-   An R Script that produces the figure described above. See
-  \ref{RScript} for more information. {[}5 marks{]} 
-\end{itemize}
-
-{[}10 marks{]}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Next, we try approach ii. to make the graph. Under approach ii. we
-  will work with the dates by converting them to the number of days
-  since a reference date. To do this we will use the \texttt{julian()}
-  function, which is part of the \texttt{chron} package.
-\end{enumerate}
-
-Read Section 4.4 of
-\href{https://ahurford.github.io/quant-guide-all-courses/}{Quantitative
-skills for biology} regarding installing packages. Install the package
-\texttt{chron} using either the \texttt{Install} button on the
-\texttt{Packages} tab, or by using the command
-\texttt{install.packages("chron")} in the \texttt{Console} window. Note
-that the package is only available for use once you check the box on the
-\texttt{Packages} tab or by running the following command in the
-\texttt{Console}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{require}\NormalTok{(}\StringTok{"chron"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-After the \texttt{chron} package is loaded, we can then query the
-\texttt{julian} function,
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?julian}
-\end{Highlighting}
-\end{Shaded}
-
-or use an internet search to better understand how to use it. As the
-help files can be difficult to understand, another approach to is to try
-out the function. Try the following:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1970}\NormalTok{)}
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1970}\NormalTok{)}
-\KeywordTok{julian}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1970}\NormalTok{)}
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1971}\NormalTok{)}
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1969}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Which argument position of the \texttt{julian()} function corresponds to
-the month? Note also that by default the origin (the origin is when the
-returned value is 0) is set to January 1, 1970. Experiment by running
-the following lines of code:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{)}
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{, }\DataTypeTok{origin =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1970}\NormalTok{))}
-\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{, }\DataTypeTok{origin =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-Finally, we need to make our figure. Recall that the plot function
-requires vectors of equal length for the x- and y-axes. Make a vector of
-the days since a reference date as follows:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ref.day =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{)}
-\NormalTok{x =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{, }\DataTypeTok{origin =} \NormalTok{ref.day), }\KeywordTok{julian}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2002}\NormalTok{, }\DataTypeTok{origin =} \NormalTok{ref.day))}
-\end{Highlighting}
-\end{Shaded}
-
-If you run into problems you can query the value of \texttt{x} in your
-console, and you can use \texttt{length(x)} to check the length of
-\texttt{x}.
-
- HAND IN
-
-\begin{itemize}
-\item
-   As for question 2. you need to hand in a graph with descriptive axes
-  and with a figure caption. The y-axis on your graph is population size
-  and the x-axis will be created using the \texttt{julian()} function.
-  Be sure to label the x-axis differently than you did in question 2.
-  {[}10 marks{]} 
-\item
-   You also need to produce an R Script that makes the figure described
-  above. See \ref{RScript} for more information. Name this file
-  \emph{protection-island-q3.R} {[}5 marks{]} 
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
-\item
-  For the discrete time exponential (geometric) growth model, ideally
-  the census points should be a fixed amount of time apart, i.e., a day,
-  a week, or a year.
-\end{enumerate}
-
- HAND IN
-
-\begin{itemize}
-\tightlist
-\item
-  Provide 1-3 sentences discussing the timing of the census points for
-  Protection Island. 
-\end{itemize}
 
 \chapter{Thurs Sept 24: Protection Island
 3}\label{thurs-sept-24-protection-island-3}
@@ -978,13 +711,13 @@ Washington. MS thesis. Oregon State University.
 \item
   Let \(d\) be the fraction of population that dies each year. What is
   \(d\) for the ring-tailed pheasant population on Protection Island?
-  Write down any assumptions you have made.
+  Write down any assumptions you have made. {[}3 marks{]}
 \item
   \(b\) is the per capita number of births each year. What is the value
-  of \(b\)? Write down any assumptions you have made.
+  of \(b\)? Write down any assumptions you have made. {[}3 marks{]}
 \item
   Recall that \(\lambda = 1 + b-d\). What is the value of \(\lambda\)?
-  Is this population is exected to grow over time?
+  Is this population is expected to grow over time? {[}2 marks{]}
 \item
   Lets assume that the pheasant population on Protection Island grows
   geoemetrically (i.e.~exponentially) where the geometric growth rate,
@@ -997,7 +730,8 @@ Washington. MS thesis. Oregon State University.
 \[N_{t} = N_0 \lambda^t \]
 
 You can use \texttt{R} to do this calculation as follows (you should use
-your value of \(\lambda\) from question 5):
+your value of \(\lambda\) from question 5, rather than
+\texttt{lambda\ \textless{}-\ 3} as in the example below):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1008,11 +742,10 @@ your value of \(\lambda\) from question 5):
 \end{Highlighting}
 \end{Shaded}
 
-where since \(t = 1\) the result of \texttt{N0*lambda\^{}t} is
-\(N_{t+1}\), with \(t=1\), such that \texttt{N0*lambda\^{}t} is the
-value of \(N_{t+1}=N_2\): the population size two years after May 1937.
-You can change the value of \(t\) and repeat the calculation. Unless you
-have cleared your workshop it won't be necessary to re-input
+The result of \texttt{N0*lambda\^{}t} is \(N_{t+1}\), and with \(t=1\),
+then \(N_{t+1}=N_2\): the population size two years after May 1937. You
+can change the value of \(t\) and repeat the calculation. Unless you
+have cleared your workspace it won't be necessary to re-input
 \(N_0 = 10\) and \(\lambda = 3\). As such, you can calculate \(N_3\)
 with the following commands:
 
@@ -1029,7 +762,8 @@ with the following commands:
 \tightlist
 \item
   Use \texttt{R} to predict the value of the pheasant population size
-  every year up until May 1940.
+  every year up until May 1940. You only need to hand in the values that
+  you get, not an R Script. {[}2 marks{]}
 \end{itemize}
 
 \begin{enumerate}
@@ -1101,8 +835,9 @@ the value of \texttt{new.result} between each time we run the
 \end{Highlighting}
 \end{Shaded}
 
-Finally, when we do calculations for a sequence of values, it is easier
-to code this using a \texttt{for} loop.
+Type \texttt{df} into the \texttt{Console} to see the resulting
+dataframe. Finally, when we do calculations for a sequence of values, it
+is easier to code this using a \texttt{for} loop.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1161,7 +896,7 @@ We can also plot the results of our calculations:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-25-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-17-1.pdf}
 
 If you already have an existing plot you can add new lines using
 \texttt{lines()}. For example,
@@ -1173,49 +908,31 @@ If you already have an existing plot you can add new lines using
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-26-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf}
 
  HAND IN
 
-\begin{itemize}
-\tightlist
-\item
-   Write an R scipt that builds on the file you have previously make
-  \emph{protection-island-q3.R}. Use the \texttt{lines()} command to add
-  the predicted population size assuming geometric growth using the
-  commands described in this section. If you have written the code
-  correctly the result should look something like this:
-\end{itemize}
+Write an R scipt that builds on the file you have previously made
+\emph{protection-island.R}. Use the \texttt{lines()} command to add the
+predicted population size assuming geometric growth using the commands
+described in this section. If you have written the code correctly the
+result should look something like this:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ref.day =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2000}\NormalTok{)}
-\CommentTok{#x = c(julian(1,1,2000, origin = ref.day), julian(1,1,2002, origin = ref.day))}
+\CommentTok{# To be added}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{7}
-\item
-  The geometric growth model is called `discrete time'. This equation is
-  appropriate for populations that have regular, pulse reproduction, for
-  example, pheasants that reproduce once per year in the summer. Can you
-  think of examples of other species that reproduce like this?
-\item
-  Can you think of any species that reproduce continuously throughout
-  the year? These species are better modelled with a continuous time
-  model.
-\end{enumerate}
+You are to hand in your R Script. See \ref{RScript} for more
+information. {[}10 marks{]}
 
 \chapter{Fri Sept 25: Doubling times}\label{fri-sept-25-doubling-times}
 
 {[}DRAFT{]}
 
-\chapter{Tue Sept 29: Density dependence and logistic
-growth}\label{tue-sept-29-density-dependence-and-logistic-growth}
-
-{[}DRAFT{]}
+\chapter{Tue Sept 29: {[}DRAFT{]} Density dependence and logistic
+growth}\label{tue-sept-29-draft-density-dependence-and-logistic-growth}
 
 \section{Required reading}\label{required-reading-2}
 
@@ -1304,9 +1021,6 @@ columbine}\label{tues-oct-27-yellow-columbine}
 
 \chapter{Thurs Oct 29-Fri Oct 30: Midterm {[}due Fri Nov 6 at
 5pm{]}}\label{thurs-oct-29-fri-oct-30-midterm-due-fri-nov-6-at-5pm}
-
-What is chaos? Do real populations exhibit chaos? Discuss the evidence
-for and against. Provide citations.
 
 \chapter{Tues Nov 3: Evolutionary
 ecology}\label{tues-nov-3-evolutionary-ecology}
