@@ -1,4 +1,4 @@
-# Thurs Sept 17: Getting started with R
+# Thurs Sept 17: Getting started with R {#Rinstall}
 
 ## Required reading
 
