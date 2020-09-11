@@ -9,7 +9,7 @@ Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Se
 
 1. Suppose $\lambda = 5$ in equation (3) (see the required reading). Explain in 1-2 sentences the meaning of $\lambda = 5$. [1 mark]
 
-2. Suppose the number of lilypads during week 7 is 150. Let $\lambda = 5$, and assume that the units of $t$ are weeks. Use equation (3) to calculate the number of lilypads in week 8. Show your calculations. [2 marks]
+2. Suppose the number of lilypads during week 7 is 78,125. Let $\lambda = 5$, and assume that the units of $t$ are weeks. Use equation (3) to calculate the number of lilypads in week 8. Show your calculations. [2 marks]
 
 3. Use your answer to question 2. to calculate the number of lilypads in week 9. Show your calculations. [2 marks]
 
@@ -19,7 +19,7 @@ Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Se
 N_t = N_0\lambda^t
 \]
 
-where $N_t$ is the population size at time, $t$. Define time such that $t=0$ is week 7 and $t$ is then the number of weeks since week 7. Use the the equation above to answer question 3 and confirm that the answer is the same (i.e., find the population size for week 9, when $\lambda=5$ and the population size for week 7 is 150). Show your calculations. [2 marks]
+where $N_t$ is the population size at time, $t$. Define time such that $t=0$ is week 7 and $t$ is then the number of weeks since week 7. Use the the equation above to answer question 3 and confirm that the answer is the same (i.e., find the population size for week 9, when $\lambda=5$ and the population size for week 7 is 78,125). Show your calculations. [2 marks]
 
 5. Use the formula from question 4 to find the population size for week 15, where $N_0=1$ and $\lambda=5$ (the same as question 4). Show your calculations [2 marks]
 
