@@ -131,8 +131,16 @@ lines(seq(1,4), seq(1,4))
 
 Write an R scipt that builds on the file you have previously made _protection-island.R_. Use the `lines()` command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:
 
-```{r}
-# To be added
+```{r,eval=T,echo=F}
+lambda <- 3
+N0 <- 10
+df <- data.frame(time = 0, popn.size = 10)
+for(t in seq(1,4,1)){
+  val <- N0*lambda^t
+  new.result <- data.frame(time = t, popn.size = val)
+  df <- rbind(df, new.result)
+}
+plot(df$time, df$popn.size, typ = "l", xlab = "years since May 1937", ylab = "Population size")
 ```
 You are to hand in your R Script.  See \@ref(RScript) for more information. [10 marks]
 
