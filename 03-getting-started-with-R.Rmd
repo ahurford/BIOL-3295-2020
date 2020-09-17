@@ -18,7 +18,7 @@ Type into the R Console:
 
 ```{r,eval=FALSE}
 install.packages("praise")
-require(praise)
+require("praise")
 praise()
 ```
 

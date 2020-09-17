@@ -50,7 +50,7 @@ Having completed Chapter 11 [Making graphs in R](https://ahurford.github.io/quan
 
 <strong> HAND IN </strong>
 
-- <strong> A graph and figure caption. The graph should have dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. The solutions to this problem have figure caption that is 2 sentences long [10 marks]
+- <strong> A graph and figure caption. The graph should have dates on the x-axis and the pheasant population size on the y-axis drawing from the information provided in b.-d. You will need to guess the date of 'before the breeding season' as stated in b. and you should disclose the value of this guess in the figure caption. See \@ref(figures) for more information. The solutions to this problem have figure caption that is 2 sentences long. _[Note that the graph will likely have years, not months on the x-axis - changing this is a quite fiddle-y and not worth it at this stage of your R journey]_  [10 marks]
 </strong>
 
 - <strong> An R Script that produces the figure described above. See \@ref(RScript) for more information. [5 marks]
