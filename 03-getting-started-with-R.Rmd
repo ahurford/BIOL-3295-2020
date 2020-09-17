@@ -17,6 +17,7 @@ When you are finished you should have `R` and `RStudio` installed on your comput
 Type into the R Console:
 
 ```{r,eval=FALSE}
+install.packages("praise")
 require(praise)
 praise()
 ```
