@@ -45,7 +45,7 @@ If you run into problems you can query the value of `x` in your console, and you
 
 ## Questions
 
-1. You need to hand in a graph with descriptive axes and with a figure caption. The y-axis on your graph is population size and the x-axis will be created using the `julian()` function. Be sure to label the x-axis differently than you did for the previous assignment. [10 marks]
+1. You need to hand in a graph with descriptive axes and with a figure caption. The y-axis on your graph is population size and the x-axis will be created using the `julian()` function. Be sure to label the x-axis differently than you did for the previous assignment. See \@ref(figures) for more information. The figure caption in the solutions for this problem is 2 sentences long. [10 marks]
 
 
 2. You also need to produce an R Script that makes the figure described above. See \@ref(RScript) for more information. Save this file as _protection-island.R_ [5 marks]

@@ -80,7 +80,13 @@ The last day to drop the course without academic prejudice is Wednesday Nov. 4.
 ## Handing in your work
 
 ### Making figures to hand-in {#figures}
-The graphs you hand in need to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_.
+The graphs you hand in need to have descriptive axeses and a figure caption. You may put these elements together using a word processing software such as _Microsoft Word_. Elements of a good figure caption:
+
+- Has a label, i.e., "Figure 1",
+
+- The first sentences provides a summary of what the figure shows, i.e., "The price of oranges has increased steadily since 1964",
+
+- Provide all necessary information to understand everything in the figure, i.e., if the figure has no legend, but multiple line types/symbols, be sure to indicate what is represented by the different symbols. If the axes labels are overly brief due to space constraints in the graph, provide a more thorough description in the figure caption. If any assumptions have been made in making the figure, disclose these, i.e., a point that was excluded from the analysis due to being considered an outlier.
 
 ### Writing R scripts to hand-in {#RScript}
 To write your own R scripts follow the guidelines described in Chapter 7 [Best Practices](https://ahurford.github.io/quant-guide-all-courses/style.html) of _Quantitative training in Biology_. If you are asked to hand in your R script this means you need to submit an `.R` file on Brightspace.
