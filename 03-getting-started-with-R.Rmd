@@ -12,3 +12,12 @@ When you are finished you should have `R` and `RStudio` installed on your comput
 
 ## Questions
 1. Write 1 paragraph describing your experience completing the the exercises. [5 marks. You will receive full marks for attempting the question and submitting an answer.]
+
+## Just for fun
+Type into the R Console:
+
+```{r,eval=FALSE}
+require(praise)
+praise()
+```
+

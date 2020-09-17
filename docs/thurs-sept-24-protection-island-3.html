@@ -127,6 +127,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4" data-path="Rinstall.html"><a href="Rinstall.html"><i class="fa fa-check"></i><b>4</b> Thurs Sept 17: Getting started with R</a><ul>
 <li class="chapter" data-level="4.1" data-path="Rinstall.html"><a href="Rinstall.html#required-reading-1"><i class="fa fa-check"></i><b>4.1</b> Required reading</a></li>
 <li class="chapter" data-level="4.2" data-path="Rinstall.html"><a href="Rinstall.html#questions-2"><i class="fa fa-check"></i><b>4.2</b> Questions</a></li>
+<li class="chapter" data-level="4.3" data-path="Rinstall.html"><a href="Rinstall.html#just-for-fun"><i class="fa fa-check"></i><b>4.3</b> Just for fun</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="fri-sept-18-protection-island-1.html"><a href="fri-sept-18-protection-island-1.html"><i class="fa fa-check"></i><b>5</b> Fri Sept 18: Protection Island 1</a><ul>
 <li class="chapter" data-level="5.1" data-path="fri-sept-18-protection-island-1.html"><a href="fri-sept-18-protection-island-1.html#questions-3"><i class="fa fa-check"></i><b>5.1</b> Questions</a></li>
@@ -266,14 +267,14 @@ for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">
   df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
 }
 <span class="kw">plot</span>(df$time, df$popn.size, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;years since May 1937&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Population size&quot;</span>)</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>If you already have an existing plot you can add new lines using <code>lines()</code>. For example,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>), <span class="dt">ylab =</span> <span class="st">&quot;y-axis&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;x-axis&quot;</span>)
 <span class="kw">lines</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>))</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p><strong> HAND IN </strong></p>
 <p>Write an R scipt that builds on the file you have previously made <em>protection-island.R</em>. Use the <code>lines()</code> command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:</p>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-19-1.png" width="672" /> You are to hand in your R Script. See <a href="index.html#RScript">1.7.2</a> for more information. [10 marks]</p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-20-1.png" width="672" /> You are to hand in your R Script. See <a href="index.html#RScript">1.7.2</a> for more information. [10 marks]</p>
 
 </div>
 </div>
