@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="fri-oct-23-stage-structured-dynamics.html"/>
-<link rel="next" href="thurs-oct-29-fri-oct-30-midterm-due-fri-nov-6-at-5pm.html"/>
+<link rel="prev" href="thurs-sept-24-protection-island-3.html"/>
+<link rel="next" href="tue-sept-29-draft-density-dependence-and-logistic-growth.html"/>
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -193,17 +193,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tues-oct-27-yellow-columbine" class="section level1">
-<h1><span class="header-section-number">19</span> Tues Oct 27: Yellow columbine</h1>
+<div id="fri-sept-25-exponential-growth-continuous-time" class="section level1">
+<h1><span class="header-section-number">8</span> Fri Sept 25: Exponential growth (continuous time)</h1>
+<div id="required-reading-2" class="section level2">
+<h2><span class="header-section-number">8.1</span> Required reading</h2>
+<p>Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p4-8. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619">Link</a></p>
+<p>We now have two ways of describing how population size changes with time whereby an each individual has the same average number of offspring per unit time and the same probability of dying.</p>
+<ol style="list-style-type: decimal">
+<li>Discrete time geometric growth:</li>
+</ol>
+<span class="math display" id="eq:Geo">\[\begin{equation}
+N_t = N_0\lambda^t
+\tag{8.1}
+\end{equation}\]</span>
+<p>and,</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Continuous time exponential growth</li>
+</ol>
+<span class="math display" id="eq:Exp">\[\begin{equation}
+N(t) = N(0)e^{rt}
+\tag{8.2}
+\end{equation}\]</span>
+<p>Notably, for both these models the birth and death rates do not change change over time, and do not change with density or age.</p>
+<p>The notation <span class="math inline">\(N_t\)</span> and <span class="math inline">\(N(t)\)</span> is conventional for discrete time versus continuous time formulations respectively, however, these notations both mean the same: the population size at a particular time, <span class="math inline">\(t\)</span>. When <span class="math inline">\(t=0\)</span> we have the population size at time 0: <span class="math inline">\(N_0\)</span> or <span class="math inline">\(N(0)\)</span>.</p>
+</div>
+<div id="discrete-or-continuous-time-formulations" class="section level2">
+<h2><span class="header-section-number">8.2</span> Discrete or continuous time formulations</h2>
+<p>Whether it is appropriate to model a population in a discrete time or continous time formulation depends on whether births and deaths are overlapping or neatly partitioned into a distinct time period. For example, for many animals there is a distinct breeding season: a short proportion of the year when offspring are born. As such, there is very little temporal overlap between the times of year when births and deaths occur. Humans are an example of a species that might reasonably be modelled as continuous time because babies are born year round.</p>
+</div>
+<div id="questions-6" class="section level2">
+<h2><span class="header-section-number">8.3</span> Questions</h2>
+<ol style="list-style-type: decimal">
+<li>In equation <a href="fri-sept-25-exponential-growth-continuous-time.html#eq:Exp">(8.2)</a>, what is <span class="math inline">\(e\)</span>?</li>
+<li>For what values of <span class="math inline">\(r\)</span> does the population size increase over time?</li>
+<li>As described in the reading, <span class="math inline">\(b\)</span> is a per capita birth rate, and <span class="math inline">\(d\)</span> is a per capita death rate. Both <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> must be non-negative and can take values bigger than 1. Note that this differs from the discrete time model formulation where <span class="math inline">\(0 \leq d \leq 1\)</span>. When <span class="math inline">\(d &gt; 1\)</span> in the continuous time formulation, for example, <span class="math inline">\(d = 2\)</span> this means that the average life expectancy for an individual is 1/2 a time unit (i.e., days or year, however, the time unit is defined in the model). When the population size increases over time, what is true of <span class="math inline">\(b\)</span> relative to <span class="math inline">\(d\)</span>?</li>
+<li>For what value of <span class="math inline">\(r\)</span> does <span class="math inline">\(N(t)\)</span> not change over time?</li>
+<li><p>Consider the equation: <span class="math display">\[
+\frac{dN(t)}{dt} = rN(t).
+\]</span> As described in the reading, this is an alternative way to write the continuous time exponential growth equation. The quantity <span class="math inline">\(\frac{dN(t)}{dt}\)</span> can be understood as the slope of a graph of population size versus time. As such, if the slope is zero, <span class="math inline">\(\frac{dN(t)}{dt}=0\)</span>, then the population size is not changing. If <span class="math inline">\(\frac{dN(t)}{dt}&lt;0\)</span> then the population size is decreasing. For what value of <span class="math inline">\(r\)</span> does the population size decrease? What is true about <span class="math inline">\(b\)</span> relative to <span class="math inline">\(d\)</span> in this instance?</p></li>
+<li><p>Which population would be more appropriate to be modelled as a continuous time formulation: <em>E. coli</em> bacteria or moose?</p></li>
+<li><p>Calculate the formula for the doubling time for continuous time exponential growth. This is the time for the population to double in size. The value of <span class="math inline">\(N(0)\)</span>, the population size at <span class="math inline">\(t=0\)</span> doesn’t matter as long as it is a positive number. When the population has doubled <span class="math inline">\(N(t) = 2N(0)\)</span>. To answer this question you need to find <span class="math inline">\(t\)</span> such that <span class="math inline">\(N(t) = 2N(0)\)</span>. You may need to revisit some revisit some rules about working wiht logarithms to complete this question (i.e. see <a href="https://en.wikipedia.org/wiki/Logarithm">here</a>, specifically the <em>Product, Quotient, Power, and Root</em> table. Also recall, <span class="math inline">\(Ln(e^x) = x\)</span>)</p></li>
+<li><p>In the next class we will aim to produce a plot such as this:</p></li>
+</ol>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="fri-oct-23-stage-structured-dynamics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="thurs-oct-29-fri-oct-30-midterm-due-fri-nov-6-at-5pm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="thurs-sept-24-protection-island-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tue-sept-29-draft-density-dependence-and-logistic-growth.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
