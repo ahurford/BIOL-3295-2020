@@ -1,4 +1,4 @@
-# Fri Oct 2: Data and the logistic equation
+# Tues Oct 6: Data and the logistic equation
 
 Density dependence + data
 

@@ -1,3 +1,0 @@
-# Thurs Oct 1: Solving the logistic growth equation using a computer
-
-Numerical solutions to CT logistic growth
