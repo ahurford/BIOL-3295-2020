@@ -724,10 +724,11 @@ Washington. MS thesis. Oregon State University.
   Between the 1938 and 1939 censuses, Newcomb observed that 17 adult
   birds died.
 \item
-  During the 1938 nesting season: 5.86 eggs/nest. 83.57\% of eggs
-  hatched.
+  During the 1938 nesting season there were 5.86 eggs/nest. 83.57\% of
+  eggs hatched.
 \item
-  During the 1939 nesting season: 8.73 eggs/nest. 64.58\% hatched.
+  During the 1939 nesting season there were 8.73 eggs/nest. 64.58\%
+  hatched.
 \item
   During the 1939 nesting season: Average number of chicks per clutch
   was 6.93.\(^1\)
@@ -743,7 +744,7 @@ Washington. MS thesis. Oregon State University.
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Let \(d\) be the fraction of population that dies each year. What is
+  Let \(d\) be the fraction of population that dies each year. Estimate
   \(d\) for the ring-tailed pheasant population on Protection Island?
   Write down any assumptions you have made. {[}3 marks{]}
 \item
@@ -754,11 +755,11 @@ Washington. MS thesis. Oregon State University.
   Is this population is expected to grow over time? {[}2 marks{]}
 \item
   Lets assume that the pheasant population on Protection Island grows
-  geoemetrically (i.e.~exponentially) where the geometric growth rate,
-  \(\lambda\), is the value that you estimated in 5. Lets predict the
-  population size each May beginning with May 1937. Let \(N_0 = 10\) and
-  let \(t\) be the number of years since May 1937. Recall that when a
-  population grows geometrically,
+  geoemetrically (i.e.~exponentially but for a discrete time model)
+  where the geometric growth rate, \(\lambda\), is the value that you
+  estimated in 3. Lets predict the population size each May beginning
+  with May 1937. Let \(N_0 = 10\) and let \(t\) be the number of years
+  since May 1937. Recall that when a population grows geometrically,
 \end{enumerate}
 
 \[N_{t} = N_0 \lambda^t \]
@@ -776,7 +777,7 @@ your value of \(\lambda\) from question 5, rather than
 \end{Highlighting}
 \end{Shaded}
 
-The result of \texttt{N0*lambda\^{}t} is \(N_{t+1}\), and with \(t=1\),
+The result of \texttt{N0*lambda\^{}t} is \(N_{t+1}\), and with \(t=1\)
 then \(N_{t+1}=N_2\): the population size two years after May 1937. You
 can change the value of \(t\) and repeat the calculation. Unless you
 have cleared your workspace it won't be necessary to re-input
@@ -792,23 +793,19 @@ with the following commands:
 
  HAND IN
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
 \tightlist
 \item
   Use \texttt{R} to predict the value of the pheasant population size
   every year up until May 1940. You only need to hand in the values that
   you get, not an R Script. {[}2 marks{]}
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{6}
-\tightlist
-\item
-  The approach to calculating the pheasant population size in Question 6
-  is not very organized. In this question, we will learn how to make a
-  data frame, use a for loop, and use the function \texttt{rbind()}.
 \end{enumerate}
+
+The approach to calculating the pheasant population size in Question 4
+is not very organized. In this question, we will learn how to make a
+data frame, use a for loop, and use the function \texttt{rbind()}.
 
 Read
 \href{https://ahurford.github.io/quantitative-training-guide/rintro.html\#data-structures}{Data
@@ -887,11 +884,11 @@ is easier to code this using a \texttt{for} loop.
 \end{Shaded}
 
 To understand the above code, after copy and pasting it into your
-\texttt{Console}, query the value of \texttt{df}: you should see
-predicted population sizes up until 4 years after May 1937. Now, lets
-try to understand \texttt{seq(1,4,1)}. Let's learn about the
-\texttt{seq()} function by trying it out in the \texttt{Console}. What
-is the result of each of these?
+\texttt{Console}, and running it by clicking \texttt{Return}, query the
+value of \texttt{df}: you should see predicted population sizes up until
+4 years after May 1937. Now, lets try to understand \texttt{seq(1,4,1)}.
+Let's learn about the \texttt{seq()} function by trying it out in the
+\texttt{Console}. What is the result of each of these?
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -946,13 +943,27 @@ If you already have an existing plot you can add new lines using
 
  HAND IN
 
-Write an R scipt that builds on the file you have previously made
-\emph{protection-island.R}. Use the \texttt{lines()} command to add the
-predicted population size assuming geometric growth using the commands
-described in this section. If you have written the code correctly the
-result should look something like this:
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Write an R scipt that builds on the file you have previously made
+  \emph{protection-island.R}. Use the \texttt{lines()} command to add
+  the predicted population size assuming geometric growth using the
+  commands described in this section. If you have written the code
+  correctly the result should look something like this:
+\end{enumerate}
 
 \includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+Note that to get years on the x-axis for data from the
+\emph{protection-island.R} file, I needed to plot \texttt{plot(x/365,y)}
+because with \texttt{plot(x,y)} the units on my x-axis were days. Your
+graph may look slightly different since you may have calculated a
+slightly different \(\lambda\) value if you made different assumptions
+to me in questions 1 and 2.
+
 You are to hand in your R Script. See \ref{RScript} for more
 information. {[}10 marks{]}
 

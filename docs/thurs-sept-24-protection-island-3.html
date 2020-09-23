@@ -198,8 +198,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>November 10, 1938 a census estimated 110 pheasants.</li>
 <li>October 13, 1939 a census estimated 400 pheasants.</li>
 <li>Between the 1938 and 1939 censuses, Newcomb observed that 17 adult birds died.</li>
-<li>During the 1938 nesting season: 5.86 eggs/nest. 83.57% of eggs hatched.</li>
-<li>During the 1939 nesting season: 8.73 eggs/nest. 64.58% hatched.</li>
+<li>During the 1938 nesting season there were 5.86 eggs/nest. 83.57% of eggs hatched.</li>
+<li>During the 1939 nesting season there were 8.73 eggs/nest. 64.58% hatched.</li>
 <li>During the 1939 nesting season: Average number of chicks per clutch was 6.93.<span class="math inline">\(^1\)</span></li>
 <li>You can assume the sex ratio is 50:50 male to female. Pheasants are a sexually reproducing species.</li>
 </ol>
@@ -207,10 +207,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="questions-5" class="section level2">
 <h2><span class="header-section-number">7.1</span> Questions</h2>
 <ol style="list-style-type: decimal">
-<li><p>Let <span class="math inline">\(d\)</span> be the fraction of population that dies each year. What is <span class="math inline">\(d\)</span> for the ring-tailed pheasant population on Protection Island? Write down any assumptions you have made. [3 marks]</p></li>
+<li><p>Let <span class="math inline">\(d\)</span> be the fraction of population that dies each year. Estimate <span class="math inline">\(d\)</span> for the ring-tailed pheasant population on Protection Island? Write down any assumptions you have made. [3 marks]</p></li>
 <li><p><span class="math inline">\(b\)</span> is the per capita number of births each year. What is the value of <span class="math inline">\(b\)</span>? Write down any assumptions you have made. [3 marks]</p></li>
 <li><p>Recall that <span class="math inline">\(\lambda = 1 + b-d\)</span>. What is the value of <span class="math inline">\(\lambda\)</span>? Is this population is expected to grow over time? [2 marks]</p></li>
-<li><p>Lets assume that the pheasant population on Protection Island grows geoemetrically (i.e. exponentially) where the geometric growth rate, <span class="math inline">\(\lambda\)</span>, is the value that you estimated in 5. Lets predict the population size each May beginning with May 1937. Let <span class="math inline">\(N_0 = 10\)</span> and let <span class="math inline">\(t\)</span> be the number of years since May 1937. Recall that when a population grows geometrically,</p></li>
+<li><p>Lets assume that the pheasant population on Protection Island grows geoemetrically (i.e. exponentially but for a discrete time model) where the geometric growth rate, <span class="math inline">\(\lambda\)</span>, is the value that you estimated in 3. Lets predict the population size each May beginning with May 1937. Let <span class="math inline">\(N_0 = 10\)</span> and let <span class="math inline">\(t\)</span> be the number of years since May 1937. Recall that when a population grows geometrically,</p></li>
 </ol>
 <p><span class="math display">\[N_{t} = N_0 \lambda^t \]</span></p>
 <p>You can use <code>R</code> to do this calculation as follows (you should use your value of <span class="math inline">\(\lambda\)</span> from question 5, rather than <code>lambda &lt;- 3</code> as in the example below):</p>
@@ -218,16 +218,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 N0 &lt;-<span class="dv">10</span>
 lambda &lt;-<span class="dv">3</span>
 N0*lambda^t</code></pre></div>
-<p>The result of <code>N0*lambda^t</code> is <span class="math inline">\(N_{t+1}\)</span>, and with <span class="math inline">\(t=1\)</span>, then <span class="math inline">\(N_{t+1}=N_2\)</span>: the population size two years after May 1937. You can change the value of <span class="math inline">\(t\)</span> and repeat the calculation. Unless you have cleared your workspace it won’t be necessary to re-input <span class="math inline">\(N_0 = 10\)</span> and <span class="math inline">\(\lambda = 3\)</span>. As such, you can calculate <span class="math inline">\(N_3\)</span> with the following commands:</p>
+<p>The result of <code>N0*lambda^t</code> is <span class="math inline">\(N_{t+1}\)</span>, and with <span class="math inline">\(t=1\)</span> then <span class="math inline">\(N_{t+1}=N_2\)</span>: the population size two years after May 1937. You can change the value of <span class="math inline">\(t\)</span> and repeat the calculation. Unless you have cleared your workspace it won’t be necessary to re-input <span class="math inline">\(N_0 = 10\)</span> and <span class="math inline">\(\lambda = 3\)</span>. As such, you can calculate <span class="math inline">\(N_3\)</span> with the following commands:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t &lt;-<span class="dv">2</span>
 N0*lambda^t</code></pre></div>
 <p><strong> HAND IN </strong></p>
-<ul>
+<ol start="5" style="list-style-type: decimal">
 <li>Use <code>R</code> to predict the value of the pheasant population size every year up until May 1940. You only need to hand in the values that you get, not an R Script. [2 marks]</li>
-</ul>
-<ol start="7" style="list-style-type: decimal">
-<li>The approach to calculating the pheasant population size in Question 6 is not very organized. In this question, we will learn how to make a data frame, use a for loop, and use the function <code>rbind()</code>.</li>
 </ol>
+<p>The approach to calculating the pheasant population size in Question 4 is not very organized. In this question, we will learn how to make a data frame, use a for loop, and use the function <code>rbind()</code>.</p>
 <p>Read <a href="https://ahurford.github.io/quantitative-training-guide/rintro.html#data-structures">Data structures</a> in <em>Quantitative training for biology</em>.</p>
 <p>Create a one row dataframe called <code>df</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">0</span>, <span class="dt">popn.size =</span> <span class="dv">10</span>)</code></pre></div>
@@ -253,7 +251,7 @@ for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">
   new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> t, <span class="dt">popn.size =</span> val)
   df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
 }</code></pre></div>
-<p>To understand the above code, after copy and pasting it into your <code>Console</code>, query the value of <code>df</code>: you should see predicted population sizes up until 4 years after May 1937. Now, lets try to understand <code>seq(1,4,1)</code>. Let’s learn about the <code>seq()</code> function by trying it out in the <code>Console</code>. What is the result of each of these?</p>
+<p>To understand the above code, after copy and pasting it into your <code>Console</code>, and running it by clicking <code>Return</code>, query the value of <code>df</code>: you should see predicted population sizes up until 4 years after May 1937. Now, lets try to understand <code>seq(1,4,1)</code>. Let’s learn about the <code>seq()</code> function by trying it out in the <code>Console</code>. What is the result of each of these?</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(-<span class="dv">10</span>,<span class="dv">10</span>)
 <span class="kw">seq</span>(-<span class="dv">10</span>,<span class="dv">5</span>,<span class="fl">0.1</span>)</code></pre></div>
 <p>The <code>for</code> loop works by beginning with <code>t</code> equal to the first value of the sequence and stepping through each value until the final value. The code is written so that quantities that depend on <code>t</code> are inside the <code>for</code> loop (i.e., enclosed with in the <code>{}</code> and those that do not depend on <code>t</code> are outside the <code>for</code> loop). Note that <code>val</code> changes for different values of <code>t</code>, <code>new.result</code> changes for different values of <code>t</code> (because <code>new.result</code> has <code>time = t</code> and <code>pop.size = val</code>, where <code>val</code> depends on <code>t</code>). Finally, <code>df</code> also depends on <code>t</code>, because <code>new.result</code> depends on <code>t</code>. In contrast, <code>N0</code> and <code>lambda</code> do not change with <code>t</code>, so it is more efficient to place the allocated values for these parameters outside of the loop.</p>
@@ -273,8 +271,12 @@ for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">
 <span class="kw">lines</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">4</span>))</code></pre></div>
 <p><img src="BIOL-3295_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p><strong> HAND IN </strong></p>
-<p>Write an R scipt that builds on the file you have previously made <em>protection-island.R</em>. Use the <code>lines()</code> command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:</p>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-20-1.png" width="672" /> You are to hand in your R Script. See <a href="index.html#RScript">1.7.2</a> for more information. [10 marks]</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Write an R scipt that builds on the file you have previously made <em>protection-island.R</em>. Use the <code>lines()</code> command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:</li>
+</ol>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Note that to get years on the x-axis for data from the <em>protection-island.R</em> file, I needed to plot <code>plot(x/365,y)</code> because with <code>plot(x,y)</code> the units on my x-axis were days. Your graph may look slightly different since you may have calculated a slightly different <span class="math inline">\(\lambda\)</span> value if you made different assumptions to me in questions 1 and 2.</p>
+<p>You are to hand in your R Script. See <a href="index.html#RScript">1.7.2</a> for more information. [10 marks]</p>
 
 </div>
 </div>
