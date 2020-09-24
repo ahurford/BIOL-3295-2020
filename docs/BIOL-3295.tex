@@ -464,8 +464,7 @@ Type into the R Console:
 \end{Highlighting}
 \end{Shaded}
 
-\chapter{Fri Sept 18: Protection Island
-1}\label{fri-sept-18-protection-island-1}
+\chapter{Fri Sept 18: Protection Island 1}\label{PE1}
 
 Today's exercise will be challenging. You should aim to complete this
 exercise before the next class. This exercise is due by Fri Sept 25.
@@ -604,8 +603,7 @@ above.
   \ref{RScript} for more information. {[}5 marks{]} 
 \end{itemize}
 
-\chapter{Tues Sept 22: Protection Island
-2}\label{tues-sept-22-protection-island-2}
+\chapter{Tues Sept 22: Protection Island 2}\label{PE2}
 
 Continuing from last week, today we will try approach ii. to make the
 graph of the number of pheasants on Protection Island as it changes with
@@ -1086,35 +1084,33 @@ penalty.
   specifically the \emph{Product, Quotient, Power, and Root} table. Also
   recall, \(Ln(e^x) = x\)). Please show your work. {[}2 marks{]}
 \item
-  In the next class we will aim to produce a plot such as this:
+  Consider the following plot:
 
   \begin{figure}
   \includegraphics[width=0.95\linewidth]{figures/doublingtime} \caption{An example of a very well thought out data visualation where the data might demonstrate exponential growth}\label{fig:doublingtime}
   \end{figure}
 \end{enumerate}
 
-In this question, we will find the equation for `doubles every day' to
-help us re-create this plot in the next class. Our model is equation
-\eqref{eq:Exp}. This means that we will calculate the equation for
-`doubles every day' under the assumption that number of daily cases
-grows exponentially over time.
+In this question, we will find the equation for `doubles every day'. Our
+model is equation \eqref{eq:Exp}. This means that we will calculate the
+equation for `doubles every day' under the assumption that cumulative
+COVID-19 deaths grow exponentially over time.
 
 To begin, we choose the time step for our model as days. The first
 problem we should consider is what is the value of \(r\) if the
 population doubles every 1 day? Make the appropriate substitutions and
 re-arrange equation \eqref{eq:Exp} to find the value of \(r\).
 
-Now, note that the y-axis on the graph we are aiming to produce is on a
-logarithmic scale. We will assume this is a base \(e\) logarithmic
-scale. Take the natural logarithm of both sides of equation
-\eqref{eq:Exp}. Note that the result should be the formula for a straight
-line, i.e., \(y = mx + c\), but where \(y\) is \(Ln(N(t))\) and \(x\) is
-\(t\) (to match the axes of Figure \ref{fig:doublingtime}). The
-questions we are left to solve are: what is the slope of the line (i.e.,
-\(m\), or the value of the coefficient that multiplies \(t\)), and what
-is the value of the intercept (i.e., \(c\) or the remaining terms on the
-opposite side of the equals to \(Ln(N(t))\) and which are not multiplied
-by \(t\))?
+Now, note that the y-axis on the above graph is on a logarithmic scale.
+We will assume this is a base \(e\) logarithmic scale. Take the natural
+logarithm of both sides of equation \eqref{eq:Exp}. Note that the result
+should be the formula for a straight line, i.e., \(y = mx + c\), but
+where \(y\) is \(Ln(N(t))\) and \(x\) is \(t\) (to match the axes of
+Figure \ref{fig:doublingtime}). The questions we are left to solve are:
+what is the slope of the line (i.e., \(m\), or the value of the
+coefficient that multiplies \(t\)), and what is the value of the
+intercept (i.e., \(c\) or the remaining terms on the opposite side of
+the equals to \(Ln(N(t))\) and which are not multiplied by \(t\))?
 
 Show all your work. Your answer is complete when you provide the
 numerical values of the slope and the intercept for the straight line
@@ -1138,36 +1134,266 @@ Today we will make a graph of the current COVID-19 data for Ontario.
 When only a small fraction of the population is resistant to an
 infection, the number of daily cases, in absence of any interventions
 such as physical distancing, is expected to grow exponentially over
-time.
+time. At the end of this exercise you will have calculated the doubling
+time for the second wave of COVID-19 in Ontario.
 
-Plotting data that shows exponential growth on regular axes can produce
-a graph that is difficult to read since the numbers when the population
-size are small will be unreadable due to the very large numbers that
-occur at later times. Our aim today is to produce a graph similar to
-Figure \ref{fig:doublingtime2}, but for the current Ontario COVID-19
-data.
+Visit the website: \url{https://art-bd.shinyapps.io/covid19canada/},
+this site is the \emph{front end} for the data we will use which are
+archived \href{https://github.com/ishaberry/Covid19Canada}{here} (also
+referred to as the \emph{back end}). These data can easily be pulled
+into \texttt{R} using this command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{COVID.data <-}\StringTok{ }\NormalTok{data.table::}\KeywordTok{fread}\NormalTok{(}\StringTok{'https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/active_timeseries_prov.csv'}\NormalTok{, }\DataTypeTok{fill =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+To view the data type:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(COVID.data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    province date_active cumulative_cases cumulative_recovered cumulative_deaths
+## 1:  Alberta  25-01-2020                0                    0                 0
+## 2:  Alberta  26-01-2020                0                    0                 0
+## 3:  Alberta  27-01-2020                0                    0                 0
+## 4:  Alberta  28-01-2020                0                    0                 0
+## 5:  Alberta  29-01-2020                0                    0                 0
+## 6:  Alberta  30-01-2020                0                    0                 0
+##    active_cases active_cases_change
+## 1:            0                   0
+## 2:            0                   0
+## 3:            0                   0
+## 4:            0                   0
+## 5:            0                   0
+## 6:            0                   0
+\end{verbatim}
+
+\texttt{head()} is a command that shows the first 6 lines of the
+quantity inside the round brackets. \texttt{COVID.data} is a very large
+table of data. If I type \texttt{COVID.data} into the Console I will get
+more information than I want, so I instead use \texttt{head()}.
+
+So far we have pulled data from an online repository. However, it is
+good practice to save these data in case later the repository is
+removed. We can make copy of the data for our records using the
+following commands:
+
+Note that the above contains the path to folders on my computer and
+saves \texttt{COVID.data} as the file \emph{COVID-data-save.csv}. You
+will need to replace the path above with correct path to the folder on
+your own computer where you want to save these data. Setting the path is
+computer-specific, and so we always have problems with this in class
+because the solutions vary by student. Some tricks that work for me are:
+
+\begin{itemize}
+\item
+  type \texttt{getwd()} into the Console. This will tell you the current
+  working directory and can give you clues on the format of the path for
+  your computer.
+\item
+  clicking the \texttt{Source} button on a .R file that you have made
+  will print the path to that .R file into the Console.
+\item
+  elect to save the file somewhere very simple, for example, on your
+  Desktop and then move it to a more organized place later.
+\end{itemize}
+
+Navigate to the folder where you expected to save the data as a .csv
+file. You should be able to open the .csv file in \emph{Microsoft
+Excel}.
+
+Now, the data table \texttt{COVID.data} contains data for all provinces
+and we would like to \emph{subset} the data so that only the information
+pertaining to Ontario is left. We do this as follows:
+
+We should understand what variables are contained in our data set. Query
+the following in your Console:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(data.ON)}
+\end{Highlighting}
+\end{Shaded}
+
+We will plot confirmed positive cases over time:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(data.ON$cumulative_cases, }\DataTypeTok{ylab =} \StringTok{"Cumulative cases"}\NormalTok{, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+Note that we haven't provided an x-axis argument above. The x-axis
+should be \texttt{date\_active}, however, from our previous exercise
+(Chapter \ref{PE2}), we recognize that dates need to be reformatted to
+be an appropriate x-axis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(data.ON$date_active)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "25-01-2020" "26-01-2020" "27-01-2020" "28-01-2020" "29-01-2020"
+## [6] "30-01-2020"
+\end{verbatim}
+
+The earliest date is January 25, 2020. We will use this as the origin
+and calculate the number of days since that time.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{require}\NormalTok{(chron)}
+\NormalTok{days.since <-}\StringTok{ }\KeywordTok{julian}\NormalTok{(}\KeywordTok{as.Date}\NormalTok{(data.ON$date_active, }\DataTypeTok{format =} \StringTok{"%d-%m-%Y"}\NormalTok{),}\DataTypeTok{origin=}\KeywordTok{as.Date}\NormalTok{(}\StringTok{"25-01-2020"}\NormalTok{, }\DataTypeTok{format =} \StringTok{"%d-%m-%Y"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+If you get an error this may be because you have not installed the
+\texttt{chron} package. You can do so as
+\texttt{install.packages("chron")}.
+
+On my first attempt at the above code, I tried
+\texttt{julian(data.ON\$date\_active)}. This generated an error because
+our dates from the COVID-19 dataset are formatted as a character string
+``01-25-2020'', but the \texttt{julian()} function is expecting three
+numerical arguments \texttt{julian(m,d,y)}. As such,
+\texttt{julian(data.ON\$Date}) fails to provide three numerical
+arguments to the function and instead provides a single character
+string. For this reason the function \texttt{as.Date()} needs to be
+applied to \texttt{data.ON\$Date} inside the \texttt{julian()} function.
+
+We now have a quantity \texttt{days.since} that is appropriate for the
+x-axis of our graph:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(days.since, data.ON$cumulative_cases, }\DataTypeTok{ylab =} \StringTok{"cumulative cases"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"days since Jan 25, 2020"}\NormalTok{, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+However, rather than calculating cumumlative cases suppose that we might
+like to plot daily new cases. We do this by subtracting the cumulative
+cases for the previous day. The function \texttt{diff()} subtracts the
+element previous to the entry of a list and because the first element of
+the list has not preceeding value we add in a 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{new.cases <-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,data.ON$cumulative_cases))}
+\KeywordTok{plot}\NormalTok{(days.since, new.cases, }\DataTypeTok{ylab =} \StringTok{"new cases"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"days since Jan 25, 2020"}\NormalTok{, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+If we have done a good job of our work, it should be consistent with the
+official graph labelled as (B) below:
+
+\includegraphics[width=1.2\linewidth]{figures/ONData}
+
+We can also focus in on just the second wave by adjusting the
+\texttt{xlim} argument:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(days.since[}\DecValTok{200}\NormalTok{:}\KeywordTok{max}\NormalTok{(days.since)], new.cases[}\DecValTok{200}\NormalTok{:}\KeywordTok{max}\NormalTok{(days.since)], }\DataTypeTok{ylab =} \StringTok{"new cases"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"days since Jan 25, 2020"}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf}
+
+Note that the second wave of COVID-19 in Ontario appears to be
+consistent with exponential growth. Recall that when the y-axis of the
+graph is on a logarithmic scale, exponential growth will be represented
+as a straight line.
 
 \begin{figure}
-\includegraphics[width=0.95\linewidth]{figures/doublingtime} \caption{An example of a very well thought out data visualation where the data might demonstrate exponential growth}\label{fig:doublingtime2}
+\includegraphics[width=0.95\linewidth]{figures/doublingtime} \caption{Straight lines illustrate exponential growth with different doubling times when the y-axis is plotted on a logarithmic scale}\label{fig:doublingtime2}
 \end{figure}
 
-Visit the website: \url{https://wzmli.github.io/COVID19-Canada/}, this
-site is the \emph{front end} for the data we will use which are archived
-\href{https://github.com/wzmli/COVID19-Canada}{here} (also referred to
-as the \emph{back end}). These data can easily be pulled into \texttt{R}
-using the following command:
+We can estimate the doubling time of the number of new cases for the
+second wave of COVID-19 in Ontario by perfoming a linear regression on
+the natural logarithm of the number of new cases. Below, we consider
+only the data 224 days after January 25 and onwards. The function
+\texttt{lm()} performs the linear regression and \texttt{abline()} plots
+the regression.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{data <-}\StringTok{ }\NormalTok{data.table::}\KeywordTok{fread}\NormalTok{(}\StringTok{'https://raw.githubusercontent.com/wzmli/COVID19-Canada/master/COVID19_Canada.csv'}\NormalTok{, }\DataTypeTok{fill =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{since}\FloatTok{.225} \NormalTok{<-}\StringTok{ }\NormalTok{days.since[}\DecValTok{225}\NormalTok{:}\KeywordTok{max}\NormalTok{(days.since)]}
+\NormalTok{log.cases}\FloatTok{.225} \NormalTok{<-}\StringTok{ }\KeywordTok{log}\NormalTok{(new.cases[}\DecValTok{225}\NormalTok{:}\KeywordTok{max}\NormalTok{(days.since)])}
+\KeywordTok{plot}\NormalTok{(since}\FloatTok{.225}\NormalTok{,log.cases}\FloatTok{.225}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"log(new cases)"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"days since Jan 25, 2020"}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{)}
+\NormalTok{reg <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(log.cases}\FloatTok{.225}\NormalTok{~since}\FloatTok{.225}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{(reg)}
 \end{Highlighting}
 \end{Shaded}
 
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf}
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{data.ON <-}\StringTok{ }\NormalTok{data[,Province=}\StringTok{"ON"}\NormalTok{]}
+\KeywordTok{summary}\NormalTok{(reg)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = log.cases.225 ~ since.225)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.34767 -0.12710  0.03244  0.10027  0.33219 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -10.612982   2.026825  -5.236 8.15e-05 ***
+## since.225     0.069584   0.008715   7.984 5.69e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.1918 on 16 degrees of freedom
+## Multiple R-squared:  0.7994, Adjusted R-squared:  0.7868 
+## F-statistic: 63.75 on 1 and 16 DF,  p-value: 5.691e-07
+\end{verbatim}
+
+From the summary of the linear regression we are interested in the
+slope, because in the previous class we estimated the relationship
+between this slope and the doubling time.
+
+\begin{figure}
+\includegraphics[width=0.95\linewidth]{figures/regression} \caption{The above output shows the slope of the regression as 0.0695 log cases per day}\label{fig:regression}
+\end{figure}
+
+\section{Questions}\label{questions-7}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  How many observations and how many variables are there in the
+  \texttt{COVID.data} and the \texttt{data.ON} files? (see the
+  \emph{Environment} tab) {[}1 mark{]}
+\item
+  What command did you use to save the data as a .csv file? {[}1 mark{]}
+\item
+  What do you estimate the doubling time of the second wave of COVID-19
+  in Ontario to be? Show your calculations {[}3 marks{]}
+\item
+  Write an R Script that performs the linear regression as illustrated
+  above. Your script must make the figure including the regression line
+  {[}7 marks{]}
+\end{enumerate}
 
 \chapter{Thurs Oct 1: {[}DRAFT{]} Density dependence and logistic
 growth}\label{thurs-oct-1-draft-density-dependence-and-logistic-growth}
@@ -1179,7 +1405,7 @@ Principles (Second Edition). Princeton University Press, Princeton,
 United States. p9-17.
 \href{https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619}{Link}
 
-\section{Questions}\label{questions-7}
+\section{Questions}\label{questions-8}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1202,7 +1428,7 @@ equation}\label{tues-oct-6-data-and-the-logistic-equation}
 
 Density dependence + data
 
-\section{Questions}\label{questions-8}
+\section{Questions}\label{questions-9}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}

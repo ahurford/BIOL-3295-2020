@@ -1,4 +1,4 @@
-# Tues Sept 22: Protection Island 2
+# Tues Sept 22: Protection Island 2 {#PE2}
 
 Continuing from last week, today we will try approach ii. to make the graph of the number of pheasants on Protection Island as it changes with time. Under approach ii. we will work with the dates by converting them to the number of days since a reference date. To do this we will use the `julian()` function, which is part of the `chron` package.
 
