@@ -12,7 +12,7 @@ d.	October 13, 1939 a census estimated 400 pheasants.
 
 ## Questions
 
-1. Read and complete all the exercises in Chapters 6.3 [_Variables and assignment_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#variables-and-assignment) to 6.10 [_R packages_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages) and 11 [_Making graphs in R_](https://ahurford.github.io/quant-guide-all-courses/graph.html) of _Quantitative skills for biology_
+1. Read and complete all the exercises in Chapters 4.3 [_Variables and assignment_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#variables-and-assignment) to 4.10 [_R packages_](https://ahurford.github.io/quant-guide-all-courses/rintro.html#r-packages) and 9 [_Making graphs in R_](https://ahurford.github.io/quant-guide-all-courses/graph.html) of _Quantitative skills for biology_
 
 -  Answer all questions marked  HAND IN in the reading [5 marks]
 
