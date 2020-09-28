@@ -45,7 +45,7 @@ N0*lambda^t
 
 <strong> HAND IN </strong>
 
-5. Use `R` to predict the value of the pheasant population size every year up until May 1940. You only need to hand in the values that you get, not an R Script. [2 marks]
+Use `R` to predict the value of the pheasant population size every year up until May 1940. You only need to hand in the values that you get, not an R Script. [2 marks]
 
 The approach to calculating the pheasant population size in Question 4 is not very organized. In this question, we will learn how to make a data frame, use a for loop, and use the function `rbind()`.
 
@@ -129,7 +129,7 @@ lines(seq(1,4), seq(1,4))
 
 <strong> HAND IN </strong>
 
-6. Write an R scipt that builds on the file you have previously made _protection-island.R_. Use the `lines()` command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:
+5. Write an R scipt that builds on the file you have previously made _protection-island.R_. Use the `lines()` command to add the predicted population size assuming geometric growth using the commands described in this section. If you have written the code correctly the result should look something like this:
 
 ```{r,eval=T,echo=F,message=F}
 # Title: Protection Island – chron package

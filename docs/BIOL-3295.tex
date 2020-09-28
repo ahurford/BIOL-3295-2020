@@ -791,15 +791,9 @@ with the following commands:
 
  HAND IN
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
-\item
-  Use \texttt{R} to predict the value of the pheasant population size
-  every year up until May 1940. You only need to hand in the values that
-  you get, not an R Script. {[}2 marks{]}
-\end{enumerate}
+Use \texttt{R} to predict the value of the pheasant population size
+every year up until May 1940. You only need to hand in the values that
+you get, not an R Script. {[}2 marks{]}
 
 The approach to calculating the pheasant population size in Question 4
 is not very organized. In this question, we will learn how to make a
@@ -943,7 +937,7 @@ If you already have an existing plot you can add new lines using
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{5}
+\setcounter{enumi}{4}
 \tightlist
 \item
   Write an R scipt that builds on the file you have previously made
@@ -1074,15 +1068,16 @@ penalty.
   mark{]}
 \item
   Calculate the formula for the doubling time for continuous time
-  exponential growth (\eqref{eq:Exp}). This is the time for the population
-  to double in size. The value of \(N(0)\), the population size at
-  \(t=0\) doesn't matter as long as it is a positive number. When the
-  population has doubled, \(N(t) = 2N(0)\). To answer this question you
-  need to find \(t\) such that \(N(t) = 2N(0)\). You may need to revisit
-  some rules about working with logarithms to complete this question
-  (i.e.~see \href{https://en.wikipedia.org/wiki/Logarithm}{here},
-  specifically the \emph{Product, Quotient, Power, and Root} table. Also
-  recall, \(Ln(e^x) = x\)). Please show your work. {[}2 marks{]}
+  exponential growth (equation \eqref{eq:Exp}). This is the time for the
+  population to double in size. The value of \(N(0)\), the population
+  size at \(t=0\) doesn't matter as long as it is a positive number.
+  When the population has doubled, \(N(t) = 2N(0)\). To answer this
+  question you need to find \(t\) such that \(N(t) = 2N(0)\). You may
+  need to revisit some rules about working with logarithms to complete
+  this question (i.e.~see
+  \href{https://en.wikipedia.org/wiki/Logarithm}{here}, specifically the
+  \emph{Product, Quotient, Power, and Root} table. Also recall,
+  \(Ln(e^x) = x\)). Please show your work. {[}2 marks{]}
 \item
   Consider the following plot:
 
@@ -1148,6 +1143,17 @@ into \texttt{R} using this command:
 \NormalTok{COVID.data <-}\StringTok{ }\NormalTok{data.table::}\KeywordTok{fread}\NormalTok{(}\StringTok{'https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/active_timeseries_prov.csv'}\NormalTok{, }\DataTypeTok{fill =} \OtherTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+However, first you will need to install the \texttt{data.table} package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"data.table"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+When asked: \emph{Do you want to install from sources the package which
+needs compilation? (Yes/no/cancel)} enter \texttt{no}.
 
 To view the data type:
 
@@ -1229,7 +1235,7 @@ We will plot confirmed positive cases over time:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-26-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf}
 
 Note that we haven't provided an x-axis argument above. The x-axis
 should be \texttt{date\_active}, however, from our previous exercise
@@ -1280,7 +1286,7 @@ x-axis of our graph:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-29-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf}
 
 However, rather than calculating cumumlative cases suppose that we might
 like to plot daily new cases. We do this by subtracting the cumulative
@@ -1295,7 +1301,7 @@ the list has not preceeding value we add in a 0.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf}
 
 If we have done a good job of our work, it should be consistent with the
 official graph labelled as (B) below:
@@ -1311,7 +1317,7 @@ We can also focus in on just the second wave by adjusting the
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf}
 
 Note that the second wave of COVID-19 in Ontario appears to be
 consistent with exponential growth. Recall that when the y-axis of the
@@ -1339,7 +1345,7 @@ the regression.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf}
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1354,18 +1360,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.26734 -0.18899  0.02621  0.09812  0.36324 
+## -0.26356 -0.15620  0.01137  0.10095  0.36732 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -8.38452    1.68062  -4.989 8.15e-05 ***
-## since.225    0.05989    0.00718   8.341 8.97e-08 ***
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -7.980371   1.549098  -5.152 4.86e-05 ***
+## since.225    0.058134   0.006604   8.804 2.58e-08 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.1992 on 19 degrees of freedom
-## Multiple R-squared:  0.7855, Adjusted R-squared:  0.7742 
-## F-statistic: 69.57 on 1 and 19 DF,  p-value: 8.966e-08
+## Residual standard error: 0.1965 on 20 degrees of freedom
+## Multiple R-squared:  0.7949, Adjusted R-squared:  0.7846 
+## F-statistic:  77.5 on 1 and 20 DF,  p-value: 2.577e-08
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the

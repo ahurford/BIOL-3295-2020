@@ -44,7 +44,7 @@ As described in the reading, this is an alternative way to write the continuous 
 
 6. Which population would be more appropriate to be modelled as a continuous time formulation: _E. coli_ bacteria or moose? [1 mark]
 
-7. Calculate the formula for the doubling time for continuous time exponential growth (\@ref(eq:Exp)). This is the time for the population to double in size. The value of $N(0)$, the population size at $t=0$ doesn't matter as long as it is a positive number. When the population has doubled, $N(t) = 2N(0)$. To answer this question you need to find $t$ such that $N(t) = 2N(0)$. You may need to revisit some rules about working with logarithms to complete this question (i.e. see [here](https://en.wikipedia.org/wiki/Logarithm), specifically the _Product, Quotient, Power, and Root_ table. Also recall, $Ln(e^x) = x$). Please show your work. [2 marks]
+7. Calculate the formula for the doubling time for continuous time exponential growth (equation \@ref(eq:Exp)). This is the time for the population to double in size. The value of $N(0)$, the population size at $t=0$ doesn't matter as long as it is a positive number. When the population has doubled, $N(t) = 2N(0)$. To answer this question you need to find $t$ such that $N(t) = 2N(0)$. You may need to revisit some rules about working with logarithms to complete this question (i.e. see [here](https://en.wikipedia.org/wiki/Logarithm), specifically the _Product, Quotient, Power, and Root_ table. Also recall, $Ln(e^x) = x$). Please show your work. [2 marks]
 
 8. Consider the following plot:
 ```{r doublingtime, echo=FALSE, fig.cap="An example of a very well thought out data visualation where the data might demonstrate exponential growth", out.width="95%", purl=FALSE}

@@ -199,6 +199,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Today we will make a graph of the current COVID-19 data for Ontario. When only a small fraction of the population is resistant to an infection, the number of daily cases, in absence of any interventions such as physical distancing, is expected to grow exponentially over time. At the end of this exercise you will have calculated the doubling time for the second wave of COVID-19 in Ontario.</p>
 <p>Visit the website: <a href="https://art-bd.shinyapps.io/covid19canada/" class="uri">https://art-bd.shinyapps.io/covid19canada/</a>, this site is the <em>front end</em> for the data we will use which are archived <a href="https://github.com/ishaberry/Covid19Canada">here</a> (also referred to as the <em>back end</em>). These data can easily be pulled into <code>R</code> using this command:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">COVID.data &lt;-<span class="st"> </span>data.table::<span class="kw">fread</span>(<span class="st">&#39;https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/active_timeseries_prov.csv&#39;</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>However, first you will need to install the <code>data.table</code> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;data.table&quot;</span>)</code></pre></div>
+<p>When asked: <em>Do you want to install from sources the package which needs compilation? (Yes/no/cancel)</em> enter <code>no</code>.</p>
 <p>To view the data type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(COVID.data)</code></pre></div>
 <pre><code>##    province date_active cumulative_cases cumulative_recovered cumulative_deaths
@@ -229,7 +232,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(data.ON)</code></pre></div>
 <p>We will plot confirmed positive cases over time:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(data.ON$cumulative_cases, <span class="dt">ylab =</span> <span class="st">&quot;Cumulative cases&quot;</span>, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>)</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>Note that we haven’t provided an x-axis argument above. The x-axis should be <code>date_active</code>, however, from our previous exercise (Chapter <a href="PE2.html#PE2">6</a>), we recognize that dates need to be reformatted to be an appropriate x-axis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(data.ON$date_active)</code></pre></div>
 <pre><code>## [1] &quot;25-01-2020&quot; &quot;26-01-2020&quot; &quot;27-01-2020&quot; &quot;28-01-2020&quot; &quot;29-01-2020&quot;
@@ -241,16 +244,16 @@ days.since &lt;-<span class="st"> </span><span class="kw">julian</span>(<span cl
 <p>On my first attempt at the above code, I tried <code>julian(data.ON$date_active)</code>. This generated an error because our dates from the COVID-19 dataset are formatted as a character string “01-25-2020”, but the <code>julian()</code> function is expecting three numerical arguments <code>julian(m,d,y)</code>. As such, <code>julian(data.ON$Date</code>) fails to provide three numerical arguments to the function and instead provides a single character string. For this reason the function <code>as.Date()</code> needs to be applied to <code>data.ON$Date</code> inside the <code>julian()</code> function.</p>
 <p>We now have a quantity <code>days.since</code> that is appropriate for the x-axis of our graph:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(days.since, data.ON$cumulative_cases, <span class="dt">ylab =</span> <span class="st">&quot;cumulative cases&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;days since Jan 25, 2020&quot;</span>, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>)</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <p>However, rather than calculating cumumlative cases suppose that we might like to plot daily new cases. We do this by subtracting the cumulative cases for the previous day. The function <code>diff()</code> subtracts the element previous to the entry of a list and because the first element of the list has not preceeding value we add in a 0.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new.cases &lt;-<span class="st"> </span><span class="kw">diff</span>(<span class="kw">c</span>(<span class="dv">0</span>,data.ON$cumulative_cases))
 <span class="kw">plot</span>(days.since, new.cases, <span class="dt">ylab =</span> <span class="st">&quot;new cases&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;days since Jan 25, 2020&quot;</span>, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>)</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <p>If we have done a good job of our work, it should be consistent with the official graph labelled as (B) below:</p>
 <p><img src="figures/ONData.jpg" width="120%" /></p>
 <p>We can also focus in on just the second wave by adjusting the <code>xlim</code> argument:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(days.since[<span class="dv">200</span>:<span class="kw">max</span>(days.since)], new.cases[<span class="dv">200</span>:<span class="kw">max</span>(days.since)], <span class="dt">ylab =</span> <span class="st">&quot;new cases&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;days since Jan 25, 2020&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>)</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
 <p>Note that the second wave of COVID-19 in Ontario appears to be consistent with exponential growth. Recall that when the y-axis of the graph is on a logarithmic scale, exponential growth will be represented as a straight line.</p>
 <div class="figure"><span id="fig:doublingtime2"></span>
 <img src="figures/doublingtime.jpg" alt="Straight lines illustrate exponential growth with different doubling times when the y-axis is plotted on a logarithmic scale" width="95%" />
@@ -264,7 +267,7 @@ log.cases<span class="fl">.225</span> &lt;-<span class="st"> </span><span class=
 <span class="kw">plot</span>(since<span class="fl">.225</span>,log.cases<span class="fl">.225</span>, <span class="dt">ylab =</span> <span class="st">&quot;log(new cases)&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;days since Jan 25, 2020&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>)
 reg &lt;-<span class="st"> </span><span class="kw">lm</span>(log.cases<span class="fl">.225</span>~since<span class="fl">.225</span>)
 <span class="kw">abline</span>(reg)</code></pre></div>
-<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(reg)</code></pre></div>
 <pre><code>## 
 ## Call:
@@ -272,18 +275,18 @@ reg &lt;-<span class="st"> </span><span class="kw">lm</span>(log.cases<span clas
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.26734 -0.18899  0.02621  0.09812  0.36324 
+## -0.26356 -0.15620  0.01137  0.10095  0.36732 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -8.38452    1.68062  -4.989 8.15e-05 ***
-## since.225    0.05989    0.00718   8.341 8.97e-08 ***
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -7.980371   1.549098  -5.152 4.86e-05 ***
+## since.225    0.058134   0.006604   8.804 2.58e-08 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.1992 on 19 degrees of freedom
-## Multiple R-squared:  0.7855, Adjusted R-squared:  0.7742 
-## F-statistic: 69.57 on 1 and 19 DF,  p-value: 8.966e-08</code></pre>
+## Residual standard error: 0.1965 on 20 degrees of freedom
+## Multiple R-squared:  0.7949, Adjusted R-squared:  0.7846 
+## F-statistic:  77.5 on 1 and 20 DF,  p-value: 2.577e-08</code></pre>
 <p>From the summary of the linear regression we are interested in the slope, because in the previous class we estimated the relationship between this slope and the doubling time.</p>
 <div class="figure"><span id="fig:regression"></span>
 <img src="figures/regression.png" alt="The above output shows the slope of the regression as 0.0695 log cases per day" width="95%" />
