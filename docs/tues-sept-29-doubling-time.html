@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="fri-sept-25-exponential-growth-continuous-time.html"/>
-<link rel="next" href="thurs-oct-1-draft-density-dependence-and-logistic-growth.html"/>
+<link rel="next" href="thurs-oct-1-density-dependence-and-logistic-growth.html"/>
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -146,9 +146,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9" data-path="tues-sept-29-doubling-time.html"><a href="tues-sept-29-doubling-time.html"><i class="fa fa-check"></i><b>9</b> Tues Sept 29: Doubling time</a><ul>
 <li class="chapter" data-level="9.1" data-path="tues-sept-29-doubling-time.html"><a href="tues-sept-29-doubling-time.html#questions-7"><i class="fa fa-check"></i><b>9.1</b> Questions</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="thurs-oct-1-draft-density-dependence-and-logistic-growth.html"><a href="thurs-oct-1-draft-density-dependence-and-logistic-growth.html"><i class="fa fa-check"></i><b>10</b> Thurs Oct 1: [DRAFT] Density dependence and logistic growth</a><ul>
-<li class="chapter" data-level="10.1" data-path="thurs-oct-1-draft-density-dependence-and-logistic-growth.html"><a href="thurs-oct-1-draft-density-dependence-and-logistic-growth.html#required-reading-3"><i class="fa fa-check"></i><b>10.1</b> Required reading</a></li>
-<li class="chapter" data-level="10.2" data-path="thurs-oct-1-draft-density-dependence-and-logistic-growth.html"><a href="thurs-oct-1-draft-density-dependence-and-logistic-growth.html#questions-8"><i class="fa fa-check"></i><b>10.2</b> Questions</a></li>
+<li class="chapter" data-level="10" data-path="thurs-oct-1-density-dependence-and-logistic-growth.html"><a href="thurs-oct-1-density-dependence-and-logistic-growth.html"><i class="fa fa-check"></i><b>10</b> Thurs Oct 1: Density dependence and logistic growth</a><ul>
+<li class="chapter" data-level="10.1" data-path="thurs-oct-1-density-dependence-and-logistic-growth.html"><a href="thurs-oct-1-density-dependence-and-logistic-growth.html#required-reading-3"><i class="fa fa-check"></i><b>10.1</b> Required reading</a></li>
+<li class="chapter" data-level="10.2" data-path="thurs-oct-1-density-dependence-and-logistic-growth.html"><a href="thurs-oct-1-density-dependence-and-logistic-growth.html#questions-8"><i class="fa fa-check"></i><b>10.2</b> Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><i class="fa fa-check"></i><b>11</b> Fri Oct 2: Solving the logistic growth equation using a computer</a></li>
 <li class="chapter" data-level="12" data-path="tues-oct-6-data-and-the-logistic-equation.html"><a href="tues-oct-6-data-and-the-logistic-equation.html"><i class="fa fa-check"></i><b>12</b> Tues Oct 6: Data and the logistic equation</a><ul>
@@ -275,18 +275,18 @@ reg &lt;-<span class="st"> </span><span class="kw">lm</span>(log.cases<span clas
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.26356 -0.15620  0.01137  0.10095  0.36732 
+## -0.27782 -0.16066 -0.00211  0.10830  0.37214 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -7.980371   1.549098  -5.152 4.86e-05 ***
-## since.225    0.058134   0.006604   8.804 2.58e-08 ***
+## (Intercept) -7.429637   1.453033  -5.113 4.59e-05 ***
+## since.225    0.055750   0.006181   9.020 1.14e-08 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.1965 on 20 degrees of freedom
-## Multiple R-squared:  0.7949, Adjusted R-squared:  0.7846 
-## F-statistic:  77.5 on 1 and 20 DF,  p-value: 2.577e-08</code></pre>
+## Residual standard error: 0.1966 on 21 degrees of freedom
+## Multiple R-squared:  0.7948, Adjusted R-squared:  0.7851 
+## F-statistic: 81.36 on 1 and 21 DF,  p-value: 1.142e-08</code></pre>
 <p>From the summary of the linear regression we are interested in the slope, because in the previous class we estimated the relationship between this slope and the doubling time.</p>
 <div class="figure"><span id="fig:regression"></span>
 <img src="figures/regression.png" alt="The above output shows the slope of the regression as 0.0695 log cases per day" width="95%" />
@@ -311,7 +311,7 @@ Figure 9.2: The above output shows the slope of the regression as 0.0695 log cas
         </div>
       </div>
 <a href="fri-sept-25-exponential-growth-continuous-time.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="thurs-oct-1-draft-density-dependence-and-logistic-growth.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="thurs-oct-1-density-dependence-and-logistic-growth.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
