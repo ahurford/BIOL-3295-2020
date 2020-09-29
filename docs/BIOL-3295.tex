@@ -1218,6 +1218,12 @@ Now, the data table \texttt{COVID.data} contains data for all provinces
 and we would like to \emph{subset} the data so that only the information
 pertaining to Ontario is left. We do this as follows:
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data.ON <-}\StringTok{ }\NormalTok{COVID.data[province ==}\StringTok{ "Ontario"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
 We should understand what variables are contained in our data set. Query
 the following in your Console:
 

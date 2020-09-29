@@ -41,7 +41,7 @@ Navigate to the folder where you expected to save the data as a .csv file. You s
 
 Now, the data table `COVID.data` contains data for all provinces and we would like to _subset_ the data so that only the information pertaining to Ontario is left. We do this as follows:
 
-```{r,eval=T, echo=F}
+```{r,eval=T}
 data.ON <- COVID.data[province == "Ontario"]
 ```
 

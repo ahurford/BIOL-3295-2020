@@ -231,6 +231,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>Navigate to the folder where you expected to save the data as a .csv file. You should be able to open the .csv file in <em>Microsoft Excel</em>.</p>
 <p>Now, the data table <code>COVID.data</code> contains data for all provinces and we would like to <em>subset</em> the data so that only the information pertaining to Ontario is left. We do this as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data.ON &lt;-<span class="st"> </span>COVID.data[province ==<span class="st"> &quot;Ontario&quot;</span>]</code></pre></div>
 <p>We should understand what variables are contained in our data set. Query the following in your Console:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(data.ON)</code></pre></div>
 <p>We will plot confirmed positive cases over time:</p>
