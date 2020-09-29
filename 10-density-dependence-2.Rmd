@@ -1,3 +1,87 @@
 # Fri Oct 2: Solving the logistic growth equation using a computer
 
+Recall that for continous time exponential growth there were two ways that the equation might be written. Firstly, as a change in population size over time,
+
+\begin{equation}
+\frac{dN(t)}{dt} = rN(t)
+(\#eq:Exp1)
+\end{equation}
+
+such that if $\frac{dN(t)}{dt}>0$ the population size, $N(t)$ is increasing over time, and if $\frac{dN(t)}{dt}<0$ the population size is decreasing. Alternatively, we can write continuous time exponential growth as,
+
+\begin{equation}
+N(t) = N(0)e^{rt}
+(\#eq:Exp2)
+\end{equation}
+
+where the lefthand side of this equation states the size of the population at time $t$, rather than the change in the size of the population as it did in equation \@ref(eq:Exp1). 
+
+For logistic growth, we have:
+
+\begin{equation}
+\frac{dN(t)}{dt} = rN(t)\left(1 - \frac{N(t)}{K} \right).
+(\#eq:Log1)
+\end{equation}
+
+However, how might we find the equivalent of equation \@ref(eq:Exp2) for logistic growth? i.e., for logistic growth, what is the equation for the size of the population at a particular time, $t$? If you are great at math, you might integrate equation \@ref(eq:Log1) using [separation of variables](https://math.usu.edu/~powell/ysa-html/node8.html). However, another option is to numerically integrate equation \@ref(eq:Log1) using a computer. You might wish to numerically integrate an ordinary differential equation such as equation \@ref(eq:Log1) if:
+
+- you have integrated the ordinary differential equation by hand and you would like to check your work; or
+
+- it is not possible to integrate the ordinary differential equation you are interested in.
+
+## What is an ordinary differential equation
+In an introductory calculus course, most often you are solving problems of the type:
+
+\begin{eqnarray}
+\int \frac{dy}{dx} &=& x^2 \ dx \\ \nonumber
+y(x) &=& \frac{1}{3}x^3 + c,
+(\#eq:e1)
+\end{eqnarray}
+
+where the $y(x)$ is the dependent variable and $x$ is the independent variable. In the notation of population biology, a similar problem might look like this:
+
+\begin{eqnarray}
+\int \frac{dN(t)}{dt} &=& rt \ dt \\ \nonumber
+N(t) &=& \frac{1}{2}rt^2 + c. 
+(\#eq:e2)
+\end{eqnarray}
+
+Note that ordinary differential equations such as equation \@ref(eq:Log1) differ from equations \@ref(eq:e1) and \@ref(eq:e2) because the dependent variable, $N(t)$ appears on the righthand side of the equation, rather than $t$, the independent variable which appears on the right in \@ref(eq:e2). Some equations in population biology are ordinary differential equations, while equations such as \@ref(eq:e1) and \@ref(eq:e2) are uncommon.
+
+## Numerically integrating an ordinary differential equation in R
+Ordinary differential equations can be solved in `R` using the `deSolve` package. Install this package:
+
+```{r, eval=F}
+install.packages("deSolve")
+require(deSolve)
+```
+
+Reading over the help documentation, I found the following example:
+
+```{r, eval=F}
+library(deSolve)
+
+## Chaos in the atmosphere
+Lorenz <- function(t, state, parameters) {
+  with(as.list(c(state, parameters)), {
+    dX <-  a * X + Y * Z
+    dY <-  b * (Y - Z)
+    dZ <- -X * Y + c * Y - Z
+    list(c(dX, dY, dZ))
+  })
+}
+
+parameters <- c(a = -8/3, b = -10, c = 28)
+state      <- c(X = 1, Y = 1, Z = 1)
+times      <- seq(0, 100, by = 0.01)
+
+out <- ode(y = state, times = times, func = Lorenz, parms = parameters)
+
+head(out)
+```
+
+which I have slightly modified. Copy and paste the above code into your console. Does it work for you? If yes, congrats - you have numerically integrated an ordinary differential equation! Unfortunately, the problem in the _Example_ from the help file, is not the one we were wanting to solve, but this is a good start - now all we need to do is change the problem that we _can_ solve into the problem that we want to solve.
+
+Suppose the problem that we wanted to solve was equation \@ref(eq:Exp1).
+
 

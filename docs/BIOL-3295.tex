@@ -1438,6 +1438,132 @@ United States. p9-17.
 \chapter{Fri Oct 2: Solving the logistic growth equation using a
 computer}\label{fri-oct-2-solving-the-logistic-growth-equation-using-a-computer}
 
+Recall that for continous time exponential growth there were two ways
+that the equation might be written. Firstly, as a change in population
+size over time,
+
+\begin{equation}
+\frac{dN(t)}{dt} = rN(t)
+\label{eq:Exp1}
+\end{equation}
+
+such that if \(\frac{dN(t)}{dt}>0\) the population size, \(N(t)\) is
+increasing over time, and if \(\frac{dN(t)}{dt}<0\) the population size
+is decreasing. Alternatively, we can write continuous time exponential
+growth as,
+
+\begin{equation}
+N(t) = N(0)e^{rt}
+\label{eq:Exp2}
+\end{equation}
+
+where the lefthand side of this equation states the size of the
+population at time \(t\), rather than the change in the size of the
+population as it did in equation \eqref{eq:Exp1}.
+
+For logistic growth, we have:
+
+\begin{equation}
+\frac{dN(t)}{dt} = rN(t)\left(1 - \frac{N(t)}{K} \right).
+\label{eq:Log1}
+\end{equation}
+
+However, how might we find the equivalent of equation \eqref{eq:Exp2} for
+logistic growth? i.e., for logistic growth, what is the equation for the
+size of the population at a particular time, \(t\)? If you are great at
+math, you might integrate equation \eqref{eq:Log1} using
+\href{https://math.usu.edu/~powell/ysa-html/node8.html}{separation of
+variables}. However, another option is to numerically integrate equation
+\eqref{eq:Log1} using a computer. You might wish to numerically integrate
+an ordinary differential equation such as equation \eqref{eq:Log1} if:
+
+\begin{itemize}
+\item
+  you have integrated the ordinary differential equation by hand and you
+  would like to check your work; or
+\item
+  it is not possible to integrate the ordinary differential equation you
+  are interested in.
+\end{itemize}
+
+\section{What is an ordinary differential
+equation}\label{what-is-an-ordinary-differential-equation}
+
+In an introductory calculus course, most often you are solving problems
+of the type:
+
+\begin{eqnarray}
+\int \frac{dy}{dx} &=& x^2 \ dx \\ \nonumber
+y(x) &=& \frac{1}{3}x^3 + c,
+\label{eq:e1}
+\end{eqnarray}
+
+where the \(y(x)\) is the dependent variable and \(x\) is the
+independent variable. In the notation of population biology, a similar
+problem might look like this:
+
+\begin{eqnarray}
+\int \frac{dN(t)}{dt} &=& rt \ dt \\ \nonumber
+N(t) &=& \frac{1}{2}rt^2 + c. 
+\label{eq:e2}
+\end{eqnarray}
+
+Note that ordinary differential equations such as equation \eqref{eq:Log1}
+differ from equations \eqref{eq:e1} and \eqref{eq:e2} because the dependent
+variable, \(N(t)\) appears on the righthand side of the equation, rather
+than \(t\), the independent variable which appears on the right in
+\eqref{eq:e2}. Some equations in population biology are ordinary
+differential equations, while equations such as \eqref{eq:e1} and
+\eqref{eq:e2} are uncommon.
+
+\section{Numerically integrating an ordinary differential equation in
+R}\label{numerically-integrating-an-ordinary-differential-equation-in-r}
+
+Ordinary differential equations can be solved in \texttt{R} using the
+\texttt{deSolve} package. Install this package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"deSolve"}\NormalTok{)}
+\KeywordTok{require}\NormalTok{(deSolve)}
+\end{Highlighting}
+\end{Shaded}
+
+Reading over the help documentation, I found the following example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(deSolve)}
+
+\NormalTok{## Chaos in the atmosphere}
+\NormalTok{Lorenz <-}\StringTok{ }\NormalTok{function(t, state, parameters) \{}
+  \KeywordTok{with}\NormalTok{(}\KeywordTok{as.list}\NormalTok{(}\KeywordTok{c}\NormalTok{(state, parameters)), \{}
+    \NormalTok{dX <-}\StringTok{  }\NormalTok{a *}\StringTok{ }\NormalTok{X +}\StringTok{ }\NormalTok{Y *}\StringTok{ }\NormalTok{Z}
+    \NormalTok{dY <-}\StringTok{  }\NormalTok{b *}\StringTok{ }\NormalTok{(Y -}\StringTok{ }\NormalTok{Z)}
+    \NormalTok{dZ <-}\StringTok{ }\NormalTok{-X *}\StringTok{ }\NormalTok{Y +}\StringTok{ }\NormalTok{c *}\StringTok{ }\NormalTok{Y -}\StringTok{ }\NormalTok{Z}
+    \KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(dX, dY, dZ))}
+  \NormalTok{\})}
+\NormalTok{\}}
+
+\NormalTok{parameters <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DataTypeTok{a =} \NormalTok{-}\DecValTok{8}\NormalTok{/}\DecValTok{3}\NormalTok{, }\DataTypeTok{b =} \NormalTok{-}\DecValTok{10}\NormalTok{, }\DataTypeTok{c =} \DecValTok{28}\NormalTok{)}
+\NormalTok{state      <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DataTypeTok{X =} \DecValTok{1}\NormalTok{, }\DataTypeTok{Y =} \DecValTok{1}\NormalTok{, }\DataTypeTok{Z =} \DecValTok{1}\NormalTok{)}
+\NormalTok{times      <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DataTypeTok{by =} \FloatTok{0.01}\NormalTok{)}
+
+\NormalTok{out <-}\StringTok{ }\KeywordTok{ode}\NormalTok{(}\DataTypeTok{y =} \NormalTok{state, }\DataTypeTok{times =} \NormalTok{times, }\DataTypeTok{func =} \NormalTok{Lorenz, }\DataTypeTok{parms =} \NormalTok{parameters)}
+
+\KeywordTok{head}\NormalTok{(out)}
+\end{Highlighting}
+\end{Shaded}
+
+which I have slightly modified. Copy and paste the above code into your
+console. Does it work for you? If yes, congrats - you have numerically
+integrated an ordinary differential equation! Unfortunately, the problem
+in the \emph{Example} from the help file, is not the one we were wanting
+to solve, but this is a good start - now all we need to do is change the
+problem that we \emph{can} solve into the problem that we want to solve.
+
+Suppose the problem that we wanted to solve was equation \eqref{eq:Exp1}.
+
 \chapter{Tues Oct 6: Data and the logistic
 equation}\label{tues-oct-6-data-and-the-logistic-equation}
 
