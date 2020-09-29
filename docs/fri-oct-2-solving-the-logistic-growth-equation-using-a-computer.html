@@ -262,7 +262,12 @@ out &lt;-<span class="st"> </span><span class="kw">ode</span>(<span class="dt">y
 
 <span class="kw">head</span>(out)</code></pre></div>
 <p>which I have slightly modified. Copy and paste the above code into your console. Does it work for you? If yes, congrats - you have numerically integrated an ordinary differential equation! Unfortunately, the problem in the <em>Example</em> from the help file, is not the one we were wanting to solve, but this is a good start - now all we need to do is change the problem that we <em>can</em> solve into the problem that we want to solve.</p>
-<p>Suppose the problem that we wanted to solve was equation <a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#eq:Exp1">(11.1)</a>.</p>
+<p>Suppose the problem that we wanted to solve was equation <a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#eq:Exp1">(11.1)</a>. Let’s first understand the problem that we did solve. We solved the Lorenz equations which are:</p>
+<span class="math display">\[\begin{eqnarray}
+    \frac{dX(t)}{dt} &amp;=&amp;  aX(t) + Y(t)Z(t)\\ \nonumber
+    \frac{dY(t)}{dt} &amp;=&amp;  b(Y(t) - Z(t))\\ \nonumber
+    \frac{dZ(t)}{dt} &amp;=&amp; -X(t) Y(t) + cY(t) - Z(t)\\
+\end{eqnarray}\]</span>
 
 </div>
 </div>

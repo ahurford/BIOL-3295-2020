@@ -82,6 +82,12 @@ head(out)
 
 which I have slightly modified. Copy and paste the above code into your console. Does it work for you? If yes, congrats - you have numerically integrated an ordinary differential equation! Unfortunately, the problem in the _Example_ from the help file, is not the one we were wanting to solve, but this is a good start - now all we need to do is change the problem that we _can_ solve into the problem that we want to solve.
 
-Suppose the problem that we wanted to solve was equation \@ref(eq:Exp1).
+Suppose the problem that we wanted to solve was equation \@ref(eq:Exp1). Let's first understand the problem that we did solve. We solved the Lorenz equations which are:
+
+\begin{eqnarray}
+    \frac{dX(t)}{dt} &=&  aX(t) + Y(t)Z(t)\\ \nonumber
+    \frac{dY(t)}{dt} &=&  b(Y(t) - Z(t))\\ \nonumber
+    \frac{dZ(t)}{dt} &=& -X(t) Y(t) + cY(t) - Z(t)\\
+\end{eqnarray}
 
 
