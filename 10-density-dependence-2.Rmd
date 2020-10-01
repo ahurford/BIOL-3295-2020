@@ -1,20 +1,20 @@
-# Fri Oct 2: Solving the logistic growth equation using a computer
+# Fri Oct 2: Solving the logistic growth equation using a computer 1
 
-Recall that for continous time exponential growth there were two ways that the equation might be written. Firstly, as a change in population size over time,
+Recall that for continous time exponential growth there were two ways that the equation might be written. Firstly, as a _change_ in population size over time,
 
 \begin{equation}
-\frac{dN(t)}{dt} = rN(t)
+\frac{dN(t)}{dt} = rN(t),
 (\#eq:Exp1)
 \end{equation}
 
-such that if $\frac{dN(t)}{dt}>0$ the population size, $N(t)$ is increasing over time, and if $\frac{dN(t)}{dt}<0$ the population size is decreasing. Alternatively, we can write continuous time exponential growth as,
+such that if $\frac{dN(t)}{dt}>0$, the population size, $N(t)$ is increasing over time, and if $\frac{dN(t)}{dt}<0$, the population size is decreasing over time. Alternatively, we can write continuous time exponential growth as,
 
 \begin{equation}
-N(t) = N(0)e^{rt}
+N(t) = N(0)e^{rt},
 (\#eq:Exp2)
 \end{equation}
 
-where the lefthand side of this equation states the size of the population at time $t$, rather than the change in the size of the population as it did in equation \@ref(eq:Exp1). 
+where the lefthand side of equation \@ref(eq:Exp2) states the _size_ of the population, $N(t)$, at time $t$, rather than the _change_ in the size of the population, as it did in equation \@ref(eq:Exp1). 
 
 For logistic growth, we have:
 
@@ -23,71 +23,108 @@ For logistic growth, we have:
 (\#eq:Log1)
 \end{equation}
 
-However, how might we find the equivalent of equation \@ref(eq:Exp2) for logistic growth? i.e., for logistic growth, what is the equation for the size of the population at a particular time, $t$? If you are great at math, you might integrate equation \@ref(eq:Log1) using [separation of variables](https://math.usu.edu/~powell/ysa-html/node8.html). However, another option is to numerically integrate equation \@ref(eq:Log1) using a computer. You might wish to numerically integrate an ordinary differential equation such as equation \@ref(eq:Log1) if:
+How might we find the equivalent of equation \@ref(eq:Exp2) for logistic growth? i.e., for logistic growth, what is the equation for the _size_ of the population at a particular time, $t$? If you are great at math, you might integrate equation \@ref(eq:Log1) using [separation of variables](https://math.usu.edu/~powell/ysa-html/node8.html). However, another option, that we will build towards for next class, is to numerically integrate equation \@ref(eq:Log1) using a computer.
 
-- you have integrated the ordinary differential equation by hand and you would like to check your work; or
 
-- it is not possible to integrate the ordinary differential equation you are interested in.
-
-## What is an ordinary differential equation
-In an introductory calculus course, most often you are solving problems of the type:
+## What is an ordinary differential equation?
+In an introductory calculus course that covers integration, most often you are solving problems of the type:
 
 \begin{eqnarray}
-\int \frac{dy}{dx} &=& x^2 \ dx \\ \nonumber
+\int \frac{dy(x)}{dx} &=& \int x^2 \ dx, \\ \nonumber
 y(x) &=& \frac{1}{3}x^3 + c,
 (\#eq:e1)
 \end{eqnarray}
 
-where the $y(x)$ is the dependent variable and $x$ is the independent variable. In the notation of population biology, a similar problem might look like this:
+where $y(x)$ is the dependent variable, the derivative of $y(x)$ is with respect to $x$, and $x$, the independent variable, appears on the opposite side of the `=` to the derivative of the dependent variable. In the notation of population biology, where $N(t)$ is conventional for the dependent variable, a similar problem might look like this:
 
 \begin{eqnarray}
-\int \frac{dN(t)}{dt} &=& rt \ dt \\ \nonumber
+\int \frac{dN(t)}{dt} &=& \int rt \ dt, \\ \nonumber
 N(t) &=& \frac{1}{2}rt^2 + c. 
 (\#eq:e2)
 \end{eqnarray}
 
-Note that ordinary differential equations such as equation \@ref(eq:Log1) differ from equations \@ref(eq:e1) and \@ref(eq:e2) because the dependent variable, $N(t)$ appears on the righthand side of the equation, rather than $t$, the independent variable which appears on the right in \@ref(eq:e2). Some equations in population biology are ordinary differential equations, while equations such as \@ref(eq:e1) and \@ref(eq:e2) are uncommon.
+We have not seen any equations like equation \@ref(eq:e2) in BIOL 3295 so far: usually, our equations for the _change_ in the population size, $\frac{dN(t)}{dt}$, have a dependency on the population size, $N(t)$ - the dependent variable, rather than a sole dependency on $t$ - the independent variable.
+
+The equations that are models for population biology are sometimes ODEs. While some ODEs can be solved using math, commonly the ODEs that are used to model population dynamics need to be integrated numerically; that is, using a computer. 
 
 ## Numerically integrating an ordinary differential equation in R
-Ordinary differential equations can be solved in `R` using the `deSolve` package. Install this package:
+
+Numerical integration in `R` can be performed by installing this package:
 
 ```{r, eval=F}
 install.packages("deSolve")
-require(deSolve)
 ```
 
-Reading over the help documentation, I found the following example:
+To integrate our ODE, we use the function `ode()` from the `deSolve` package. Let's look at the structure of this function. The mandatory arguments to the function are:
+
+`ode(y,times,parms,func)`
+
+where,
+
+`y` are the initial values of the dependent varaible.
+
+`times` is a sequence for which output is wanted; the first value of times is the initial time.
+
+`func` is an R-function that computes the values of the derivatives of the dependent variables. `func` must be defined as: `func <- function(t, y, parms,...)`. $t$ is the current time point in the integration, y is the current estimate of the variables in the ODE system.
+
+Given what we have learned in BIOL 3295 so far, `y` and `times` are not so tricky, but the `func` arguement requires us to write our own function, and so far we have only used functions written by other people; we have yet to write our own custom functions. In preparation for next class, when we will numerically integrate the logistic growth equation, we will next learn how to write custom functions.
+
+## Writing custom functions
+Generally, your code can still work without writing custom functions, however writing functions makes your code modular and more organized.
+
+Consider the following code:
 
 ```{r, eval=F}
-library(deSolve)
+# Temperatures in Celcius
+temp.min.C <- 10
+temp.max.C <- 20
 
-## Chaos in the atmosphere
-Lorenz <- function(t, state, parameters) {
-  with(as.list(c(state, parameters)), {
-    dX <-  a * X + Y * Z
-    dY <-  b * (Y - Z)
-    dZ <- -X * Y + c * Y - Z
-    list(c(dX, dY, dZ))
-  })
-}
-
-parameters <- c(a = -8/3, b = -10, c = 28)
-state      <- c(X = 1, Y = 1, Z = 1)
-times      <- seq(0, 100, by = 0.01)
-
-out <- ode(y = state, times = times, func = Lorenz, parms = parameters)
-
-head(out)
+# Temperatures in Farenheit
+temp.min.F <- temp.min.C*9/5+32
+temp.max.F <- temp.max.C*9/5+32 
 ```
 
-which I have slightly modified. Copy and paste the above code into your console. Does it work for you? If yes, congrats - you have numerically integrated an ordinary differential equation! Unfortunately, the problem in the _Example_ from the help file, is not the one we were wanting to solve, but this is a good start - now all we need to do is change the problem that we _can_ solve into the problem that we want to solve.
+The above code is fine, but since we've done the same calculation twice (conversion of Celcius to Farenheit), just with a different number, we might want to consider writing a custom function. Let's re-write the above code so that it now uses a custom function:
 
-Suppose the problem that we wanted to solve was equation \@ref(eq:Exp1). Let's first understand the problem that we did solve. We solved the Lorenz equations which are:
+```{r, eval=F}
+# A function that converts Celcius to Farenheit
+C.to.F <- function(C){
+  F <- C*9/5 +32
+  return(F)
+}
 
-\begin{eqnarray}
-    \frac{dX(t)}{dt} &=&  aX(t) + Y(t)Z(t)\\ \nonumber
-    \frac{dY(t)}{dt} &=&  b(Y(t) - Z(t))\\ \nonumber
-    \frac{dZ(t)}{dt} &=& -X(t) Y(t) + cY(t) - Z(t)\\
-\end{eqnarray}
+# Temperatures in Celcius
+temp.min.C <- 10
+temp.max.C <- 20
 
+# Temperatures in Farenheit
+temp.min.F <- C.to.F(temp.min.C)
+temp.max.F <- C.to.F(temp.max.C)
+```
 
+Note that the above code consists of the _function definition_ and the _function call_. The function definition uses the function `function()`.
+
+```{r function, echo=FALSE, out.width="120%", purl=FALSE}
+knitr::include_graphics("figures/function.png")
+```
+
+In the example, note the following:
+
+- `arglist` is just one value: `C`. Generally, several values might be provided to the function where each should be separated by commas and enclosed within the `()`.
+
+- `expression` can be any set of commands and should be enclosed within the `{}`.
+
+- The function is assigned a name: `C.to.F`. We give the function a name so that we can use it later during a function call.
+
+## Questions
+1. The following is an equation for exponential population growth, but with a constant immigration rate, $m >0$, into the population:
+
+\[
+\frac{dN(t)}{dt}= rN(t) + m
+\]
+
+where $r$ is the net reproductive rate and $N(t)$ is the population size at time, $t$.
+
+Is this equation an ordinary differential equation (ODE)? Give 1 sentence explaining your reasoning [2 marks].
+
+2. Write a function that adds 123 to a user supplied argument, and then write the line of code that calls the function to evaluate 123+1 and assigns the result the variable name `y`. You are to hand in your R script. [5 marks]

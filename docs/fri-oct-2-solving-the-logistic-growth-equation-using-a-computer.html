@@ -153,9 +153,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><i class="fa fa-check"></i><b>11</b> Fri Oct 2: Solving the logistic growth equation using a computer</a><ul>
 <li class="chapter" data-level="11.1" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#what-is-an-ordinary-differential-equation"><i class="fa fa-check"></i><b>11.1</b> What is an ordinary differential equation</a></li>
 <li class="chapter" data-level="11.2" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#numerically-integrating-an-ordinary-differential-equation-in-r"><i class="fa fa-check"></i><b>11.2</b> Numerically integrating an ordinary differential equation in R</a></li>
+<li class="chapter" data-level="11.3" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#writing-custom-functions"><i class="fa fa-check"></i><b>11.3</b> Writing custom functions</a></li>
+<li class="chapter" data-level="11.4" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#writing-the-func-argument-for-ode"><i class="fa fa-check"></i><b>11.4</b> Writing the func argument for ode()</a></li>
+<li class="chapter" data-level="11.5" data-path="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html"><a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#questions-9"><i class="fa fa-check"></i><b>11.5</b> Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="tues-oct-6-data-and-the-logistic-equation.html"><a href="tues-oct-6-data-and-the-logistic-equation.html"><i class="fa fa-check"></i><b>12</b> Tues Oct 6: Data and the logistic equation</a><ul>
-<li class="chapter" data-level="12.1" data-path="tues-oct-6-data-and-the-logistic-equation.html"><a href="tues-oct-6-data-and-the-logistic-equation.html#questions-9"><i class="fa fa-check"></i><b>12.1</b> Questions</a></li>
+<li class="chapter" data-level="12.1" data-path="tues-oct-6-data-and-the-logistic-equation.html"><a href="tues-oct-6-data-and-the-logistic-equation.html#questions-10"><i class="fa fa-check"></i><b>12.1</b> Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="thurs-oct-8-discrete-time-models-with-density-dependence-using-a-computer.html"><a href="thurs-oct-8-discrete-time-models-with-density-dependence-using-a-computer.html"><i class="fa fa-check"></i><b>13</b> Thurs Oct 8: Discrete time models with density dependence using a computer</a></li>
 <li class="chapter" data-level="14" data-path="thurs-oct-15-solving-the-discrete-time-models-with-density-dependence-using-a-computer.html"><a href="thurs-oct-15-solving-the-discrete-time-models-with-density-dependence-using-a-computer.html"><i class="fa fa-check"></i><b>14</b> Thurs Oct 15: Solving the discrete time models with density dependence using a computer</a></li>
@@ -240,34 +243,109 @@ N(t) &amp;=&amp; \frac{1}{2}rt^2 + c.
 <h2><span class="header-section-number">11.2</span> Numerically integrating an ordinary differential equation in R</h2>
 <p>Ordinary differential equations can be solved in <code>R</code> using the <code>deSolve</code> package. Install this package:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;deSolve&quot;</span>)
-<span class="kw">require</span>(deSolve)</code></pre></div>
-<p>Reading over the help documentation, I found the following example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(deSolve)
+<span class="kw">library</span>(deSolve)</code></pre></div>
+<p>To integrate our ordinary differential equation, we use the function <code>ode()</code> from <code>deSolve</code> package. Let’s look at the structure of this function. The mandatory arguments to the function are:</p>
+<p><code>ode(y,times,parms,func)</code></p>
+<p>where,</p>
+<p><code>y</code> is the initial (state) values for the ODE system, a vector. If y has a name attribute, the names will be used to label the output matrix.</p>
+<p><code>times</code> time sequence for which output is wanted; the first value of times must be the initial time.</p>
+<p><code>func</code> an R-function that computes the values of the derivatives in the ODE system (the model definition) at time <span class="math inline">\(t\)</span>. The must be defined as: <code>func &lt;- function(t, y, parms,...)</code>. <span class="math inline">\(t\)</span> is the current time point in the integration, y is the current estimate of the variables in the ODE system.</p>
+<p><code>y</code> and <code>times</code> are not so tricky:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The initial value of the variable named N</span>
+yini&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">N =</span> <span class="dv">1</span>)
 
-## Chaos in the atmosphere
-Lorenz &lt;-<span class="st"> </span>function(t, state, parameters) {
-  <span class="kw">with</span>(<span class="kw">as.list</span>(<span class="kw">c</span>(state, parameters)), {
-    dX &lt;-<span class="st">  </span>a *<span class="st"> </span>X +<span class="st"> </span>Y *<span class="st"> </span>Z
-    dY &lt;-<span class="st">  </span>b *<span class="st"> </span>(Y -<span class="st"> </span>Z)
-    dZ &lt;-<span class="st"> </span>-X *<span class="st"> </span>Y +<span class="st"> </span>c *<span class="st"> </span>Y -<span class="st"> </span>Z
-    <span class="kw">list</span>(<span class="kw">c</span>(dX, dY, dZ))
-  })
+<span class="co"># the times for the numerical integration</span>
+times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dt">by =</span> .<span class="dv">1</span>)</code></pre></div>
+<p>The <code>func</code> arguement, however, is a function, and so far in class we have only used functions written by other people, we have yet to write our own custom functions.</p>
+</div>
+<div id="writing-custom-functions" class="section level2">
+<h2><span class="header-section-number">11.3</span> Writing custom functions</h2>
+<p>Generally, your code can still work without writing custom functions, however writing functions makes your code modular and more organized.</p>
+<p>Consider the follow code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Temperatures in Celcius</span>
+temp.min.C &lt;-<span class="st"> </span><span class="dv">10</span>
+temp.max.C &lt;-<span class="st"> </span><span class="dv">20</span>
+
+<span class="co"># Temperatures in Farenheit</span>
+temp.min.K &lt;-<span class="st"> </span>temp.min.C*<span class="dv">9</span>/<span class="dv">5+32</span>
+temp.max.K &lt;-<span class="st"> </span>temp.max.C*<span class="dv">9</span>/<span class="dv">5+32</span> </code></pre></div>
+<p>The above code is fine, but since we’ve done the same calculation twice, just with a different number, we might want to consider writing a custom function. Let’s re-write the above code so that it now uses a custom function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Converts Celcius to Farenheit</span>
+C.to.F &lt;-<span class="st"> </span>function(C){
+  F &lt;-<span class="st"> </span>C*<span class="dv">9</span>/<span class="dv">5</span> +<span class="dv">32</span>
+  <span class="kw">return</span>(F)
 }
 
-parameters &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">a =</span> -<span class="dv">8</span>/<span class="dv">3</span>, <span class="dt">b =</span> -<span class="dv">10</span>, <span class="dt">c =</span> <span class="dv">28</span>)
-state      &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">X =</span> <span class="dv">1</span>, <span class="dt">Y =</span> <span class="dv">1</span>, <span class="dt">Z =</span> <span class="dv">1</span>)
-times      &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)
+<span class="co"># Temperatures in Celcius</span>
+temp.min.C &lt;-<span class="st"> </span><span class="dv">10</span>
+temp.max.C &lt;-<span class="st"> </span><span class="dv">20</span>
 
-out &lt;-<span class="st"> </span><span class="kw">ode</span>(<span class="dt">y =</span> state, <span class="dt">times =</span> times, <span class="dt">func =</span> Lorenz, <span class="dt">parms =</span> parameters)
+<span class="co"># Temperatures in Farenheit</span>
+temp.min.K &lt;-<span class="st"> </span><span class="kw">C.to.F</span>(temp.min.C)
+temp.max.K &lt;-<span class="st"> </span><span class="kw">C.to.F</span>(temp.max.C)</code></pre></div>
+<p>Note that the above code consists of the <em>function definition</em> and the <em>function call</em>. The function definition uses the function <code>function()</code>.</p>
+<p><img src="figures/function.png" width="120%" /></p>
+<p>In the example, note the following:</p>
+<ul>
+<li><p><code>arglist</code> is just one value: <code>C</code>. Generally, several values might be provided to the function where each should be separated by commas.</p></li>
+<li><p><code>expression</code> can be any set of commands which are enclosed within the <code>{}</code>.</p></li>
+<li><p>The function is assigned a name: <code>C.to.F</code>. We give the function a name so that we can use it later.</p></li>
+</ul>
+</div>
+<div id="writing-the-func-argument-for-ode" class="section level2">
+<h2><span class="header-section-number">11.4</span> Writing the func argument for ode()</h2>
+<p>The <code>func</code> argument of the <code>ode()</code> has the following constraints:</p>
+<ul>
+<li>The <code>arglist</code> must include <code>t</code>, <code>y</code>, and <code>parms</code>.</li>
+<li>The value returned must be a <em>list</em> of the rates of change in the variables.</li>
+</ul>
+<p>Note that if your ODE comprises of more than one variable that is changing over time, then <code>y</code> will be a vector. Here is an example of how <code>func</code> might be coded for exponential growth. Remember that the ODE for exponential growth is:</p>
+<span class="math display" id="eq:Exp99">\[\begin{equation}
+\frac{dN(t)}{dt} = rN(t) 
+\tag{11.6}
+\end{equation}\]</span>
+<p>Below is equation <a href="#Exp99"><strong>??</strong></a> coded in the appropriate syntax for eventual use in the <code>ode()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Write a function that returns a list of the rate of change in your variables.</span>
+model =<span class="st"> </span>function(t,y,parms){
+  <span class="co"># It&#39;s a personal perference of mine to switch the symbols</span>
+  <span class="co"># to be consistent with the equation as written.</span>
+  N &lt;-<span class="st"> </span>y[<span class="dv">1</span>]
+  dN &lt;-<span class="st"> </span>r*N
+<span class="kw">return</span>(<span class="kw">list</span>(<span class="kw">c</span>(dN)))
+}</code></pre></div>
+<p>Let’s try out the function to make sure it works. Copy and paste the function into your <code>Console</code> and then type.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r&lt;-<span class="dv">1</span>
+<span class="kw">model</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dt">parms=</span><span class="ot">NULL</span>)</code></pre></div>
+<p>Did you get <code>2</code>. Does it make sense to you that the returned value is <code>2</code>?</p>
+<p>Now that the <code>func</code> argument of <code>ode()</code> has been worked out, the remaining arguments for the <code>ode()</code> function are not so bad.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The initial value of N</span>
+yini&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">N =</span> <span class="dv">1</span>)
 
-<span class="kw">head</span>(out)</code></pre></div>
-<p>which I have slightly modified. Copy and paste the above code into your console. Does it work for you? If yes, congrats - you have numerically integrated an ordinary differential equation! Unfortunately, the problem in the <em>Example</em> from the help file, is not the one we were wanting to solve, but this is a good start - now all we need to do is change the problem that we <em>can</em> solve into the problem that we want to solve.</p>
-<p>Suppose the problem that we wanted to solve was equation <a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#eq:Exp1">(11.1)</a>. Let’s first understand the problem that we did solve. We solved the Lorenz equations which are:</p>
-<span class="math display">\[\begin{eqnarray}
-    \frac{dX(t)}{dt} &amp;=&amp;  aX(t) + Y(t)Z(t)\\ \nonumber
-    \frac{dY(t)}{dt} &amp;=&amp;  b(Y(t) - Z(t))\\ \nonumber
-    \frac{dZ(t)}{dt} &amp;=&amp; -X(t) Y(t) + cY(t) - Z(t)\\
-\end{eqnarray}\]</span>
+<span class="co"># the times for the numerical integration</span>
+times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> .<span class="dv">1</span>)</code></pre></div>
+<p>Rembember to assign a value for <code>r</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Asign a value to the parameter:</span>
+r &lt;-<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<p>And then once all the arguments are set, call the function, and plot the results:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># performing the numerical integration</span>
+out &lt;-<span class="st"> </span><span class="kw">ode</span>(<span class="dt">y =</span> yini, <span class="dt">parms =</span> <span class="ot">NULL</span>, <span class="dt">times =</span> times, <span class="dt">func =</span> model)
+out &lt;-<span class="st"> </span><span class="kw">data.frame</span>(out)
+<span class="kw">head</span>(out)
+
+<span class="co"># this line overrides a multipanel plot. I had tried plot(out) # and was having conflicts with a small plotting window on my</span>
+<span class="co"># laptop</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))
+
+<span class="co"># Make the graph</span>
+<span class="kw">plot</span>(out$time, out$N, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>)</code></pre></div>
+</div>
+<div id="questions-9" class="section level2">
+<h2><span class="header-section-number">11.5</span> Questions</h2>
+<ol style="list-style-type: decimal">
+<li><p>Write a function that adds 123 to a user supplied argument, and then write the line of code that calls the function to evaluate 123+1 and assigns the result the variable name <code>y</code>. [5 marks]</p></li>
+<li><p>Write an R Script that numerically integrates the logistic growth function (equation <a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer.html#eq:Log1">(11.3)</a>). Choose a value of <span class="math inline">\(r\)</span> such that the population size increases over time. Remember to use good practices for writing your script - see <a href="index.html#RScript">1.7.2</a>. Your script should produce a graph with <span class="math inline">\(N(t)\)</span> on the y-axis and time on the x-axis [10 marks]</p></li>
+<li><p>Add to your script from 2. such that another graph is produced, this time such that the pouplation size decreases over time. Note that this should just require adding new lines to the bottom of your question 2 script such that you: a) set a new value of <code>r</code>; b) run the <code>ode()</code> command; and c) make the graph. In other words, it is not necessary to define the logistic growth function again because that has not changed. Further, if you are happy to use the same values of <code>times</code> as for question 2. you do not need to restate this either.</p></li>
+</ol>
 
 </div>
 </div>

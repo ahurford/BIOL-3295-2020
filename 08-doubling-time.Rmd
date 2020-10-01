@@ -37,7 +37,7 @@ Note that the above contains the path to folders on my computer and saves `COVID
  
  - elect to save the file somewhere very simple, for example, on your Desktop and then move it to a more organized place later.
  
-Navigate to the folder where you expected to save the data as a .csv file. You should be able to open the .csv file in _Microsoft Excel_.
+Navigate to the folder where you expected to save the data as a .csv file. You should be able to open the .csv file in _Microsoft Excel_. [THIS PART DOESN'T WORK - SORRY - JUST SKIP]
 
 Now, the data table `COVID.data` contains data for all provinces and we would like to _subset_ the data so that only the information pertaining to Ontario is left. We do this as follows:
 
@@ -125,7 +125,7 @@ knitr::include_graphics("figures/regression.png")
 ## Questions
 1. How many observations and how many variables are there in the `COVID.data` and the `data.ON` files? (see the _Environment_ tab) [1 mark]
 
-2. What command did you use to save the data as a .csv file? [1 mark]
+2. What command did you use to save the data as a .csv file? - IGNORE THIS QUESTION - INSTRUCTIONS WERE BAD [1 mark]
 
 3. What do you estimate the doubling time of the second wave of COVID-19 in Ontario to be? Show your calculations [3 marks]
 
