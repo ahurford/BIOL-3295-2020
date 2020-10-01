@@ -30,12 +30,13 @@ How might we find the equivalent of equation \@ref(eq:Exp2) for logistic growth?
 In an introductory calculus course that covers integration, most often you are solving problems of the type:
 
 \begin{eqnarray}
-\int \frac{dy(x)}{dx} &=& \int x^2 \ dx, \\ \nonumber
-y(x) &=& \frac{1}{3}x^3 + c,
+\frac{dy(x)}{dx} &=& x^2, \\
+\int \frac{dy(x)}{dx} &=& \int x^2 \ dx, \\
+y(x) &=& \frac{1}{3}x^3 + c.
 (\#eq:e1)
 \end{eqnarray}
 
-where $y(x)$ is the dependent variable, the derivative of $y(x)$ is with respect to $x$, and $x$, the independent variable, appears on the opposite side of the `=` to the derivative of the dependent variable. In the notation of population biology, where $N(t)$ is conventional for the dependent variable, a similar problem might look like this:
+Note that in the above calculations, we are able to use integration to find $y(x)$ when we are given the rate of change equation, $\frac{dy(x)}{dx}$. In the above equations, $x$, is the independent variable, $y(x)$ is the dependent variable, the derivative of $y(x)$ is with respect to $x$, and $x$ appears on the opposite side of the `=` to the derivative of the dependent variable. In the notation of population biology, where $N(t)$ is conventional for the dependent variable, a similar problem might look like this:
 
 \begin{eqnarray}
 \int \frac{dN(t)}{dt} &=& \int rt \ dt, \\ \nonumber
@@ -43,7 +44,7 @@ N(t) &=& \frac{1}{2}rt^2 + c.
 (\#eq:e2)
 \end{eqnarray}
 
-We have not seen any equations like equation \@ref(eq:e2) in BIOL 3295 so far: usually, our equations for the _change_ in the population size, $\frac{dN(t)}{dt}$, have a dependency on the population size, $N(t)$ - the dependent variable, rather than a sole dependency on $t$ - the independent variable.
+We have not seen any equations like equation \@ref(eq:e2) in BIOL 3295 so far: usually, our equations for the _change_ in the population size, $\frac{dN(t)}{dt}$, have a dependency on the population size, $N(t)$ (the dependent variable), rather than a sole dependency on $t$ (the independent variable).
 
 The equations that are models for population biology are sometimes ODEs. While some ODEs can be solved using math, commonly the ODEs that are used to model population dynamics need to be integrated numerically; that is, using a computer. 
 
@@ -61,13 +62,13 @@ To integrate our ODE, we use the function `ode()` from the `deSolve` package. Le
 
 where,
 
-`y` are the initial values of the dependent varaible.
+`y` is a vector of the initial values of the dependent variable (i.e., those which correspond to the initial time).
 
-`times` is a sequence for which output is wanted; the first value of times is the initial time.
+`times` is a sequence of time points that we will calculate the values of the variables; the first value of times is the initial time.
 
-`func` is an R-function that computes the values of the derivatives of the dependent variables. `func` must be defined as: `func <- function(t, y, parms,...)`. $t$ is the current time point in the integration, y is the current estimate of the variables in the ODE system.
+`func` is a function that computes the values of the derivatives of the dependent variables. `func` must be defined as: `func <- function(t, y, parms,...)`. `t` is the current time point in the integration, and `y` is the current estimate of the variables in the ODE system.
 
-Given what we have learned in BIOL 3295 so far, `y` and `times` are not so tricky, but the `func` arguement requires us to write our own function, and so far we have only used functions written by other people; we have yet to write our own custom functions. In preparation for next class, when we will numerically integrate the logistic growth equation, we will next learn how to write custom functions.
+Given what we have learned in BIOL 3295 so far, `y` and `times` are not so tricky, but the `func` arguement requires us to write our own function, and so far we have only used functions written by other people: we have yet to write our own custom functions. In preparation for next class, when we will numerically integrate the logistic growth equation, we will next learn how to write custom functions.
 
 ## Writing custom functions
 Generally, your code can still work without writing custom functions, however writing functions makes your code modular and more organized.
@@ -84,7 +85,7 @@ temp.min.F <- temp.min.C*9/5+32
 temp.max.F <- temp.max.C*9/5+32 
 ```
 
-The above code is fine, but since we've done the same calculation twice (conversion of Celcius to Farenheit), just with a different number, we might want to consider writing a custom function. Let's re-write the above code so that it now uses a custom function:
+The above code is fine, but since the same calculation is performed twice (conversion of Celcius to Farenheit), just with a different number, we might consider writing a custom function. Let's re-write the above code so that it now uses a custom function:
 
 ```{r, eval=F}
 # A function that converts Celcius to Farenheit
@@ -117,14 +118,14 @@ In the example, note the following:
 - The function is assigned a name: `C.to.F`. We give the function a name so that we can use it later during a function call.
 
 ## Questions
-1. The following is an equation for exponential population growth, but with a constant immigration rate, $m >0$, into the population:
+1. The following is an equation for exponential population growth with a constant immigration rate, $m>0$, into the population:
 
 \[
 \frac{dN(t)}{dt}= rN(t) + m
 \]
 
-where $r$ is the net reproductive rate and $N(t)$ is the population size at time, $t$.
+where $r$ is the net reproductive rate, and $N(t)$ is the population size at time, $t$.
 
 Is this equation an ordinary differential equation (ODE)? Give 1 sentence explaining your reasoning [2 marks].
 
-2. Write a function that adds 123 to a user supplied argument, and then write the line of code that calls the function to evaluate 123+1 and assigns the result the variable name `y`. You are to hand in your R script. [5 marks]
+2. Write a function that adds 123 to a user supplied argument, and then write the line of code that calls the function to evaluate 123+1, and assigns the result the variable name `y`. You are to hand in your R script. [5 marks]

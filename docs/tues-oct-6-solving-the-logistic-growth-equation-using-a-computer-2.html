@@ -204,13 +204,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="tues-oct-6-solving-the-logistic-growth-equation-using-a-computer-2" class="section level1">
 <h1><span class="header-section-number">12</span> Tues Oct 6: Solving the logistic growth equation using a computer 2</h1>
-<p>Last class we learned how to make a custom function. Today we would like to write a custom function that satisfies the requirements of the the <code>func</code> argument that is supplied to <code>ode()</code> so that numerical integration can be performed.</p>
+<p>Last class we learned how to make a custom function. Today we would like to write a custom function that satisfies the requirements of the <code>func</code> argument that is supplied to <code>ode()</code> so that numerical integration can be performed.</p>
 <div id="writing-the-func-argument-for-ode" class="section level2">
 <h2><span class="header-section-number">12.1</span> Writing the func argument for ode()</h2>
 <p>The <code>func</code> argument of <code>ode()</code> has the following constraints:</p>
 <ul>
 <li>The <code>arglist</code> must include <code>t</code>, <code>y</code>, and <code>parms</code>.</li>
-<li>The value returned must be a <em>list</em> of the rates of change in the dependent variables.</li>
+<li>The value returned must be a <em>list</em> of the rates of change in the dependent variable(s).</li>
 </ul>
 <p>Note that if your ODE comprises of more than one variable that is changing over time, then <code>y</code> will be a vector. Below is an example of how <code>func</code> might be coded for exponential growth. Remember that the ODE for exponential growth is:</p>
 <span class="math display" id="eq:Exp99">\[\begin{equation}
@@ -228,10 +228,10 @@ model =<span class="st"> </span>function(t,y,parms){
   <span class="co"># The function returns the value of the change in N.</span>
 <span class="kw">return</span>(<span class="kw">list</span>(<span class="kw">c</span>(dN)))
 }</code></pre></div>
-<p>Let’s try out the function to make sure it works. Copy and paste the function into your <code>Console</code> and then type.</p>
+<p>Let’s try out the function to make sure it works. Copy and paste the function into your <code>Console</code> and then type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r&lt;-<span class="dv">1</span>
 <span class="kw">model</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dt">parms=</span><span class="ot">NULL</span>)</code></pre></div>
-<p>Did you get <code>2</code>? Does it make sense to you that the returned value is <code>2</code>?</p>
+<p>Did you get <code>2</code>? Does it make sense to you that the returned value is <code>2</code>? Try some other values. Are the values making sense?</p>
 <p>Now that the <code>func</code> argument of <code>ode()</code> has been demonstrated, the remaining arguments for the <code>ode()</code> function are not so bad.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The initial value of N</span>
 yini&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">N =</span> <span class="dv">1</span>)
@@ -257,6 +257,7 @@ out &lt;-<span class="st"> </span><span class="kw">data.frame</span>(out)
 <div id="questions-10" class="section level2">
 <h2><span class="header-section-number">12.2</span> Questions</h2>
 <ol style="list-style-type: decimal">
+<li><p>For the code <code>model(1,2,parms=NULL)</code> (where the function <code>model</code> is defined above), what do <code>1</code> and <code>2</code> correspond to? One of these quantities does not affect the value that the <code>model()</code> function returns. Which quantity does not affect the value the function returns? [2 marks]</p></li>
 <li><p>Write an R Script that numerically integrates the logistic growth function (equation <a href="fri-oct-2-solving-the-logistic-growth-equation-using-a-computer-1.html#eq:Log1">(11.3)</a>). Choose a value of <span class="math inline">\(r\)</span> such that the population size increases over time. Remember to use good practices for writing your script - see <a href="index.html#RScript">1.7.2</a>. Your script should produce a graph with <span class="math inline">\(N(t)\)</span> on the y-axis and time on the x-axis [10 marks]</p></li>
 <li><p>Add to your script from 2. such that another graph is produced, this time where the population size decreases over time. Note that this should just require adding new lines to the bottom of your question 1 script such that you: a) set a new value of <code>r</code>; b) run the <code>ode()</code> command; and c) make the graph. In other words, it is not necessary to define the logistic growth function, <code>model</code>, again because that has not changed. Further, if you are happy to use the same values of <code>times</code> as for question 1, you do not need to restate this either. Answer this question by adding a few lines of code to your answer to 1. You are to hand in your R script. You should answer both questions 1. and 2. in the same R script. [5 marks]</p></li>
 </ol>

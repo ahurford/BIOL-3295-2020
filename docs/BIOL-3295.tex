@@ -1493,17 +1493,20 @@ In an introductory calculus course that covers integration, most often
 you are solving problems of the type:
 
 \begin{eqnarray}
-\int \frac{dy(x)}{dx} &=& \int x^2 \ dx, \\ \nonumber
-y(x) &=& \frac{1}{3}x^3 + c,
+\frac{dy(x)}{dx} &=& x^2, \\
+\int \frac{dy(x)}{dx} &=& \int x^2 \ dx, \\
+y(x) &=& \frac{1}{3}x^3 + c.
 \label{eq:e1}
 \end{eqnarray}
 
-where \(y(x)\) is the dependent variable, the derivative of \(y(x)\) is
-with respect to \(x\), and \(x\), the independent variable, appears on
-the opposite side of the \texttt{=} to the derivative of the dependent
-variable. In the notation of population biology, where \(N(t)\) is
-conventional for the dependent variable, a similar problem might look
-like this:
+Note that in the above calculations, we are able to use integration to
+find \(y(x)\) when we are given the rate of change equation,
+\(\frac{dy(x)}{dx}\). In the above equations, \(x\), is the independent
+variable, \(y(x)\) is the dependent variable, the derivative of \(y(x)\)
+is with respect to \(x\), and \(x\) appears on the opposite side of the
+\texttt{=} to the derivative of the dependent variable. In the notation
+of population biology, where \(N(t)\) is conventional for the dependent
+variable, a similar problem might look like this:
 
 \begin{eqnarray}
 \int \frac{dN(t)}{dt} &=& \int rt \ dt, \\ \nonumber
@@ -1514,8 +1517,8 @@ N(t) &=& \frac{1}{2}rt^2 + c.
 We have not seen any equations like equation \eqref{eq:e2} in BIOL 3295 so
 far: usually, our equations for the \emph{change} in the population
 size, \(\frac{dN(t)}{dt}\), have a dependency on the population size,
-\(N(t)\) - the dependent variable, rather than a sole dependency on
-\(t\) - the independent variable.
+\(N(t)\) (the dependent variable), rather than a sole dependency on
+\(t\) (the independent variable).
 
 The equations that are models for population biology are sometimes ODEs.
 While some ODEs can be solved using math, commonly the ODEs that are
@@ -1542,21 +1545,22 @@ The mandatory arguments to the function are:
 
 where,
 
-\texttt{y} are the initial values of the dependent varaible.
+\texttt{y} is a vector of the initial values of the dependent variable
+(i.e., those which correspond to the initial time).
 
-\texttt{times} is a sequence for which output is wanted; the first value
-of times is the initial time.
+\texttt{times} is a sequence of time points that we will calculate the
+values of the variables; the first value of times is the initial time.
 
-\texttt{func} is an R-function that computes the values of the
-derivatives of the dependent variables. \texttt{func} must be defined
-as: \texttt{func\ \textless{}-\ function(t,\ y,\ parms,...)}. \(t\) is
-the current time point in the integration, y is the current estimate of
-the variables in the ODE system.
+\texttt{func} is a function that computes the values of the derivatives
+of the dependent variables. \texttt{func} must be defined as:
+\texttt{func\ \textless{}-\ function(t,\ y,\ parms,...)}. \texttt{t} is
+the current time point in the integration, and \texttt{y} is the current
+estimate of the variables in the ODE system.
 
 Given what we have learned in BIOL 3295 so far, \texttt{y} and
 \texttt{times} are not so tricky, but the \texttt{func} arguement
 requires us to write our own function, and so far we have only used
-functions written by other people; we have yet to write our own custom
+functions written by other people: we have yet to write our own custom
 functions. In preparation for next class, when we will numerically
 integrate the logistic growth equation, we will next learn how to write
 custom functions.
@@ -1580,9 +1584,9 @@ Consider the following code:
 \end{Highlighting}
 \end{Shaded}
 
-The above code is fine, but since we've done the same calculation twice
-(conversion of Celcius to Farenheit), just with a different number, we
-might want to consider writing a custom function. Let's re-write the
+The above code is fine, but since the same calculation is performed
+twice (conversion of Celcius to Farenheit), just with a different
+number, we might consider writing a custom function. Let's re-write the
 above code so that it now uses a custom function:
 
 \begin{Shaded}
@@ -1630,15 +1634,15 @@ In the example, note the following:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  The following is an equation for exponential population growth, but
-  with a constant immigration rate, \(m >0\), into the population:
+  The following is an equation for exponential population growth with a
+  constant immigration rate, \(m>0\), into the population:
 \end{enumerate}
 
 \[
 \frac{dN(t)}{dt}= rN(t) + m
 \]
 
-where \(r\) is the net reproductive rate and \(N(t)\) is the population
+where \(r\) is the net reproductive rate, and \(N(t)\) is the population
 size at time, \(t\).
 
 Is this equation an ordinary differential equation (ODE)? Give 1
@@ -1650,7 +1654,7 @@ sentence explaining your reasoning {[}2 marks{]}.
 \tightlist
 \item
   Write a function that adds 123 to a user supplied argument, and then
-  write the line of code that calls the function to evaluate 123+1 and
+  write the line of code that calls the function to evaluate 123+1, and
   assigns the result the variable name \texttt{y}. You are to hand in
   your R script. {[}5 marks{]}
 \end{enumerate}
@@ -1660,7 +1664,7 @@ computer
 2}\label{tues-oct-6-solving-the-logistic-growth-equation-using-a-computer-2}
 
 Last class we learned how to make a custom function. Today we would like
-to write a custom function that satisfies the requirements of the the
+to write a custom function that satisfies the requirements of the
 \texttt{func} argument that is supplied to \texttt{ode()} so that
 numerical integration can be performed.
 
@@ -1677,7 +1681,7 @@ constraints:
   \texttt{parms}.
 \item
   The value returned must be a \emph{list} of the rates of change in the
-  dependent variables.
+  dependent variable(s).
 \end{itemize}
 
 Note that if your ODE comprises of more than one variable that is
@@ -1709,7 +1713,7 @@ eventual use in the \texttt{ode()} function:
 \end{Shaded}
 
 Let's try out the function to make sure it works. Copy and paste the
-function into your \texttt{Console} and then type.
+function into your \texttt{Console} and then type:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1719,7 +1723,7 @@ function into your \texttt{Console} and then type.
 \end{Shaded}
 
 Did you get \texttt{2}? Does it make sense to you that the returned
-value is \texttt{2}?
+value is \texttt{2}? Try some other values. Are the values making sense?
 
 Now that the \texttt{func} argument of \texttt{ode()} has been
 demonstrated, the remaining arguments for the \texttt{ode()} function
@@ -1767,6 +1771,12 @@ results:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\item
+  For the code \texttt{model(1,2,parms=NULL)} (where the function
+  \texttt{model} is defined above), what do \texttt{1} and \texttt{2}
+  correspond to? One of these quantities does not affect the value that
+  the \texttt{model()} function returns. Which quantity does not affect
+  the value the function returns? {[}2 marks{]}
 \item
   Write an R Script that numerically integrates the logistic growth
   function (equation \eqref{eq:Log1}). Choose a value of \(r\) such that
