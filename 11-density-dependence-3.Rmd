@@ -1,4 +1,6 @@
-# Tues Oct 6: Solving the logistic growth equation using a computer 2
+# Thurs Oct 8: Solving the logistic growth equation using a computer 2
+
+DUE DATE: Thursday Oct 15
 
 Last class we learned how to make a custom function. Today we would like to write a custom function that satisfies the requirements of the `func` argument that is supplied to `ode()` so that numerical integration can be performed.
 

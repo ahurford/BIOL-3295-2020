@@ -1,5 +1,7 @@
 # Tues Sept 29: Doubling time
 
+DUE DATE: Thurs Oct 8
+
 Today we will make a graph of the current COVID-19 data for Ontario. When only a small fraction of the population is resistant to an infection, the number of daily cases, in absence of any interventions such as physical distancing, is expected to grow exponentially over time. At the end of this exercise you will have calculated the doubling time for the second wave of COVID-19 in Ontario.
 
 Visit the website: https://art-bd.shinyapps.io/covid19canada/, this site is the _front end_ for the data we will use which are archived [here](https://github.com/ishaberry/Covid19Canada) (also referred to as the _back end_). These data can easily be pulled into `R` using this command:

@@ -1,4 +1,8 @@
-# Fri Oct 2: Solving the logistic growth equation using a computer 1
+# Tues Oct 6: Solving the logistic growth equation using a computer 1
+
+ANNOUNCEMENT: Friday Oct 2 is a catch-up day
+
+DUE DATE: Tues Oct 13
 
 Recall that for continous time exponential growth there were two ways that the equation might be written. Firstly, as a _change_ in population size over time,
 
