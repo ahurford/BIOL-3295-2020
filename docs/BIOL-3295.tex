@@ -1372,18 +1372,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.26568 -0.16461  0.01192  0.10771  0.36850 
+## -0.36897 -0.10648 -0.02282  0.12287  0.38261 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -7.885510   1.295110  -6.089 3.28e-06 ***
-## since.225    0.057722   0.005485  10.523 2.90e-10 ***
+## (Intercept) -5.981132   0.944973  -6.329 5.57e-07 ***
+## since.225    0.049559   0.003943  12.570 1.74e-13 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.1978 on 23 degrees of freedom
-## Multiple R-squared:  0.828,  Adjusted R-squared:  0.8205 
-## F-statistic: 110.7 on 1 and 23 DF,  p-value: 2.895e-10
+## Residual standard error: 0.2059 on 30 degrees of freedom
+## Multiple R-squared:  0.8404, Adjusted R-squared:  0.8351 
+## F-statistic:   158 on 1 and 30 DF,  p-value: 1.735e-13
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the
@@ -1812,25 +1812,241 @@ results:
   answer both questions 1. and 2. in the same R script. {[}5 marks{]}
 \end{enumerate}
 
-\chapter{Fri Oct 9: Data and the logistic
-equation}\label{fri-oct-9-data-and-the-logistic-equation}
+\chapter{Fri Oct 9 and Thurs Oct 15: Data and the logistic
+equation}\label{fri-oct-9-and-thurs-oct-15-data-and-the-logistic-equation}
 
-Density dependence + data
+DUE DATE: Thurs Oct 22
 
 \section{Questions}\label{questions}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  Question 1.9 on p12 of Vandermeer and Gordon.
+  Question 1.9 on p12 of
+  \href{https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619}{Vandermeer
+  and Gordon} (but completed following the instructions below). Hand-in
+  your graph with a figure caption. Your graph should have the intrinsic
+  growth rate on the y-axis and population size (in millions) on the
+  x-axis. In response to `what kind of function would describe the data
+  reasonably well', you just need to answer an increasing or decreasing
+  function. {[}10 marks{]}
 \item
-  Question 1.10 on p12 of Vandermeer and Gordon.
+  Based on your work in question 1, what is the value of the intrinsic
+  growth when \(t = 1955, 2013\) and \(2014\)? {[}2 marks{]}
+\item
+  If a population is growing exponentially, and the intrinsic growth
+  rate is plotted on the y-axis, and population size is plotted on the
+  x-axis, what is the slope of the line? What does the intercept of the
+  graph tell us? {[}2 marks{]}
 \end{enumerate}
 
-\chapter{Thurs Oct 15: Solving the discrete time models with density
-dependence using a
-computer}\label{thurs-oct-15-solving-the-discrete-time-models-with-density-dependence-using-a-computer}
+\section{The data}\label{the-data}
+
+Question 1.9 in Vandermeer and Goldberg involves a large data table. It
+will be very boring to have to type all those numbers in by hand.
+Fortunately, here is a
+\href{https://ourworldindata.org/world-population-growth}{website}, with
+a link to a similiar data set. Lets load in the data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop.data <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'https://ourworldindata.org/uploads/2013/05/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Lets take a look at our data by entering the following in the console:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(pop.data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     year World.Population..Spline.Interpolation.until.1950.
+## 1 -10000                                            2431214
+## 2  -9999                                            2432196
+## 3  -9998                                            2433179
+## 4  -9997                                            2434162
+## 5  -9996                                            2435145
+## 6  -9995                                            2436129
+\end{verbatim}
+
+Lets find out the column names of our data. Type the following into your
+console:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(pop.data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "year"                                              
+## [2] "World.Population..Spline.Interpolation.until.1950."
+\end{verbatim}
+
+The second column name is weird. Let's replace it with a better name:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(pop.data)<-}\KeywordTok{c}\NormalTok{(}\StringTok{"year"}\NormalTok{, }\StringTok{"size"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The data we have loaded starts in 10,000 B.C., but the Vandermeer and
+Goldberg data just starts in 1955. The code below identifies which rows
+correspond to 1955 onwards.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ind <-}\StringTok{ }\KeywordTok{which}\NormalTok{(pop.data$year>=}\DecValTok{1955}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Let's make a new dataset that only contains the data for 1955 onwards:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop.data}\FloatTok{.1955} \NormalTok{<-}\StringTok{ }\NormalTok{pop.data[ind,]}
+\end{Highlighting}
+\end{Shaded}
+
+In the above code the square brackets are the
+\texttt{{[}rows,columns{]}} that we are extracting. Note that the rows
+we would like, we have assigned the variable name \texttt{ind}. When the
+column argument is left blank this is understood to be all columns (or
+in this case, \emph{both} columns: \texttt{year} and \texttt{size}).
+
+Let's plot our data, but to make things easier, let's change the
+population size into millions (where \texttt{1e6} is scientific notation
+for millions).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pop.data}\FloatTok{.1955}\NormalTok{$size <-}\StringTok{ }\NormalTok{pop.data}\FloatTok{.1955}\NormalTok{$size/}\FloatTok{1e6}
+\KeywordTok{plot}\NormalTok{(pop.data}\FloatTok{.1955}\NormalTok{$year, pop.data}\FloatTok{.1955}\NormalTok{$size, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"year"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"popn size (in millions)"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-48-1.pdf}
+
+\section{The intrinsic growth rate}\label{the-intrinsic-growth-rate}
+
+Now, consider the equation,
+
+\begin{equation}
+N_{t+1} = r(N_t)N_t.
+\label{eq:R}
+\end{equation}
+
+This equation states that the population size in the next time step
+(\(N_{t+1}\)) is equal to the population size at time \(t\) (which is
+\(N_t\)), multiplied by the intrinsic growth rate, \(r(N_t)\), where the
+intrinsic growth rate might depend on population size (which is why
+\(r(N_t)\) is written that way: you can read it as `\(r\) is a function
+of \(N_t\)'). For example, with exponential growth, the intrinsic growth
+rate does not change with population size, so \(r(N_t) = \lambda\).
+However, when population growth demonstrates negative density
+dependence, then \(r(N_t)\) would be a decreasing function of population
+size, \(N_t\).
+
+Consider the Beverton-Holt equation which is equation 28 on p29 of
+Vandermeer and Goldberg:
+
+\[
+N_{t+1} = \frac{\lambda N_t}{1+\alpha N_t}.
+\]
+
+Note that this could be written in the form of equation \eqref{eq:R}
+where,
+
+\begin{equation}
+r(N_t) = \frac{\lambda}{1+\alpha N_t}.
+\end{equation}
+
+Therefore, the Beverton-Holt equation demonstrates negative density
+dependence since the intrinsic growth rate, \(r(N_t)\), is a decreasing
+function of population size, \(N_t\).
+
+By re-arranging equation \eqref{eq:R}, we can see that the intrinsic
+growth rate is calculated as:
+
+\[
+r(N_t) = \frac{N_{t+1}}{N_t},
+\]
+
+such that the intrinsic growth rate can be understood as a ratio of
+population sizes at consecutive time points. How might we calculate the
+intrinsic growth rate for our data?
+
+First, we should note that Question 1.9 in Vandermeer and Goldberg asks
+us to plot the intrinsic growth rate (y-axis) versus the population size
+(x-axis). Let's take \(N_{1955} = 2758\): this is our first x-axis
+value, but what is the corresponding y-value? The answer is:
+
+\[
+r(N_{1955}) = \frac{N_{1956}}{N_{1955}} = \frac{N_{t+1}}{N_t} \mbox{ where $t = 1955$}.
+\]
+
+Note that the numerator values will be the sequence of values
+
+\([N_{1956}, N_{1957}, ..., N_{2015}]\),
+
+and the denomenator values will be the sequence of values
+
+\([N_{1955}, N_{1956}, ..., N_{2014}]\).
+
+Therefore, the numerator values are the list of all population sizes
+except the first value (\(N_{1955}\)), and the denomenator values are
+the list of all population sizes except the last value (\(N_{2015}\)).
+The functions \texttt{head()} and \texttt{tail()} can be used to remove
+values from a list:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numerator <-}\StringTok{ }\KeywordTok{tail}\NormalTok{(pop.data}\FloatTok{.1955}\NormalTok{$size,-}\DecValTok{1}\NormalTok{)}
+\NormalTok{denomenator <-}\StringTok{ }\KeywordTok{head}\NormalTok{(pop.data}\FloatTok{.1955}\NormalTok{$size,-}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+And then we can calculate the list of intrinsic growth rates,
+\(r(N_t)\):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r <-}\StringTok{ }\NormalTok{numerator/denomenator}
+\end{Highlighting}
+\end{Shaded}
+
+Now consider the values we need for our x-axis. The last value of
+\(r(N_t)\) that we calculated was
+\(\frac{N_{2015}}{N_{2014}} = \frac{N_{t+1}}{N_t}\) when \(t=2014\),
+which means that the last value of \(N_t\) we have a corresponding
+\(r(N_t)\) value for is \(N_{2014}\). Therefore, our x-axis nees to be:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Nt <-}\StringTok{ }\KeywordTok{head}\NormalTok{(pop.data}\FloatTok{.1955}\NormalTok{$size,-}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Finally, we need to make the plot as required by Question 1.9.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(Nt, r, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+It will be your job to put appropriate axes labels on the plot.
+
+\section{References}\label{references}
+
+Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First
+Principles (Second Edition). Princeton University Press, Princeton,
+United States.
+\href{https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619}{Link}
 
 \chapter{Tues Oct 20: Density-yield and density dependence in births
 versus

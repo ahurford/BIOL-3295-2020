@@ -162,6 +162,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="13" data-path="fri-oct-9-data-and-the-logistic-equation.html"><a href="fri-oct-9-data-and-the-logistic-equation.html"><i class="fa fa-check"></i><b>13</b> Fri Oct 9: Data and the logistic equation</a><ul>
 <li class="chapter" data-level="13.1" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>13.1</b> Questions</a></li>
+<li class="chapter" data-level="13.2" data-path="fri-oct-9-data-and-the-logistic-equation.html"><a href="fri-oct-9-data-and-the-logistic-equation.html#references"><i class="fa fa-check"></i><b>13.2</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="thurs-oct-15-solving-the-discrete-time-models-with-density-dependence-using-a-computer.html"><a href="thurs-oct-15-solving-the-discrete-time-models-with-density-dependence-using-a-computer.html"><i class="fa fa-check"></i><b>14</b> Thurs Oct 15: Solving the discrete time models with density dependence using a computer</a></li>
 <li class="chapter" data-level="15" data-path="tues-oct-20-density-yield-and-density-dependence-in-births-versus-deaths.html"><a href="tues-oct-20-density-yield-and-density-dependence-in-births-versus-deaths.html"><i class="fa fa-check"></i><b>15</b> Tues Oct 20: Density-yield and density dependence in births versus deaths</a></li>
@@ -183,7 +184,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="28.3" data-path="final-project-ideas.html"><a href="final-project-ideas.html#grading-rubric-review"><i class="fa fa-check"></i><b>28.3</b> Grading Rubric: Review</a></li>
 <li class="chapter" data-level="28.4" data-path="final-project-ideas.html"><a href="final-project-ideas.html#grading-rubric-analysis"><i class="fa fa-check"></i><b>28.4</b> Grading Rubric: Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="fri-oct-9-data-and-the-logistic-equation.html"><a href="fri-oct-9-data-and-the-logistic-equation.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -203,13 +204,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="fri-oct-9-data-and-the-logistic-equation" class="section level1">
 <h1><span class="header-section-number">13</span> Fri Oct 9: Data and the logistic equation</h1>
-<p>Density dependence + data</p>
 <div id="questions" class="section level2">
 <h2><span class="header-section-number">13.1</span> Questions</h2>
 <ol style="list-style-type: decimal">
-<li>Question 1.9 on p12 of Vandermeer and Gordon.</li>
-<li>Question 1.10 on p12 of Vandermeer and Gordon.</li>
+<li>Question 1.9 on p12 of Vandermeer and Gordon (but with data as described below)</li>
+<li>Question 1.10 on p12 of Vandermeer and Gordon (but with data as described below)</li>
 </ol>
+<p>These questions involve a large data table. It will be very boring to have to type all those numbers in by hand. Fortunately, I found a <a href="https://ourworldindata.org/world-population-growth">website</a>, with a link to a similiar data set.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;https://ourworldindata.org/uploads/2013/05/WorldPopulationAnnual12000years_interpolated_HYDEandUNto2015.csv&#39;</span>)</code></pre></div>
+</div>
+<div id="references" class="section level2">
+<h2><span class="header-section-number">13.2</span> References</h2>
+<p>Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619">Link</a></p>
 
 </div>
 </div>
