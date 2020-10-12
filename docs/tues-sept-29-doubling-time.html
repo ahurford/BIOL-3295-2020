@@ -180,10 +180,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="25" data-path="thurs-nov-19-evolutionary-ecology.html"><a href="thurs-nov-19-evolutionary-ecology.html"><i class="fa fa-check"></i><b>25</b> Thurs Nov 19: Evolutionary ecology</a></li>
 <li class="chapter" data-level="26" data-path="fri-nov-20-evolutionary-ecology.html"><a href="fri-nov-20-evolutionary-ecology.html"><i class="fa fa-check"></i><b>26</b> Fri Nov 20: Evolutionary ecology</a></li>
 <li class="chapter" data-level="27" data-path="final-project-ideas.html"><a href="final-project-ideas.html"><i class="fa fa-check"></i><b>27</b> Final project ideas</a><ul>
-<li class="chapter" data-level="27.1" data-path="final-project-ideas.html"><a href="final-project-ideas.html#how-to-read-scientific-papers"><i class="fa fa-check"></i><b>27.1</b> How to read scientific papers</a></li>
-<li class="chapter" data-level="27.2" data-path="final-project-ideas.html"><a href="final-project-ideas.html#sources-for-datasets"><i class="fa fa-check"></i><b>27.2</b> Sources for datasets</a></li>
-<li class="chapter" data-level="27.3" data-path="final-project-ideas.html"><a href="final-project-ideas.html#grading-rubric-review"><i class="fa fa-check"></i><b>27.3</b> Grading Rubric: Review</a></li>
-<li class="chapter" data-level="27.4" data-path="final-project-ideas.html"><a href="final-project-ideas.html#grading-rubric-analysis"><i class="fa fa-check"></i><b>27.4</b> Grading Rubric: Analysis</a></li>
+<li class="chapter" data-level="27.1" data-path="final-project-ideas.html"><a href="final-project-ideas.html#option-1-review-paper"><i class="fa fa-check"></i><b>27.1</b> Option 1: Review paper</a></li>
+<li class="chapter" data-level="27.2" data-path="final-project-ideas.html"><a href="final-project-ideas.html#option-2-analysis"><i class="fa fa-check"></i><b>27.2</b> Option 2: Analysis</a></li>
+<li class="chapter" data-level="27.3" data-path="final-project-ideas.html"><a href="final-project-ideas.html#how-to-read-scientific-papers"><i class="fa fa-check"></i><b>27.3</b> How to read scientific papers</a></li>
+<li class="chapter" data-level="27.4" data-path="final-project-ideas.html"><a href="final-project-ideas.html#sources-for-datasets"><i class="fa fa-check"></i><b>27.4</b> Sources for datasets</a></li>
+<li class="chapter" data-level="27.5" data-path="final-project-ideas.html"><a href="final-project-ideas.html#grading-rubric-review"><i class="fa fa-check"></i><b>27.5</b> Grading Rubric: Review</a></li>
+<li class="chapter" data-level="27.6" data-path="final-project-ideas.html"><a href="final-project-ideas.html#grading-rubric-analysis"><i class="fa fa-check"></i><b>27.6</b> Grading Rubric: Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="fri-oct-9-and-thurs-oct-15-data-and-the-logistic-equation.html"><a href="fri-oct-9-and-thurs-oct-15-data-and-the-logistic-equation.html#references"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -286,18 +288,18 @@ reg &lt;-<span class="st"> </span><span class="kw">lm</span>(log.cases<span clas
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.36897 -0.10648 -0.02282  0.12287  0.38261 
+## -0.34617 -0.10818 -0.01111  0.12398  0.39969 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -5.981132   0.944973  -6.329 5.57e-07 ***
-## since.225    0.049559   0.003943  12.570 1.74e-13 ***
+## (Intercept) -5.662002   0.766558  -7.386 1.46e-08 ***
+## since.225    0.048198   0.003171  15.198  &lt; 2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.2059 on 30 degrees of freedom
-## Multiple R-squared:  0.8404, Adjusted R-squared:  0.8351 
-## F-statistic:   158 on 1 and 30 DF,  p-value: 1.735e-13</code></pre>
+## Residual standard error: 0.1977 on 34 degrees of freedom
+## Multiple R-squared:  0.8717, Adjusted R-squared:  0.8679 
+## F-statistic:   231 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>From the summary of the linear regression we are interested in the slope, because in the previous class we estimated the relationship between this slope and the doubling time.</p>
 <div class="figure"><span id="fig:regression"></span>
 <img src="figures/regression.png" alt="The above output shows the slope of the regression as 0.0695 log cases per day" width="95%" />

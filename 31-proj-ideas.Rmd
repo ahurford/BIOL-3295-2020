@@ -1,8 +1,6 @@
 # Final project ideas
 
-[DRAFT]
-
-For your final project you may choose either:
+For your final project you may choose either option:
 
 1. Review paper: Read and synthesize information on a new topic in population and evolutionary ecology that we have not considered in class.
 
@@ -10,17 +8,34 @@ or,
 
 2. Analysis: Download and visualize a dataset relevant to population and evolutionary ecology. Discuss your graphs in the context of a principle in population and evolutionary ecology.
 
-Use [Dias et al. 1996](https://www-sciencedirect-com.qe2a-proxy.mun.ca/science/article/pii/0169534796100379?via%3Dihub) _Sources and sinks in population biology_ as a guide for what a final project that is a _Review_ should aspire to look like. 
+## Option 1: Review paper
 
-If you choose to do a final project that is an _Analysis_ you should use some of the exercises we have completed for class as a guide (for example, the Doubling time, Protection Island, Yellow columbine, or balsam fir analyses). Note that you will need to write your final project as a report, rather than a series of questions.
+Aim to write a final project that is similar in style to a paper that you would read in _Trends in Ecology and Evolution_ (TREE). The concepts that you cover, however, do not need to be as advanced as something that would appear in TREE. Use [Dias et al. 1996](https://www-sciencedirect-com.qe2a-proxy.mun.ca/science/article/pii/0169534796100379?via%3Dihub) _Sources and sinks in population biology_ as a guide for what a final project that is a _Review_ should aspire to look like. 
+
+Topic ideas:
+
+- Population dynamics in warming environments
+
+- Population dynamics in seasonal environments
+
+- Spatial population dynamics/metepopulations
+
+- Evolution of sensence
+
+- Evolution of body size
+
+- Evolution of virulence
+
+## Option 2: Analysis
+If you choose to do a final project that is an _Analysis_ you should use some of the exercises we have completed for class as a guide (for example, the Doubling time or Protection Island analyses - note that you will need to write your final project as a report, rather than a series of questions as the assignments typically are).
+
+The style of your write up will be that of a regular scientific paper that includes an analysis, for example, [Suweis et al. 2013](https://www.pnas.org/content/110/11/4230): _The water-controlled wealth of nations_.
+
+
 
 Some examples of final project topics are:
 
-Review paper:
-- Population dynamics in warming environments.
-- Population dynamics in seasonal environments.
-- Spatial population dynamics.
-- Metapopulations.
+
 
 Analysis:
 
@@ -30,5 +45,8 @@ Please consult [How to Read a Scientific Paper (2014)](https://www.research4life
 ## Sources for datasets
 
 ## Grading Rubric: Review
+
+
+1. Organize your report into sections. Each section has a clear point and together the sections 
 
 ## Grading Rubric: Analysis
