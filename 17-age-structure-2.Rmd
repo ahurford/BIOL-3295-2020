@@ -1,7 +1,9 @@
 # Fri Oct 23: Stage-structured dynamics
 
-- Eigenvalues and eigenvectors
-- Diagrams
+Some great visuals [here](https://twitter.com/seb_schreiber/status/1318574271854116866) from Dr. Sebastian Schreiber.
+
+## Required Reading
+Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p30-31. [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619)
 
 
 
