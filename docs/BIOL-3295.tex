@@ -2307,7 +2307,85 @@ dynamics}\label{tues-oct-27-data-for-stage-structured-population-dynamics}
 
 Install and load the package \texttt{popbio}.
 
-`\texttt{r\ install.packages("popbio")\ require(popbio)}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"popbio"}\NormalTok{)}
+\KeywordTok{require}\NormalTok{(popbio)}
+\end{Highlighting}
+\end{Shaded}
+
+Click on the \texttt{popbio} package in the Package tab, or click
+\href{https://cran.r-project.org/web/packages/popbio/popbio.pdf}{here}
+
+Today, you will explore some of the data that is available through the
+\texttt{popbio} package.
+
+\section{Questions}\label{questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  After reading the documentation about the \texttt{popbio} package,
+  select one of the datasets. Do not select \emph{Aquilegia chrysantha}
+  as this will be used as the example. For the dataset that you have
+  selected, give the details of the source of the data, ideally, a
+  peer-reviewed publication, or permanent online repository with
+  document. For \emph{Aquilegia chrysantha} I did an internet search to
+  find a
+  \href{https://www.fs.fed.us/rm/pubs/rmrs_p023/rmrs_p023_070_077.pdf}{technical
+  report} that nicely describes the \texttt{aq.trans} dataset. For my
+  answer to this question I will provide the full citation:
+\end{enumerate}
+
+Stubben, Chris J.; Milligan, Brook G. 2001. The demography of a small
+population of yellow columbines in the Organ Mountains. In: Maschinski,
+Joyce; Holter, Louella, tech. eds. Southwestern rare and endangered
+plants: Proceedings of the Third Conference; 2000 September 25-28;
+Flagstaff, AZ. Proceedings RMRS-P-23. Fort Collins, CO: U.S. Department
+of Agriculture, Forest Service, Rocky Mountain Research Station.
+p.~70-77.
+
+and the link:
+\url{https://www.fs.fed.us/rm/pubs/rmrs_p023/rmrs_p023_070_077.pdf}
+
+For your dataset you might not be able to find all these details. For
+your answer please provide 1 sentence describing your search strategy
+and what you found. {[}2 marks{]}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  View your dataset. For \emph{Aquilegia chrysantha} this is completed
+  as:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(aq.trans)}
+\end{Highlighting}
+\end{Shaded}
+
+List the column headings of your dataset and provide their meaning. {[}2
+marks{]} (for some datasets this is a lot of work, for others it's less
+work)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Visit the section of the \texttt{popbio} package description
+  describing the \texttt{grizzly} data. Cut and paste the example code
+  into an R script. Run the example code and produce the figure. Hand in
+  the figure with a figure caption (see Section \ref{figures} for
+  expectations). Note that \(\log(1)=0\). As an aside, to be consistent
+  with the y-axis, the x-axis would better be labelled as \emph{Number
+  of females in year \(t\), \(N_t\)}. It is fine to leave this error
+  uncorrected. {[}2 marks{]}
+\end{enumerate}
 
 \chapter{Thurs Oct 29-Fri Oct 30: Midterm {[}due Fri Nov 6 at
 5pm{]}}\label{thurs-oct-29-fri-oct-30-midterm-due-fri-nov-6-at-5pm}
@@ -2544,7 +2622,5 @@ marks{]}}\label{grading-rubric-analysis-only-55-marks}
 \end{enumerate}
 
 \backmatter
-
-\texttt{r\ if\ (knitr:::is\_html\_output())\ \textquotesingle{}\ \#\ References\ \{-\}\ \textquotesingle{}}
 
 \end{document}
