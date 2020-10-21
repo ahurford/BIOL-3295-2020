@@ -170,12 +170,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.1" data-path="tues-sept-15-exponential-growth-discrete-time.html"><a href="tues-sept-15-exponential-growth-discrete-time.html#required-reading"><i class="fa fa-check"></i><b>14.1</b> Required reading</a></li>
 <li class="chapter" data-level="14.2" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>14.2</b> Questions</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="thurs-oct-22-introduction-to-age-structured-models.html"><a href="thurs-oct-22-introduction-to-age-structured-models.html"><i class="fa fa-check"></i><b>15</b> Thurs Oct 22: Introduction to age-structured models</a><ul>
+<li class="chapter" data-level="15" data-path="thurs-oct-22-introduction-to-age-structured-population-dynamics.html"><a href="thurs-oct-22-introduction-to-age-structured-population-dynamics.html"><i class="fa fa-check"></i><b>15</b> Thurs Oct 22: Introduction to age-structured population dynamics</a><ul>
 <li class="chapter" data-level="15.1" data-path="tues-sept-15-exponential-growth-discrete-time.html"><a href="tues-sept-15-exponential-growth-discrete-time.html#required-reading"><i class="fa fa-check"></i><b>15.1</b> Required Reading</a></li>
 <li class="chapter" data-level="15.2" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>15.2</b> Questions</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="fri-oct-23-stage-structured-dynamics.html"><a href="fri-oct-23-stage-structured-dynamics.html"><i class="fa fa-check"></i><b>16</b> Fri Oct 23: Stage-structured dynamics</a><ul>
+<li class="chapter" data-level="16" data-path="fri-oct-23-stage-structured-population-dynamics.html"><a href="fri-oct-23-stage-structured-population-dynamics.html"><i class="fa fa-check"></i><b>16</b> Fri Oct 23: Stage-structured population dynamics</a><ul>
 <li class="chapter" data-level="16.1" data-path="tues-sept-15-exponential-growth-discrete-time.html"><a href="tues-sept-15-exponential-growth-discrete-time.html#required-reading"><i class="fa fa-check"></i><b>16.1</b> Required Reading</a></li>
+<li class="chapter" data-level="16.2" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>16.2</b> Questions</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="tues-oct-27-yellow-columbine.html"><a href="tues-oct-27-yellow-columbine.html"><i class="fa fa-check"></i><b>17</b> Tues Oct 27: Yellow columbine</a></li>
 <li class="chapter" data-level="18" data-path="thurs-oct-29-fri-oct-30-midterm-due-fri-nov-6-at-5pm.html"><a href="thurs-oct-29-fri-oct-30-midterm-due-fri-nov-6-at-5pm.html"><i class="fa fa-check"></i><b>18</b> Thurs Oct 29-Fri Oct 30: Midterm [due Fri Nov 6 at 5pm]</a></li>
@@ -297,18 +298,18 @@ reg &lt;-<span class="st"> </span><span class="kw">lm</span>(log.cases<span clas
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.48423 -0.16082 -0.00858  0.15629  0.49671 
+## -0.47108 -0.16611 -0.01068  0.17155  0.50442 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -3.400664   0.694264  -4.898 1.48e-05 ***
-## since.225    0.038650   0.002824  13.685  &lt; 2e-16 ***
+## (Intercept) -3.188483   0.676732  -4.712 2.59e-05 ***
+## since.225    0.037759   0.002747  13.745  &lt; 2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.2379 on 42 degrees of freedom
-## Multiple R-squared:  0.8168, Adjusted R-squared:  0.8125 
-## F-statistic: 187.3 on 1 and 42 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.2393 on 43 degrees of freedom
+## Multiple R-squared:  0.8146, Adjusted R-squared:  0.8103 
+## F-statistic: 188.9 on 1 and 43 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>From the summary of the linear regression we are interested in the slope, because in the previous class we estimated the relationship between this slope and the doubling time.</p>
 <div class="figure"><span id="fig:regression"></span>
 <img src="figures/regression.png" alt="The above output shows the slope of the regression as 0.0695 log cases per day" width="95%" />

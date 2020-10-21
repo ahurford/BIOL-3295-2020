@@ -1372,18 +1372,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.48423 -0.16082 -0.00858  0.15629  0.49671 
+## -0.47108 -0.16611 -0.01068  0.17155  0.50442 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -3.400664   0.694264  -4.898 1.48e-05 ***
-## since.225    0.038650   0.002824  13.685  < 2e-16 ***
+## (Intercept) -3.188483   0.676732  -4.712 2.59e-05 ***
+## since.225    0.037759   0.002747  13.745  < 2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.2379 on 42 degrees of freedom
-## Multiple R-squared:  0.8168, Adjusted R-squared:  0.8125 
-## F-statistic: 187.3 on 1 and 42 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.2393 on 43 degrees of freedom
+## Multiple R-squared:  0.8146, Adjusted R-squared:  0.8103 
+## F-statistic: 188.9 on 1 and 43 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the
@@ -2096,8 +2096,8 @@ What is another value of \(N_t\) such that if this value were
 substituted on the righthand side of the equation \(N_{t+1}\) on the
 righthand side would equal this value of \(N_t\) too? {[}4 marks{]}.
 
-\chapter{Thurs Oct 22: Introduction to age-structured
-models}\label{thurs-oct-22-introduction-to-age-structured-models}
+\chapter{Thurs Oct 22: Introduction to age-structured population
+dynamics}\label{thurs-oct-22-introduction-to-age-structured-population-dynamics}
 
 \section{Required Reading}\label{required-reading}
 
@@ -2237,8 +2237,8 @@ one year from now, in the format of the system of equations
   age classes at \(t=1\). Show your calculations. {[}2 marks{]}
 \end{enumerate}
 
-\chapter{Fri Oct 23: Stage-structured
-dynamics}\label{fri-oct-23-stage-structured-dynamics}
+\chapter{Fri Oct 23: Stage-structured population
+dynamics}\label{fri-oct-23-stage-structured-population-dynamics}
 
 Some great visuals
 \href{https://twitter.com/seb_schreiber/status/1318574271854116866}{here}
@@ -2248,8 +2248,59 @@ from Dr.~Sebastian Schreiber.
 
 Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First
 Principles (Second Edition). Princeton University Press, Princeton,
-United States. p30-31.
+United States. p39-40.
 \href{https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619}{Link}
+
+\section{Questions}\label{questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Consider the projection matrix of the age-structured model from the
+  previous class:
+\end{enumerate}
+
+\begin{equation}
+\left[
+\begin{array}{cc}
+0 & 2\\
+0.5 & 0\\
+\end{array}
+\right]
+\end{equation}
+
+What are the special characteristics of the projection matrix for an
+age-structured population model (Leslie-Lewis matrix), that don't
+necessarily occur for a stage-structured population model (Leftkovitch
+matrix)? {[}1 mark{]}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Which elements of the Leftkovitch matrix may be larger than 1? Note
+  that elements of the matrix occurring in a horizontal line are called
+  rows, and elements occurring in a vertical line are called columns.
+  {[}1 mark{]}
+\item
+  Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013) {[}3
+  marks{]}. Note that where \(\mathbb{P}\) is a Leftkovitch matrix, the
+  element \(p_{ij}\) is the contribution \emph{from} individuals in
+  stage \(j\) at time \(t\), \emph{to} stage \(i\) at time \(t+1\),
+\end{enumerate}
+
+\begin{equation}
+\mathbb{P} = 
+\left[
+\begin{array}{ccccc}
+p_{11} & p_{12} & \dots & \dots & p_{1n} \\
+p_{21} & p_{22} & \dots & \dots & p_{2n} \\
+\vdots & \vdots & \vdots & \vdots & \vdots \\
+p_{n1} & \dots & \dots & \dots & p_{nn} \\
+\end{array}
+\right].
+\end{equation}
 
 \chapter{Tues Oct 27: Yellow
 columbine}\label{tues-oct-27-yellow-columbine}
