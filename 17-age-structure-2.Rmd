@@ -21,7 +21,7 @@ What are the special characteristics of the projection matrix for an age-structu
 
 2. Which elements of the Leftkovitch matrix may be larger than 1? Note that elements of the matrix occurring in a horizontal line are called rows, and elements occurring in a vertical line are called columns. [1 mark]
 
-3. Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013) [3 marks]. Note that where $\mathbb{P}$ is a Leftkovitch matrix, the element $p_{ij}$ is the contribution _from_ individuals in stage $j$ at time $t$, _to_ stage $i$ at time $t+1$, 
+3. Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013) [3 marks]. Note, where $\mathbb{P}$ is a Leftkovitch matrix, the element $p_{ij}$ is the contribution _from_ individuals in stage $j$ at time $t$, _to_ stage $i$ at time $t+1$, 
 
 \begin{equation}
 \mathbb{P} = 
