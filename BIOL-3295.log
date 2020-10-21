@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 OCT 2020 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 OCT 2020 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1394,7 +1394,13 @@ ULATION DYNAMICS
 Chapter 17.
 [63
 
-] [64
+]
+Overfull \hbox (96.91197pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 64 \T1/lmr/m/sl/10 CHAPTER 17.  TUES OCT 27: DATA FOR STAGE-STRU
+CTURED POPULATION DYNAMICS
+ []
+
+[64
 
 ]
 Chapter 18.
@@ -1444,23 +1450,26 @@ Chapter 27.
 Underfull \vbox (badness 1158) has occurred while \output is active []
 
 [84] [85] [86]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2544.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2544.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2550.
+[87
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2550.
 (./BIOL-3295.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2544.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2544.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2550.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2550.
 
 Package rerunfilecheck Info: File `BIOL-3295.out' has not changed.
-(rerunfilecheck)             Checksum: DD565A0E9D7FF5374C0595C5482B7A58;13703.
+(rerunfilecheck)             Checksum: 0036F163A86F0D7472290C0D1B4F0EB7;13857.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2544.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2550.
  ) 
 Here is how much of TeX's memory you used:
- 13138 strings out of 492995
- 191330 string characters out of 6132704
- 287858 words of memory out of 5000000
+ 13139 strings out of 492995
+ 191366 string characters out of 6132704
+ 287887 words of memory out of 5000000
  16066 multiletter control sequences out of 15000+600000
  63362 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1485,10 +1494,10 @@ nts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 public/lm/lmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
 lmtti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on BIOL-3295.pdf (86 pages, 1028380 bytes).
+Output written on BIOL-3295.pdf (87 pages, 1029089 bytes).
 PDF statistics:
- 1172 PDF objects out of 1200 (max. 8388607)
- 1024 compressed objects within 11 object streams
- 282 named destinations out of 1000 (max. 500000)
+ 1177 PDF objects out of 1200 (max. 8388607)
+ 1028 compressed objects within 11 object streams
+ 283 named destinations out of 1000 (max. 500000)
  10866 words of extra memory for PDF output out of 12000 (max. 10000000)
 

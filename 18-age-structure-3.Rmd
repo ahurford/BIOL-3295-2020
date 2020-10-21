@@ -1,4 +1,8 @@
-# Tues Oct 27: Yellow columbine
+# Tues Oct 27: Data for stage-structured population dynamics
 
+Install and load the package `popbio`.
 
-
+```{r, eval=F}
+install.packages("popbio")
+require(popbio)
+``
