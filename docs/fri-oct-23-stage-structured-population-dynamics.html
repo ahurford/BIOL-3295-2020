@@ -219,10 +219,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="fri-oct-23-stage-structured-population-dynamics" class="section level1">
 <h1><span class="header-section-number">16</span> Fri Oct 23: Stage-structured population dynamics</h1>
+<p>DUE DATE: Oct 30</p>
 <p>Some great visuals <a href="https://twitter.com/seb_schreiber/status/1318574271854116866">here</a> from Dr. Sebastian Schreiber.</p>
 <div id="required-reading" class="section level2">
 <h2><span class="header-section-number">16.1</span> Required Reading</h2>
 <p>Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p39-40. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619">Link</a></p>
+<p>Where <span class="math inline">\(\mathbb{P}\)</span> is a projection matrix, the element <span class="math inline">\(p_{ij}\)</span> is the contribution <em>from</em> individuals in stage <span class="math inline">\(j\)</span> at time <span class="math inline">\(t\)</span>, <em>to</em> stage <span class="math inline">\(i\)</span> at time <span class="math inline">\(t+1\)</span>,</p>
+<span class="math display">\[\begin{equation}
+\mathbb{P} = 
+\left[
+\begin{array}{ccccc}
+p_{11} &amp; p_{12} &amp; \dots &amp; \dots &amp; p_{1n} \\
+p_{21} &amp; p_{22} &amp; \dots &amp; \dots &amp; p_{2n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+p_{n1} &amp; \dots &amp; \dots &amp; \dots &amp; p_{nn} \\
+\end{array}
+\right].
+\end{equation}\]</span>
+<p>Note that it is convention for both age-structured and stage-structured population models that the most immature stages: i.e, newborns, eggs, or offspring are indexed as <span class="math inline">\(i,j = 1\)</span>, and progressively more mature stages are indexed with progressively larger indexes. For example, in Question 3 below the sensible choice of indexes is:</p>
+<p><span class="math inline">\(i,j = 1:\)</span> eggs</p>
+<p><span class="math inline">\(i,j = 2:\)</span> larvae</p>
+<p><span class="math inline">\(i,j = 3:\)</span> pupae</p>
+<p><span class="math inline">\(i,j = 4:\)</span> adults</p>
 </div>
 <div id="questions" class="section level2">
 <h2><span class="header-section-number">16.2</span> Questions</h2>
@@ -238,19 +256,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 \end{equation}\]</span>
 <p>What are the special characteristics of the projection matrix for an age-structured population model (Leslie-Lewis matrix), that don't necessarily occur for a stage-structured population model (Leftkovitch matrix)? [1 mark]</p></li>
 <li><p>Which elements of the Leftkovitch matrix may be larger than 1? Note that elements of the matrix occurring in a horizontal line are called rows, and elements occurring in a vertical line are called columns. [1 mark]</p></li>
-<li><p>Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013) [3 marks]. Note, where <span class="math inline">\(\mathbb{P}\)</span> is a Leftkovitch matrix, the element <span class="math inline">\(p_{ij}\)</span> is the contribution <em>from</em> individuals in stage <span class="math inline">\(j\)</span> at time <span class="math inline">\(t\)</span>, <em>to</em> stage <span class="math inline">\(i\)</span> at time <span class="math inline">\(t+1\)</span>,</p></li>
+<li><p>Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013) [3 marks].</p></li>
 </ol>
-<span class="math display">\[\begin{equation}
-\mathbb{P} = 
-\left[
-\begin{array}{ccccc}
-p_{11} &amp; p_{12} &amp; \dots &amp; \dots &amp; p_{1n} \\
-p_{21} &amp; p_{22} &amp; \dots &amp; \dots &amp; p_{2n} \\
-\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
-p_{n1} &amp; \dots &amp; \dots &amp; \dots &amp; p_{nn} \\
-\end{array}
-\right].
-\end{equation}\]</span>
 
 </div>
 </div>

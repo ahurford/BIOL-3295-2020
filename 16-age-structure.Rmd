@@ -1,5 +1,7 @@
 # Thurs Oct 22: Introduction to age-structured population dynamics
 
+DUE DATE: Oct 29
+
 ## Required Reading
 Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p30-31. [Link](https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619)
 
