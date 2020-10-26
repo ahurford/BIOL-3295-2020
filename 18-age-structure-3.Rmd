@@ -1,5 +1,7 @@
 # Tues Oct 27: Data for stage-structured population dynamics
 
+DUE DATE: Tues Nov 3
+
 Install and load the package `popbio`.
 
 ```{r, eval=F}
@@ -28,4 +30,4 @@ head(aq.trans)
 
 List the column headings of your dataset and provide their meaning. [2 marks] (for some datasets this is a lot of work, for others it's less work)
 
-3. Visit the section of the `popbio` package description describing the `grizzly` data. Cut and paste the example code into an R script. Run the example code and produce the figure. Hand in the figure with a figure caption (see Section \@ref(figures) for expectations). Note that $\log(1)=0$. As an aside, to be consistent with the y-axis, the x-axis would better be labelled as _Number of females in year $t$, $N_t$_. It is fine to leave this error uncorrected. [2 marks]
+3. Visit the section of the `popbio` package description describing the `grizzly` data. Cut and paste the example code into an R script. Run the example code and produce the figures. Hand in the figure with the title _'Grizzly log population growth rates'_ with a figure caption (see Section \@ref(figures) for expectations). Note that $\log(1)=0$. As an aside, to be consistent with the y-axis, the x-axis would better be labelled as _Number of females in year $t$, $N_t$_. It is fine to leave this error uncorrected. [2 marks]
