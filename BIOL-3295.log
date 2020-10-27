@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 OCT 2020 09:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 OCT 2020 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1457,18 +1457,18 @@ Chapter 27.
 Underfull \vbox (badness 1158) has occurred while \output is active []
 
 [84] [85] [86]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2646.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2646.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2644.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2644.
 (./BIOL-3295.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2646.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2646.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2644.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2644.
 
 Package rerunfilecheck Info: File `BIOL-3295.out' has not changed.
 (rerunfilecheck)             Checksum: FAC67A4CB5D57F38DBA87F8FA7EF2E5F;13959.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2646.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2644.
  ) 
 Here is how much of TeX's memory you used:
  13141 strings out of 492995
@@ -1498,7 +1498,7 @@ nts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 public/lm/lmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
 lmtti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on BIOL-3295.pdf (86 pages, 1033180 bytes).
+Output written on BIOL-3295.pdf (86 pages, 1033008 bytes).
 PDF statistics:
  1186 PDF objects out of 1200 (max. 8388607)
  1038 compressed objects within 11 object streams
