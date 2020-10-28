@@ -237,10 +237,9 @@ p_{n1} &amp; \dots &amp; \dots &amp; \dots &amp; p_{nn} \\
 \right].
 \end{equation}\]</span>
 <p>Note that it is convention for both age-structured and stage-structured population models that the most immature stages: i.e, newborns, eggs, or offspring are indexed as <span class="math inline">\(i,j = 1\)</span>, and progressively more mature stages are indexed with progressively larger indexes. For example, in Question 3 below the sensible choice of indexes is:</p>
-<p><span class="math inline">\(i,j = 1:\)</span> eggs</p>
-<p><span class="math inline">\(i,j = 2:\)</span> larvae</p>
-<p><span class="math inline">\(i,j = 3:\)</span> pupae</p>
-<p><span class="math inline">\(i,j = 4:\)</span> adults</p>
+<p><span class="math inline">\(i,j = 1:\)</span> larvae</p>
+<p><span class="math inline">\(i,j = 2:\)</span> pupae</p>
+<p><span class="math inline">\(i,j = 3:\)</span> adults</p>
 </div>
 <div id="questions" class="section level2">
 <h2><span class="header-section-number">16.2</span> Questions</h2>
@@ -256,8 +255,20 @@ p_{n1} &amp; \dots &amp; \dots &amp; \dots &amp; p_{nn} \\
 \end{equation}\]</span>
 <p>What are the special characteristics of the projection matrix for an age-structured population model (Leslie-Lewis matrix), that don't necessarily occur for a stage-structured population model (Leftkovitch matrix)? [1 mark]</p></li>
 <li><p>Which elements of the Leftkovitch matrix may be larger than 1? Note that elements of the matrix occurring in a horizontal line are called rows, and elements occurring in a vertical line are called columns. [1 mark]</p></li>
-<li><p>Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013). Note that the correct fecundity value is 100 eggs <span class="math inline">\(\times\)</span> 50% survival = 50 eggs [3 marks].</p></li>
+<li><p>Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013). This question is a bit tricky, so here's a hint. The correct answer for the projection matrix has this form:</p></li>
 </ol>
+<span class="math display">\[\begin{equation}
+\mathbb{P} = 
+\left[
+\begin{array}{ccc}
+p_{11} &amp; p_{12} &amp; 50 \\
+p_{21} &amp; p_{22} &amp; p_{23}\\
+p_{31} &amp; p_{32} &amp; p_{33}\\
+\end{array}
+\right].
+\end{equation}\]</span>
+<p>Note that it isn't necessary to include eggs as a stage because after a month either all eggs have become larvae or died.</p>
+<p>[3 marks].</p>
 
 </div>
 </div>

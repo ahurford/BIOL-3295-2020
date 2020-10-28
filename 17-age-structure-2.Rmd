@@ -23,13 +23,11 @@ p_{n1} & \dots & \dots & \dots & p_{nn} \\
 
 Note that it is convention for both age-structured and stage-structured population models that the most immature stages: i.e, newborns, eggs, or offspring are indexed as $i,j = 1$, and progressively more mature stages are indexed with progressively larger indexes. For example, in Question 3 below the sensible choice of indexes is:
 
-$i,j = 1:$ eggs
+$i,j = 1:$ larvae
 
-$i,j = 2:$ larvae
+$i,j = 2:$ pupae
 
-$i,j = 3:$ pupae
-
-$i,j = 4:$ adults
+$i,j = 3:$ adults
 
 
 ## Questions
@@ -46,5 +44,20 @@ What are the special characteristics of the projection matrix for an age-structu
 
 2. Which elements of the Leftkovitch matrix may be larger than 1? Note that elements of the matrix occurring in a horizontal line are called rows, and elements occurring in a vertical line are called columns. [1 mark]
 
-3. Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013). Note that the correct fecundity value is 100 eggs $\times$ 50% survival = 50 eggs [3 marks]. 
+3. Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013). This question is a bit tricky, so here's a hint. The correct answer for the projection matrix has this form:
+
+\begin{equation}
+\mathbb{P} = 
+\left[
+\begin{array}{ccc}
+p_{11} & p_{12} & 50 \\
+p_{21} & p_{22} & p_{23}\\
+p_{31} & p_{32} & p_{33}\\
+\end{array}
+\right].
+\end{equation}
+
+Note that it isn't necessary to include eggs as a stage because after a month either all eggs have become larvae or died.
+
+[3 marks]. 
 

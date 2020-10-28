@@ -1372,18 +1372,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.52002 -0.18024  0.00188  0.19444  0.53064 
+## -0.52863 -0.16904 -0.00236  0.19424  0.53412 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -2.370840   0.562340  -4.216 0.000107 ***
-## since.225    0.034343   0.002254  15.233  < 2e-16 ***
+## (Intercept) -2.238627   0.547592  -4.088 0.000158 ***
+## since.225    0.033794   0.002191  15.425  < 2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.237 on 49 degrees of freedom
-## Multiple R-squared:  0.8257, Adjusted R-squared:  0.8221 
-## F-statistic: 232.1 on 1 and 49 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.2371 on 50 degrees of freedom
+## Multiple R-squared:  0.8264, Adjusted R-squared:  0.8229 
+## F-statistic: 237.9 on 1 and 50 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the
@@ -2275,13 +2275,11 @@ offspring are indexed as \(i,j = 1\), and progressively more mature
 stages are indexed with progressively larger indexes. For example, in
 Question 3 below the sensible choice of indexes is:
 
-\(i,j = 1:\) eggs
+\(i,j = 1:\) larvae
 
-\(i,j = 2:\) larvae
+\(i,j = 2:\) pupae
 
-\(i,j = 3:\) pupae
-
-\(i,j = 4:\) adults
+\(i,j = 3:\) adults
 
 \section{Questions}\label{questions}
 
@@ -2310,10 +2308,26 @@ Question 3 below the sensible choice of indexes is:
   rows, and elements occurring in a vertical line are called columns.
   {[}1 mark{]}
 \item
-  Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013). Note
-  that the correct fecundity value is 100 eggs \(\times\) 50\% survival
-  = 50 eggs {[}3 marks{]}.
+  Complete Exercise 2.15 on p40 of Vandermeer and Goldberg (2013). This
+  question is a bit tricky, so here's a hint. The correct answer for the
+  projection matrix has this form:
 \end{enumerate}
+
+\begin{equation}
+\mathbb{P} = 
+\left[
+\begin{array}{ccc}
+p_{11} & p_{12} & 50 \\
+p_{21} & p_{22} & p_{23}\\
+p_{31} & p_{32} & p_{33}\\
+\end{array}
+\right].
+\end{equation}
+
+Note that it isn't necessary to include eggs as a stage because after a
+month either all eggs have become larvae or died.
+
+{[}3 marks{]}.
 
 \chapter{Tues Oct 27: Data for stage-structured population
 dynamics}\label{tues-oct-27-data-for-stage-structured-population-dynamics}
