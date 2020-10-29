@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="friday-sept-11-what-is-a-population.html"/>
-<link rel="next" href="Rinstall.html"/>
+<link rel="prev" href="NumSolve1.html"/>
+<link rel="next" href="fri-oct-9-and-thurs-oct-15-data-and-the-logistic-equation.html"/>
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -223,43 +223,65 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tues-sept-15-exponential-growth---discrete-time" class="section level1">
-<h1><span class="header-section-number">3</span> Tues Sept 15: Exponential growth - discrete time</h1>
-<p>Please submit your answers before the next class. You have until Tues Sept 22 to submit your answers.</p>
-<div id="required-reading" class="section level2">
-<h2><span class="header-section-number">3.1</span> Required reading</h2>
-<p>Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p1-3. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619">Link</a></p>
+<div id="NumSolve2" class="section level1">
+<h1><span class="header-section-number">12</span> Thurs Oct 8: Solving the logistic growth equation using a computer 2</h1>
+<p>DUE DATE: Thursday Oct 15</p>
+<p>Last class we learned how to make a custom function. Today we would like to write a custom function that satisfies the requirements of the <code>func</code> argument that is supplied to <code>ode()</code> so that numerical integration can be performed.</p>
+<div id="writing-the-func-argument-for-ode" class="section level2">
+<h2><span class="header-section-number">12.1</span> Writing the func argument for ode()</h2>
+<p>The <code>func</code> argument of <code>ode()</code> has the following constraints:</p>
+<ul>
+<li>The <code>arglist</code> must include <code>t</code>, <code>y</code>, and <code>parms</code>.</li>
+<li>The value returned must be a <em>list</em> of the rates of change in the dependent variable(s).</li>
+</ul>
+<p>Note that if your ODE comprises of more than one variable that is changing over time, then <code>y</code> will be a vector. Below is an example of how <code>func</code> might be coded for exponential growth. Remember that the ODE for exponential growth is:</p>
+<span class="math display" id="eq:Exp99">\[\begin{equation}
+\frac{dN(t)}{dt} = rN(t) 
+\tag{12.1}
+\end{equation}\]</span>
+<p>Below equation <a href="NumSolve2.html#eq:Exp99">(12.1)</a> is coded in the appropriate syntax for eventual use in the <code>ode()</code> function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Write a function that returns a list of the rate of change in your dependent variables.</span>
+model =<span class="st"> </span>function(t,y,parms){
+  <span class="co"># It&#39;s a personal perference of mine to switch the symbols</span>
+  <span class="co"># to be consistent with the equation.</span>
+  N &lt;-<span class="st"> </span>y[<span class="dv">1</span>]
+  <span class="co"># This is this equation for dN/dt</span>
+  dN &lt;-<span class="st"> </span>r*N
+  <span class="co"># The function returns the value of the change in N.</span>
+<span class="kw">return</span>(<span class="kw">list</span>(<span class="kw">c</span>(dN)))
+}</code></pre></div>
+<p>Let's try out the function to make sure it works. Copy and paste the function into your <code>Console</code> and then type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">r&lt;-<span class="dv">1</span>
+<span class="kw">model</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dt">parms=</span><span class="ot">NULL</span>)</code></pre></div>
+<p>Did you get <code>2</code>? Does it make sense to you that the returned value is <code>2</code>? Try some other values. Are the values making sense?</p>
+<p>Now that the <code>func</code> argument of <code>ode()</code> has been demonstrated, the remaining arguments for the <code>ode()</code> function are not so bad.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The initial value of N</span>
+yini&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">N =</span> <span class="dv">1</span>)
+
+<span class="co"># the times for the numerical integration</span>
+times &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dt">by =</span> .<span class="dv">1</span>)</code></pre></div>
+<p>Rembember to assign a value for <code>r</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Asign a value to the parameter:</span>
+r &lt;-<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<p>And then once all the arguments are set, call the function, and plot the results:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># performing the numerical integration</span>
+out &lt;-<span class="st"> </span><span class="kw">ode</span>(<span class="dt">y =</span> yini, <span class="dt">parms =</span> <span class="ot">NULL</span>, <span class="dt">times =</span> times, <span class="dt">func =</span> model)
+out &lt;-<span class="st"> </span><span class="kw">data.frame</span>(out)
+<span class="kw">head</span>(out)
+
+<span class="co"># this line overrides a multipanel plot. I had tried plot(out) # and was having conflicts with a small plotting window on my</span>
+<span class="co"># laptop. Generally, the below line isn&#39;t necessary.</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))
+
+<span class="co"># Make the graph</span>
+<span class="kw">plot</span>(out$time, out$N, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>)</code></pre></div>
 </div>
 <div id="questions" class="section level2">
-<h2><span class="header-section-number">3.2</span> Questions</h2>
+<h2><span class="header-section-number">12.2</span> Questions</h2>
 <ol style="list-style-type: decimal">
-<li><p>Suppose <span class="math inline">\(\lambda = 5\)</span> in equation (3) (see the required reading). Explain in 1-2 sentences the meaning of <span class="math inline">\(\lambda = 5\)</span>. [1 mark]</p></li>
-<li><p>Suppose the number of lilypads during week 7 is 78,125. Let <span class="math inline">\(\lambda = 5\)</span>, and assume that the units of <span class="math inline">\(t\)</span> are weeks. Use equation (3) to calculate the number of lilypads in week 8. Show your calculations. [2 marks]</p></li>
-<li><p>Use your answer to question 2. to calculate the number of lilypads in week 9. Show your calculations. [2 marks]</p></li>
-<li><p>Equation (4) for the required reading assumes that <span class="math inline">\(N_0=1\)</span>, however, this formula can be generalized such that</p></li>
-</ol>
-<p><span class="math display">\[
-N_t = N_0\lambda^t
-\]</span></p>
-<p>where <span class="math inline">\(N_t\)</span> is the population size at time, <span class="math inline">\(t\)</span>. Define time such that <span class="math inline">\(t=0\)</span> is week 7 and <span class="math inline">\(t\)</span> is then the number of weeks since week 7. Use the equation above to answer question 3 and confirm that the answer is the same (i.e., find the population size for week 9, when <span class="math inline">\(\lambda=5\)</span> and the population size for week 7 is 78,125). Show your calculations. [2 marks]</p>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Use the formula from question 4 to find the population size for week 15, where <span class="math inline">\(N_0=1\)</span> and <span class="math inline">\(\lambda=5\)</span>. <span style="color: red;">Define time as the number of weeks since week 0</span>. Show your calculations [2 marks]</p></li>
-<li><p>It is important to note that all mathematical formulas should have the same units on both sides of the equals sign, and for each term that is added or subtracted. The units of the population size, <span class="math inline">\(N_t\)</span>, at time, <span class="math inline">\(t\)</span>, are number. The geometric growth rate, <span class="math inline">\(\lambda\)</span> is unitless. Choose an equation from the required reading and give the units for each of the terms to show that both sides of the equals have the same units. For example, for the equation that appears in question 4, we have:</p></li>
-</ol>
-<span class="math display">\[\begin{eqnarray*}
-N_t &amp; = &amp; N_0 \lambda^t \\
-\left(\mbox{number}\right)&amp; =&amp;(\mbox{number}) (\mbox{unitless})^{weeks}\\
-\left(\mbox{number}\right)&amp; =&amp; \left(\mbox{number}\right)\\
-\end{eqnarray*}\]</span>
-Note that:
-<span class="math display">\[\begin{eqnarray*}
-(\mbox{unitless}) \times (\mbox{quantity with units}) &amp; = &amp; (\mbox{quantity with units}) \\ (\mbox{unitless})^{(\mbox{quantity})}&amp; =&amp; (\mbox{unitless})
-\end{eqnarray*}\]</span>
-<p>[2 marks]</p>
-<ol start="7" style="list-style-type: decimal">
-<li><p>Although not stated in the reading, <span class="math inline">\(\lambda = 1 + b - d\)</span> where <span class="math inline">\(b\)</span> is the per capita birth rate over one time step (i.e. one week for this example), and <span class="math inline">\(d\)</span> is the fraction of the lilypad population that dies over one time step. The number 1 is considered unitless, what must the units of <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> be? [1 mark]</p></li>
-<li><p>In the reading, <span class="math inline">\(\lambda = 2\)</span>. Given that <span class="math inline">\(\lambda = 1 + b - d\)</span>, what are some possible values of <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span>. <span style="color: red;">Note that <span class="math inline">\(d\)</span> is a fraction and must be <span class="math inline">\(1 \geq d \geq 0\)</span> and <span class="math inline">\(b&gt;0\)</span>.</span> [1 mark]</p></li>
-<li><p>[True or False] For discrete time exponential growth (as per the reading), the change in population size from one week to the next depends not so much on the per capita birth rate, but on the difference between the per capita birth rate and the per capita death rate. [1 mark]</p></li>
+<li><p>For the code <code>model(1,2,parms=NULL)</code> (where the function <code>model</code> is defined above), what do <code>1</code> and <code>2</code> correspond to? One of these quantities does not affect the value that the <code>model()</code> function returns. Which quantity does not affect the value the function returns? [2 marks]</p></li>
+<li><p>Write an R Script that numerically integrates the logistic growth function (equation <a href="NumSolve1.html#eq:Log1">(11.3)</a>). Choose a value of <span class="math inline">\(r\)</span> such that the population size increases over time. Remember to use good practices for writing your script - see <a href="index.html#RScript">1.7.2</a>. Your script should produce a graph with <span class="math inline">\(N(t)\)</span> on the y-axis and time on the x-axis [10 marks]</p></li>
+<li><p>Add to your script from 2. such that another graph is produced, this time where the population size decreases over time. Note that this should just require adding new lines to the bottom of your question 1 script such that you: a) set a new value of <code>r</code>; b) run the <code>ode()</code> command; and c) make the graph. In other words, it is not necessary to define the logistic growth function, <code>model</code>, again because that has not changed. Further, if you are happy to use the same values of <code>times</code> as for question 1, you do not need to restate this either. Answer this question by adding a few lines of code to your answer to 1. You are to hand in your R script. You should answer both questions 1. and 2. in the same R script. [5 marks]</p></li>
 </ol>
 
 </div>
@@ -269,8 +291,8 @@ Note that:
           </div>
         </div>
       </div>
-<a href="friday-sept-11-what-is-a-population.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Rinstall.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="NumSolve1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fri-oct-9-and-thurs-oct-15-data-and-the-logistic-equation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

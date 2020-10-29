@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="friday-sept-11-what-is-a-population.html"/>
-<link rel="next" href="Rinstall.html"/>
+<link rel="prev" href="thurs-oct-1-density-dependence-and-logistic-growth.html"/>
+<link rel="next" href="NumSolve2.html"/>
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -223,43 +223,103 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tues-sept-15-exponential-growth---discrete-time" class="section level1">
-<h1><span class="header-section-number">3</span> Tues Sept 15: Exponential growth - discrete time</h1>
-<p>Please submit your answers before the next class. You have until Tues Sept 22 to submit your answers.</p>
-<div id="required-reading" class="section level2">
-<h2><span class="header-section-number">3.1</span> Required reading</h2>
-<p>Vandermeer, J.H., Goldberg, D.E., 2013. Population Ecology: First Principles (Second Edition). Princeton University Press, Princeton, United States. p1-3. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/mun/detail.action?docID=1205619">Link</a></p>
+<div id="NumSolve1" class="section level1">
+<h1><span class="header-section-number">11</span> Tues Oct 6: Solving the logistic growth equation using a computer 1</h1>
+<p>ANNOUNCEMENT: Friday Oct 2 is a catch-up day</p>
+<p>DUE DATE: Tues Oct 13</p>
+<p>Recall that for continous time exponential growth there were two ways that the equation might be written. Firstly, as a <em>change</em> in population size over time,</p>
+<span class="math display" id="eq:Exp1">\[\begin{equation}
+\frac{dN(t)}{dt} = rN(t),
+\tag{11.1}
+\end{equation}\]</span>
+<p>such that if <span class="math inline">\(\frac{dN(t)}{dt}&gt;0\)</span>, the population size, <span class="math inline">\(N(t)\)</span> is increasing over time, and if <span class="math inline">\(\frac{dN(t)}{dt}&lt;0\)</span>, the population size is decreasing over time. Alternatively, we can write continuous time exponential growth as,</p>
+<span class="math display" id="eq:Exp2">\[\begin{equation}
+N(t) = N(0)e^{rt},
+\tag{11.2}
+\end{equation}\]</span>
+<p>where the lefthand side of equation <a href="NumSolve1.html#eq:Exp2">(11.2)</a> states the <em>size</em> of the population, <span class="math inline">\(N(t)\)</span>, at time <span class="math inline">\(t\)</span>, rather than the <em>change</em> in the size of the population, as it did in equation <a href="NumSolve1.html#eq:Exp1">(11.1)</a>.</p>
+<p>For logistic growth, we have:</p>
+<span class="math display" id="eq:Log1">\[\begin{equation}
+\frac{dN(t)}{dt} = rN(t)\left(1 - \frac{N(t)}{K} \right).
+\tag{11.3}
+\end{equation}\]</span>
+<p>How might we find the equivalent of equation <a href="NumSolve1.html#eq:Exp2">(11.2)</a> for logistic growth? i.e., for logistic growth, what is the equation for the <em>size</em> of the population at a particular time, <span class="math inline">\(t\)</span>? If you are great at math, you might integrate equation <a href="NumSolve1.html#eq:Log1">(11.3)</a> using <a href="https://math.usu.edu/~powell/ysa-html/node8.html">separation of variables</a>. However, another option, that we will build towards for next class, is to numerically integrate equation <a href="NumSolve1.html#eq:Log1">(11.3)</a> using a computer.</p>
+<div id="what-is-an-ordinary-differential-equation" class="section level2">
+<h2><span class="header-section-number">11.1</span> What is an ordinary differential equation?</h2>
+<p>In an introductory calculus course that covers integration, most often you are solving problems of the type:</p>
+<span class="math display" id="eq:e1">\[\begin{eqnarray}
+\frac{dy(x)}{dx} &amp;=&amp; x^2, \\
+\int \frac{dy(x)}{dx} &amp;=&amp; \int x^2 \ dx, \\
+y(x) &amp;=&amp; \frac{1}{3}x^3 + c.
+\tag{11.4}
+\end{eqnarray}\]</span>
+<p>Note that in the above calculations, we are able to use integration to find <span class="math inline">\(y(x)\)</span> when we are given the rate of change equation, <span class="math inline">\(\frac{dy(x)}{dx}\)</span>. In the above equations, <span class="math inline">\(x\)</span>, is the independent variable, <span class="math inline">\(y(x)\)</span> is the dependent variable, the derivative of <span class="math inline">\(y(x)\)</span> is with respect to <span class="math inline">\(x\)</span>, and <span class="math inline">\(x\)</span> appears on the opposite side of the <code>=</code> to the derivative of the dependent variable. In the notation of population biology, where <span class="math inline">\(N(t)\)</span> is conventional for the dependent variable, a similar problem might look like this:</p>
+<span class="math display" id="eq:e2">\[\begin{eqnarray}
+\int \frac{dN(t)}{dt} &amp;=&amp; \int rt \ dt, \\ \nonumber
+N(t) &amp;=&amp; \frac{1}{2}rt^2 + c. 
+\tag{11.5}
+\end{eqnarray}\]</span>
+<p>We have not seen any equations like equation <a href="NumSolve1.html#eq:e2">(11.5)</a> in BIOL 3295 so far: usually, our equations for the <em>change</em> in the population size, <span class="math inline">\(\frac{dN(t)}{dt}\)</span>, have a dependency on the population size, <span class="math inline">\(N(t)\)</span> (the dependent variable), rather than a sole dependency on <span class="math inline">\(t\)</span> (the independent variable).</p>
+<p>The equations that are models for population biology are sometimes ODEs. While some ODEs can be solved using math, commonly the ODEs that are used to model population dynamics need to be integrated numerically; that is, using a computer.</p>
+</div>
+<div id="numerically-integrating-an-ordinary-differential-equation-in-r" class="section level2">
+<h2><span class="header-section-number">11.2</span> Numerically integrating an ordinary differential equation in R</h2>
+<p>Numerical integration in <code>R</code> can be performed by installing this package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;deSolve&quot;</span>)</code></pre></div>
+<p>To integrate our ODE, we use the function <code>ode()</code> from the <code>deSolve</code> package. Let's look at the structure of this function. The mandatory arguments to the function are:</p>
+<p><code>ode(y,times,parms,func)</code></p>
+<p>where,</p>
+<p><code>y</code> is a vector of the initial values of the dependent variable (i.e., those which correspond to the initial time).</p>
+<p><code>times</code> is a sequence of time points that we will calculate the values of the variables; the first value of times is the initial time.</p>
+<p><code>func</code> is a function that computes the values of the derivatives of the dependent variables. <code>func</code> must be defined as: <code>func &lt;- function(t, y, parms,...)</code>. <code>t</code> is the current time point in the integration, and <code>y</code> is the current estimate of the variables in the ODE system.</p>
+<p>Given what we have learned in BIOL 3295 so far, <code>y</code> and <code>times</code> are not so tricky, but the <code>func</code> arguement requires us to write our own function, and so far we have only used functions written by other people: we have yet to write our own custom functions. In preparation for next class, when we will numerically integrate the logistic growth equation, we will next learn how to write custom functions.</p>
+</div>
+<div id="writing-custom-functions" class="section level2">
+<h2><span class="header-section-number">11.3</span> Writing custom functions</h2>
+<p>Generally, your code can still work without writing custom functions, however writing functions makes your code modular and more organized.</p>
+<p>Consider the following code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Temperatures in Celcius</span>
+temp.min.C &lt;-<span class="st"> </span><span class="dv">10</span>
+temp.max.C &lt;-<span class="st"> </span><span class="dv">20</span>
+
+<span class="co"># Temperatures in Farenheit</span>
+temp.min.F &lt;-<span class="st"> </span>temp.min.C*<span class="dv">9</span>/<span class="dv">5+32</span>
+temp.max.F &lt;-<span class="st"> </span>temp.max.C*<span class="dv">9</span>/<span class="dv">5+32</span> </code></pre></div>
+<p>The above code is fine, but since the same calculation is performed twice (conversion of Celcius to Farenheit), just with a different number, we might consider writing a custom function. Let's re-write the above code so that it now uses a custom function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A function that converts Celcius to Farenheit</span>
+C.to.F &lt;-<span class="st"> </span>function(C){
+  F &lt;-<span class="st"> </span>C*<span class="dv">9</span>/<span class="dv">5</span> +<span class="dv">32</span>
+  <span class="kw">return</span>(F)
+}
+
+<span class="co"># Temperatures in Celcius</span>
+temp.min.C &lt;-<span class="st"> </span><span class="dv">10</span>
+temp.max.C &lt;-<span class="st"> </span><span class="dv">20</span>
+
+<span class="co"># Temperatures in Farenheit</span>
+temp.min.F &lt;-<span class="st"> </span><span class="kw">C.to.F</span>(temp.min.C)
+temp.max.F &lt;-<span class="st"> </span><span class="kw">C.to.F</span>(temp.max.C)</code></pre></div>
+<p>Note that the above code consists of the <em>function definition</em> and the <em>function call</em>. The function definition uses the function <code>function()</code>.</p>
+<p><img src="figures/function.png" width="120%" /></p>
+<p>In the example, note the following:</p>
+<ul>
+<li><p><code>arglist</code> is just one value: <code>C</code>. Generally, several values might be provided to the function where each should be separated by commas and enclosed within the <code>()</code>.</p></li>
+<li><p><code>expression</code> can be any set of commands and should be enclosed within the <code>{}</code>.</p></li>
+<li><p>The function is assigned a name: <code>C.to.F</code>. We give the function a name so that we can use it later during a function call.</p></li>
+</ul>
 </div>
 <div id="questions" class="section level2">
-<h2><span class="header-section-number">3.2</span> Questions</h2>
+<h2><span class="header-section-number">11.4</span> Questions</h2>
 <ol style="list-style-type: decimal">
-<li><p>Suppose <span class="math inline">\(\lambda = 5\)</span> in equation (3) (see the required reading). Explain in 1-2 sentences the meaning of <span class="math inline">\(\lambda = 5\)</span>. [1 mark]</p></li>
-<li><p>Suppose the number of lilypads during week 7 is 78,125. Let <span class="math inline">\(\lambda = 5\)</span>, and assume that the units of <span class="math inline">\(t\)</span> are weeks. Use equation (3) to calculate the number of lilypads in week 8. Show your calculations. [2 marks]</p></li>
-<li><p>Use your answer to question 2. to calculate the number of lilypads in week 9. Show your calculations. [2 marks]</p></li>
-<li><p>Equation (4) for the required reading assumes that <span class="math inline">\(N_0=1\)</span>, however, this formula can be generalized such that</p></li>
+<li>The following is an equation for exponential population growth with a constant immigration rate, <span class="math inline">\(m&gt;0\)</span>, into the population:</li>
 </ol>
 <p><span class="math display">\[
-N_t = N_0\lambda^t
+\frac{dN(t)}{dt}= rN(t) + m
 \]</span></p>
-<p>where <span class="math inline">\(N_t\)</span> is the population size at time, <span class="math inline">\(t\)</span>. Define time such that <span class="math inline">\(t=0\)</span> is week 7 and <span class="math inline">\(t\)</span> is then the number of weeks since week 7. Use the equation above to answer question 3 and confirm that the answer is the same (i.e., find the population size for week 9, when <span class="math inline">\(\lambda=5\)</span> and the population size for week 7 is 78,125). Show your calculations. [2 marks]</p>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Use the formula from question 4 to find the population size for week 15, where <span class="math inline">\(N_0=1\)</span> and <span class="math inline">\(\lambda=5\)</span>. <span style="color: red;">Define time as the number of weeks since week 0</span>. Show your calculations [2 marks]</p></li>
-<li><p>It is important to note that all mathematical formulas should have the same units on both sides of the equals sign, and for each term that is added or subtracted. The units of the population size, <span class="math inline">\(N_t\)</span>, at time, <span class="math inline">\(t\)</span>, are number. The geometric growth rate, <span class="math inline">\(\lambda\)</span> is unitless. Choose an equation from the required reading and give the units for each of the terms to show that both sides of the equals have the same units. For example, for the equation that appears in question 4, we have:</p></li>
-</ol>
-<span class="math display">\[\begin{eqnarray*}
-N_t &amp; = &amp; N_0 \lambda^t \\
-\left(\mbox{number}\right)&amp; =&amp;(\mbox{number}) (\mbox{unitless})^{weeks}\\
-\left(\mbox{number}\right)&amp; =&amp; \left(\mbox{number}\right)\\
-\end{eqnarray*}\]</span>
-Note that:
-<span class="math display">\[\begin{eqnarray*}
-(\mbox{unitless}) \times (\mbox{quantity with units}) &amp; = &amp; (\mbox{quantity with units}) \\ (\mbox{unitless})^{(\mbox{quantity})}&amp; =&amp; (\mbox{unitless})
-\end{eqnarray*}\]</span>
-<p>[2 marks]</p>
-<ol start="7" style="list-style-type: decimal">
-<li><p>Although not stated in the reading, <span class="math inline">\(\lambda = 1 + b - d\)</span> where <span class="math inline">\(b\)</span> is the per capita birth rate over one time step (i.e. one week for this example), and <span class="math inline">\(d\)</span> is the fraction of the lilypad population that dies over one time step. The number 1 is considered unitless, what must the units of <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span> be? [1 mark]</p></li>
-<li><p>In the reading, <span class="math inline">\(\lambda = 2\)</span>. Given that <span class="math inline">\(\lambda = 1 + b - d\)</span>, what are some possible values of <span class="math inline">\(b\)</span> and <span class="math inline">\(d\)</span>. <span style="color: red;">Note that <span class="math inline">\(d\)</span> is a fraction and must be <span class="math inline">\(1 \geq d \geq 0\)</span> and <span class="math inline">\(b&gt;0\)</span>.</span> [1 mark]</p></li>
-<li><p>[True or False] For discrete time exponential growth (as per the reading), the change in population size from one week to the next depends not so much on the per capita birth rate, but on the difference between the per capita birth rate and the per capita death rate. [1 mark]</p></li>
+<p>where <span class="math inline">\(r\)</span> is the net reproductive rate, and <span class="math inline">\(N(t)\)</span> is the population size at time, <span class="math inline">\(t\)</span>.</p>
+<p>Is this equation an ordinary differential equation (ODE)? Give 1 sentence explaining your reasoning [2 marks].</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Write a function that adds 123 to a user supplied argument, and then write the line of code that calls the function to evaluate 123+1, and assigns the result the variable name <code>y</code>. You are to hand in your R script. [5 marks]</li>
 </ol>
 
 </div>
@@ -269,8 +329,8 @@ Note that:
           </div>
         </div>
       </div>
-<a href="friday-sept-11-what-is-a-population.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Rinstall.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="thurs-oct-1-density-dependence-and-logistic-growth.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="NumSolve2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

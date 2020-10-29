@@ -1,4 +1,4 @@
-# Tues Oct 6: Solving the logistic growth equation using a computer 1
+# Tues Oct 6: Solving the logistic growth equation using a computer 1 {#NumSolve1}
 
 ANNOUNCEMENT: Friday Oct 2 is a catch-up day
 

@@ -1,4 +1,4 @@
-# Thurs Oct 8: Solving the logistic growth equation using a computer 2
+# Thurs Oct 8: Solving the logistic growth equation using a computer 2 {#NumSolve2}
 
 DUE DATE: Thursday Oct 15
 
