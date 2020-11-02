@@ -1372,18 +1372,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.53923 -0.16071  0.00451  0.19579  0.53812 
+## -0.56664 -0.16946 -0.02639  0.20688  0.54708 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -2.078661   0.536591  -3.874 0.000307 ***
-## since.225    0.033130   0.002142  15.464  < 2e-16 ***
+## (Intercept) -1.679255   0.502995  -3.339  0.00153 ** 
+## since.225    0.031476   0.001996  15.771  < 2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.2386 on 51 degrees of freedom
-## Multiple R-squared:  0.8242, Adjusted R-squared:  0.8208 
-## F-statistic: 239.1 on 1 and 51 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.2414 on 54 degrees of freedom
+## Multiple R-squared:  0.8216, Adjusted R-squared:  0.8183 
+## F-statistic: 248.7 on 1 and 54 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the
@@ -2526,25 +2526,26 @@ Consider the projection matrix:
 \right].
 \end{equation}
 
+Calculate the two eigenvalues for this projection matrix,
+\(\mathbb{A}\). {[}3 marks{]}
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{4}
 \tightlist
 \item
-  Calculate the two eigenvalues for this projection matrix,
-  \(\mathbb{A}\). {[}3 marks{]}
+  The dominant eigenvalue value is the one that has largest absolute
+  value (i.e., if \(\lambda_1 < 0\) then \(|\lambda_1| = -\lambda_1\)
+  and if \(\lambda_1 >0\) then \(|\lambda_1| = \lambda_1\)).
 \end{enumerate}
 
-The dominant eigenvalue value is the one that has largest absolute value
-(i.e., if \(\lambda_1 < 0\) then \(|\lambda_1| = -\lambda_1\) and if
-\(\lambda_1 >0\) then \(|\lambda_1| = \lambda_1\)).
+What is the dominant eigenvalue for the projection matrix
+\(\mathbb{A}\)? {[}1 mark{]}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{5}
-\item
-  What is the dominant eigenvalue for the projection matrix
-  \(\mathbb{A}\)? {[}1 mark{]}
+\tightlist
 \item
   If the absolute value of the dominant eigenvalue of a projection
   matrix is greater than 1, then the population will increase over time.

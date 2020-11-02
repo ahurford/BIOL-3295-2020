@@ -73,13 +73,13 @@ Consider the projection matrix:
 \right].
 \end{equation}
 
-5. Calculate the two eigenvalues for this projection matrix, $\mathbb{A}$. [3 marks]
+Calculate the two eigenvalues for this projection matrix, $\mathbb{A}$. [3 marks]
 
-The dominant eigenvalue value is the one that has largest absolute value (i.e., if $\lambda_1 < 0$ then $|\lambda_1| = -\lambda_1$ and if $\lambda_1 >0$ then $|\lambda_1| = \lambda_1$).
+5. The dominant eigenvalue value is the one that has largest absolute value (i.e., if $\lambda_1 < 0$ then $|\lambda_1| = -\lambda_1$ and if $\lambda_1 >0$ then $|\lambda_1| = \lambda_1$).
 
-6. What is the dominant eigenvalue for the projection matrix $\mathbb{A}$? [1 mark]
+What is the dominant eigenvalue for the projection matrix $\mathbb{A}$? [1 mark]
 
-1. If the absolute value of the dominant eigenvalue of a projection matrix is greater than 1, then the population will increase over time. Will the population described by the projection matrix, $\mathbb{A}$, increase over time? [1 mark]
+6. If the absolute value of the dominant eigenvalue of a projection matrix is greater than 1, then the population will increase over time. Will the population described by the projection matrix, $\mathbb{A}$, increase over time? [1 mark]
 
 
 ## Kendall et al. 2019
