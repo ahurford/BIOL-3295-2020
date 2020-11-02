@@ -51,10 +51,7 @@ p_{21} & p_{22} \\
 \end{array}
 \right],
 \end{equation}
-
-
 the eigenvalues are calculated by solving,
-
 \begin{equation}
 0 = (p_{11} - \lambda)(p_{22}-\lambda) - p_{12}p_{21}.
 \end{equation}
