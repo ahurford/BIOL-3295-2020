@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 NOV 2020 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 NOV 2020 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1180,14 +1180,14 @@ Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
 [29
 
 ] [30]
-<BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf, id=648, 440.64626pt x 253
-.94875pt>
+<BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf, id=648, 440.64626pt x 248
+.93pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf us
 ed on input line 1250.
-(pdftex.def)             Requested size: 345.01381pt x 198.83482pt.
+(pdftex.def)             Requested size: 345.01381pt x 194.90529pt.
 
 Overfull \hbox (27.74892pt too wide) in paragraph at lines 1266--1266
 []\T1/lmtt/m/n/10 ## [1] "25-01-2020" "26-01-2020" "27-01-2020" "28-01-2020" "2
@@ -1195,14 +1195,14 @@ Overfull \hbox (27.74892pt too wide) in paragraph at lines 1266--1266
  []
 
 [31 <./BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf>]
-<BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf, id=662, 440.64626pt x 256
-.96pt>
+<BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf, id=662, 440.64626pt x 251
+.94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf us
 ed on input line 1301.
-(pdftex.def)             Requested size: 345.01381pt x 201.19255pt.
+(pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 
 <BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf, id=663, 440.64626pt x 251
 .94125pt>
@@ -1484,7 +1484,7 @@ nts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 public/lm/lmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
 lmtti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on BIOL-3295.pdf (78 pages, 3793251 bytes).
+Output written on BIOL-3295.pdf (78 pages, 3793153 bytes).
 PDF statistics:
  1205 PDF objects out of 1440 (max. 8388607)
  1064 compressed objects within 11 object streams
