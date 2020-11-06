@@ -192,7 +192,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="19.1" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>19.1</b> Questions</a></li>
 <li class="chapter" data-level="19.2" data-path="thurs-nov-5-evolutionary-ecology.html"><a href="thurs-nov-5-evolutionary-ecology.html#some-relevant-textbooks"><i class="fa fa-check"></i><b>19.2</b> Some relevant textbooks</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="fri-nov-6-evolutionary-ecology.html"><a href="fri-nov-6-evolutionary-ecology.html"><i class="fa fa-check"></i><b>20</b> Fri Nov 6: Evolutionary ecology</a></li>
+<li class="chapter" data-level="20" data-path="fri-nov-6-evolutionary-ecology.html"><a href="fri-nov-6-evolutionary-ecology.html"><i class="fa fa-check"></i><b>20</b> Fri Nov 6: Evolutionary ecology</a><ul>
+<li class="chapter" data-level="20.1" data-path="tues-sept-15-exponential-growth-discrete-time.html"><a href="tues-sept-15-exponential-growth-discrete-time.html#required-reading"><i class="fa fa-check"></i><b>20.1</b> Required reading</a></li>
+<li class="chapter" data-level="20.2" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>20.2</b> Questions</a></li>
+</ul></li>
 <li class="chapter" data-level="21" data-path="tues-nov-10-evolutionary-ecology.html"><a href="tues-nov-10-evolutionary-ecology.html"><i class="fa fa-check"></i><b>21</b> Tues Nov 10: Evolutionary ecology</a></li>
 <li class="chapter" data-level="22" data-path="final-project-ideas.html"><a href="final-project-ideas.html"><i class="fa fa-check"></i><b>22</b> Final project ideas</a><ul>
 <li class="chapter" data-level="22.1" data-path="final-project-ideas.html"><a href="final-project-ideas.html#option-1-review-paper"><i class="fa fa-check"></i><b>22.1</b> Option 1: Review paper</a></li>
@@ -223,7 +226,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="fri-nov-6-evolutionary-ecology" class="section level1">
 <h1><span class="header-section-number">20</span> Fri Nov 6: Evolutionary ecology</h1>
+<p>DUE DATE: Fri Nov 13</p>
+<div id="required-reading" class="section level2">
+<h2><span class="header-section-number">20.1</span> Required reading</h2>
+<p>Otto, Sarah P., and Troy Day. 2007. A Biologist's Guide to Mathematical Modeling in Ecology and Evolution, Princeton University Press. Beginning at 3.3 on p76 and ending at p82. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/MUN/detail.action?docID=768551">Link</a>.</p>
+</div>
+<div id="questions" class="section level2">
+<h2><span class="header-section-number">20.2</span> Questions</h2>
+<ol style="list-style-type: decimal">
+<li><p>What are population-genetic models? [1 mark]</p></li>
+<li><p>Consider the definition of <a href="https://en.wikipedia.org/wiki/Population_dynamics">population dynamics</a>. How are population dynamics related to population-genetic models? You will need to mention inheritance in your answer. [2 marks]</p></li>
+<li><p>What type of population growth is described by equations 3.6a and 3.6b? [1 mark]</p></li>
+<li><p>Typically, in this course, we have used <span class="math inline">\(\lambda\)</span> to be the geometric growth rate. What are <span class="math inline">\(W_A\)</span> and <span class="math inline">\(W_a\)</span> in equations 3.6a and b, and for what values of <span class="math inline">\(W_A\)</span> and <span class="math inline">\(W_a\)</span> is the number of individuals with the <span class="math inline">\(A\)</span> and <span class="math inline">\(a\)</span> alleles increasing? [2 marks]</p></li>
+<li><p>What are <span class="math inline">\(n_A(t)\)</span> and <span class="math inline">\(n_a(t)\)</span> in equations 3.6a and b? [1 mark]</p></li>
+<li><p>What formula would you use to calculate the frequency of the <span class="math inline">\(A\)</span> allele at time, <span class="math inline">\(t\)</span>? [1 mark]</p></li>
+<li><p>Give <em>two</em> versions of a formula that you would use to calculate the frequency of the allele <span class="math inline">\(A\)</span> at time, <span class="math inline">\(t+1\)</span>? [2 marks]</p></li>
+<li><p>In equation 3.8d, what is <span class="math inline">\(p(t+1)\)</span> and what is <span class="math inline">\(V_A\)</span>? [1 mark]</p></li>
+<li><p>If <span class="math inline">\(V_A &gt; 1\)</span>, what does this imply about the geometric growth rates for individuals that inherit the <span class="math inline">\(A\)</span> allele relative to those that inherit the <span class="math inline">\(a\)</span> allele? [1 mark]</p></li>
+<li><p>Using calculus, the author's derive a continuous time equation (3.11b) from the discrete time equation 3.8d. What is the formula for <span class="math inline">\(s_c\)</span>? Provide the meaning of all parameters in your equation for <span class="math inline">\(s_c\)</span>. [2 marks]</p></li>
+<li><p>Although not provided in the book, for the continuous time version of this population-genetic model, the equations for the number of individuals with each allele would be,</p></li>
+</ol>
+<span class="math display">\[\begin{eqnarray}
+\frac{dn_A(t)}{dt} &amp; = &amp; r_A n_A(t) \\
+\frac{dn_a(t)}{dt} &amp; = &amp; r_a n_a(t)
+\end{eqnarray}\]</span>
+<p>where <span class="math inline">\(r_A = b_A - d_A\)</span> and <span class="math inline">\(r_a = b_a - d_a\)</span>, with <span class="math inline">\(b_i\)</span> the per capita birth rate, and <span class="math inline">\(d_i\)</span> the per capita mortality rate for each of the <span class="math inline">\(A\)</span> and <span class="math inline">\(a\)</span> alleles respectively. If <span class="math inline">\(r_A &gt; 0\)</span> and <span class="math inline">\(r_a &gt; 0\)</span>, what does this imply about the change in the number of individuals with the <span class="math inline">\(A\)</span> and <span class="math inline">\(a\)</span> alleles over time? [1 mark]</p>
+<ol start="12" style="list-style-type: decimal">
+<li>What is <span class="math inline">\(p=p(t)\)</span> in equation 3.11b? Assuming that <span class="math inline">\(0 \leq p(t) \leq 1\)</span>, for what values of <span class="math inline">\(s_c\)</span> does <span class="math inline">\(p(t)\)</span> increase? How can this condition on <span class="math inline">\(s_c\)</span>, necessary for increasing <span class="math inline">\(p(t)\)</span>, be understood in terms of <span class="math inline">\(r_A\)</span> and <span class="math inline">\(r_a\)</span>? [2 marks]</li>
+</ol>
 
+</div>
 </div>
             </section>
 
