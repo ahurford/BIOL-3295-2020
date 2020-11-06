@@ -192,7 +192,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="19.1" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>19.1</b> Questions</a></li>
 <li class="chapter" data-level="19.2" data-path="thurs-nov-5-evolutionary-ecology.html"><a href="thurs-nov-5-evolutionary-ecology.html#some-relevant-textbooks"><i class="fa fa-check"></i><b>19.2</b> Some relevant textbooks</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="fri-nov-6-evolutionary-ecology.html"><a href="fri-nov-6-evolutionary-ecology.html"><i class="fa fa-check"></i><b>20</b> Fri Nov 6: Evolutionary ecology</a></li>
+<li class="chapter" data-level="20" data-path="fri-nov-6-evolutionary-ecology.html"><a href="fri-nov-6-evolutionary-ecology.html"><i class="fa fa-check"></i><b>20</b> Fri Nov 6: Evolutionary ecology</a><ul>
+<li class="chapter" data-level="20.1" data-path="tues-sept-15-exponential-growth-discrete-time.html"><a href="tues-sept-15-exponential-growth-discrete-time.html#required-reading"><i class="fa fa-check"></i><b>20.1</b> Required reading</a></li>
+<li class="chapter" data-level="20.2" data-path="friday-sept-11-what-is-a-population.html"><a href="friday-sept-11-what-is-a-population.html#questions"><i class="fa fa-check"></i><b>20.2</b> Questions</a></li>
+</ul></li>
 <li class="chapter" data-level="21" data-path="tues-nov-10-evolutionary-ecology.html"><a href="tues-nov-10-evolutionary-ecology.html"><i class="fa fa-check"></i><b>21</b> Tues Nov 10: Evolutionary ecology</a></li>
 <li class="chapter" data-level="22" data-path="final-project-ideas.html"><a href="final-project-ideas.html"><i class="fa fa-check"></i><b>22</b> Final project ideas</a><ul>
 <li class="chapter" data-level="22.1" data-path="final-project-ideas.html"><a href="final-project-ideas.html#option-1-review-paper"><i class="fa fa-check"></i><b>22.1</b> Option 1: Review paper</a></li>
@@ -304,18 +307,18 @@ reg &lt;-<span class="st"> </span><span class="kw">lm</span>(log.cases<span clas
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.59635 -0.15230 -0.01938  0.19144  0.55438 
+## -0.60429 -0.16363 -0.01929  0.19167  0.55580 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -1.271029   0.458701  -2.771   0.0075 ** 
-## since.225    0.029794   0.001805  16.504   &lt;2e-16 ***
+## (Intercept) -1.167490   0.448929  -2.601   0.0117 *  
+## since.225    0.029369   0.001763  16.657   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.2422 on 58 degrees of freedom
-## Multiple R-squared:  0.8244, Adjusted R-squared:  0.8214 
-## F-statistic: 272.4 on 1 and 58 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.2425 on 59 degrees of freedom
+## Multiple R-squared:  0.8246, Adjusted R-squared:  0.8217 
+## F-statistic: 277.4 on 1 and 59 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>From the summary of the linear regression we are interested in the slope, because in the previous class we estimated the relationship between this slope and the doubling time.</p>
 <div class="figure"><span id="fig:regression"></span>
 <img src="figures/regression.png" alt="The above output shows the slope of the regression as 0.0695 log cases per day" width="95%" />

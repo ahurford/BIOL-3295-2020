@@ -1372,18 +1372,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.59635 -0.15230 -0.01938  0.19144  0.55438 
+## -0.60429 -0.16363 -0.01929  0.19167  0.55580 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -1.271029   0.458701  -2.771   0.0075 ** 
-## since.225    0.029794   0.001805  16.504   <2e-16 ***
+## (Intercept) -1.167490   0.448929  -2.601   0.0117 *  
+## since.225    0.029369   0.001763  16.657   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.2422 on 58 degrees of freedom
-## Multiple R-squared:  0.8244, Adjusted R-squared:  0.8214 
-## F-statistic: 272.4 on 1 and 58 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.2425 on 59 degrees of freedom
+## Multiple R-squared:  0.8246, Adjusted R-squared:  0.8217 
+## F-statistic: 277.4 on 1 and 59 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the
@@ -2646,6 +2646,83 @@ Fairbairn
 
 \chapter{Fri Nov 6: Evolutionary
 ecology}\label{fri-nov-6-evolutionary-ecology}
+
+DUE DATE: Fri Nov 13
+
+\section{Required reading}\label{required-reading}
+
+Otto, Sarah P., and Troy Day. 2007. A Biologist's Guide to Mathematical
+Modeling in Ecology and Evolution, Princeton University Press. Beginning
+at 3.3 on p76 and ending at p82.
+\href{https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/MUN/detail.action?docID=768551}{Link}.
+
+\section{Questions}\label{questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  What are population-genetic models? {[}1 mark{]}
+\item
+  Consider the definition of
+  \href{https://en.wikipedia.org/wiki/Population_dynamics}{population
+  dynamics}. How are population dynamics related to population-genetic
+  models? You will need to mention inheritance in your answer. {[}2
+  marks{]}
+\item
+  What type of population growth is described by equations 3.6a and
+  3.6b? {[}1 mark{]}
+\item
+  Typically, in this course, we have used \(\lambda\) to be the
+  geometric growth rate. What are \(W_A\) and \(W_a\) in equations 3.6a
+  and b, and for what values of \(W_A\) and \(W_a\) is the number of
+  individuals with the \(A\) and \(a\) alleles increasing? {[}2 marks{]}
+\item
+  What are \(n_A(t)\) and \(n_a(t)\) in equations 3.6a and b? {[}1
+  mark{]}
+\item
+  What formula would you use to calculate the frequency of the \(A\)
+  allele at time, \(t\)? {[}1 mark{]}
+\item
+  Give \emph{two} versions of a formula that you would use to calculate
+  the frequency of the allele \(A\) at time, \(t+1\)? {[}2 marks{]}
+\item
+  In equation 3.8d, what is \(p(t+1)\) and what is \(V_A\)? {[}1 mark{]}
+\item
+  If \(V_A > 1\), what does this imply about the geometric growth rates
+  for individuals that inherit the \(A\) allele relative to those that
+  inherit the \(a\) allele? {[}1 mark{]}
+\item
+  Using calculus, the author's derive a continuous time equation (3.11b)
+  from the discrete time equation 3.8d. What is the formula for \(s_c\)?
+  Provide the meaning of all parameters in your equation for \(s_c\).
+  {[}2 marks{]}
+\item
+  Although not provided in the book, for the continuous time version of
+  this population-genetic model, the equations for the number of
+  individuals with each allele would be,
+\end{enumerate}
+
+\begin{eqnarray}
+\frac{dn_A(t)}{dt} & = & r_A n_A(t) \\
+\frac{dn_a(t)}{dt} & = & r_a n_a(t)
+\end{eqnarray}
+
+where \(r_A = b_A - d_A\) and \(r_a = b_a - d_a\), with \(b_i\) the per
+capita birth rate, and \(d_i\) the per capita mortality rate for each of
+the \(A\) and \(a\) alleles respectively. If \(r_A > 0\) and
+\(r_a > 0\), what does this imply about the change in the number of
+individuals with the \(A\) and \(a\) alleles over time? {[}1 mark{]}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  What is \(p=p(t)\) in equation 3.11b? Assuming that
+  \(0 \leq p(t) \leq 1\), for what values of \(s_c\) does \(p(t)\)
+  increase? How can this condition on \(s_c\), necessary for increasing
+  \(p(t)\), be understood in terms of \(r_A\) and \(r_a\)? {[}2 marks{]}
+\end{enumerate}
 
 \chapter{Tues Nov 10: Evolutionary
 ecology}\label{tues-nov-10-evolutionary-ecology}
