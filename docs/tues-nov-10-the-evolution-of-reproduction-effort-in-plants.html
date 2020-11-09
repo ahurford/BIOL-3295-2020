@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="final-project-ideas.html"/>
-
+<link rel="prev" href="fri-nov-6-evolutionary-ecology.html"/>
+<link rel="next" href="final-project-ideas.html"/>
 <script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
 <link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -231,17 +231,103 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="tues-nov-10-the-evolution-of-reproduction-effort-in-plants" class="section level1">
+<h1><span class="header-section-number">21</span> Tues Nov 10: The evolution of reproduction effort in plants</h1>
+<p>DUE DATE: Nov 17</p>
+<div id="required-reading" class="section level2">
+<h2><span class="header-section-number">21.1</span> Required reading</h2>
+<p>Otto, Sarah P., and Troy Day. 2007. A Biologist's Guide to Mathematical Modeling in Ecology and Evolution, Princeton University Press. p494-p496. <a href="https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/MUN/detail.action?docID=768551">Link</a>. <em>The discussion of reproduction effort in plants continues after page 486, however, we haven't covered the necessary math background for this to be very easy going</em>.</p>
+</div>
+<div id="objectives" class="section level2">
+<h2><span class="header-section-number">21.2</span> Objectives</h2>
+<p>We aim to understand: (1) the population dynamics, and then (2) the evolutionary dynamics.</p>
+</div>
+<div id="the-population-dynamics" class="section level2">
+<h2><span class="header-section-number">21.3</span> The population dynamics</h2>
+<p>Consider equation 12.1:</p>
+<span class="math display" id="eq:plant">\[\begin{equation}
+N(t+1) = N(t)\left(b e^{-\alpha N(t)} + p\right)  \tag{21.1}
+\end{equation}\]</span>
+<p>This equation can be solved using <code>R</code>. To write the code below, I returned to chapter <a href="PE3.html#PE3">7</a> and copied, pasted, and modified the script.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Parameter values</span>
+p &lt;-<span class="st"> </span><span class="fl">0.25</span>
+b &lt;-<span class="st"> </span><span class="dv">10</span>
+alpha &lt;-<span class="st"> </span><span class="fl">0.001</span>
+<span class="co"># Inital population size</span>
+Nt &lt;-<span class="st"> </span><span class="dv">1</span>
+<span class="co"># Preallocate the dataframe</span>
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">0</span>, <span class="dt">popn.size =</span> Nt)
+for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="dv">1</span>)){
+  Nt1 &lt;-<span class="st"> </span>Nt*(b*<span class="kw">exp</span>(-alpha*Nt) +<span class="st"> </span>p) <span class="co"># equation 12.1 from text</span>
+  new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> t, <span class="dt">popn.size =</span> Nt1)
+  df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+  Nt &lt;-<span class="st"> </span>Nt1 <span class="co"># update the value of N(t) for the next iteration of the loop.</span>
+}
+<span class="co"># Make the plot</span>
+<span class="kw">plot</span>(df$time, df$popn.size, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Population size&quot;</span>)</code></pre></div>
+</div>
+<div id="questions" class="section level2">
+<h2><span class="header-section-number">21.4</span> Questions</h2>
+<ol style="list-style-type: decimal">
+<li><p>Write out all the parameters (<span class="math inline">\(b&gt;0\)</span>, <span class="math inline">\(\alpha&gt;0\)</span>, and <span class="math inline">\(0 \leq p \leq 1\)</span>) in equation <a href="tues-nov-10-the-evolution-of-reproduction-effort-in-plants.html#eq:plant">(21.1)</a> and give their meanings. [1 mark]</p></li>
+<li><p>The variable in equation <a href="tues-nov-10-the-evolution-of-reproduction-effort-in-plants.html#eq:plant">(21.1)</a> is <span class="math inline">\(N(t)\)</span>. What does <span class="math inline">\(N(t)\)</span> represent? [1 mark]</p></li>
+<li><p>If <span class="math inline">\(N(t) = 0\)</span> what is the value of <span class="math inline">\(be^{-\alpha N(t)}\)</span>? What is the value of <span class="math inline">\(be^{-\alpha N(t)}\)</span> if <span class="math inline">\(N(t)\)</span> is very, very large? [1 mark]</p></li>
+<li><p>Does equation <a href="tues-nov-10-the-evolution-of-reproduction-effort-in-plants.html#eq:plant">(21.1)</a> have density dependence in births, survivorship, or both? [1 mark]</p></li>
+<li><p>Hand-in a figure showing the population dynamics (<span class="math inline">\(N(t)\)</span> on the y-axis and time, <span class="math inline">\(t\)</span>, on the x-axis). Remember to include a brief figure caption. <em>Note that the population dynamics for the parameter values above show oscillations and convergence to equilibrium.</em> [2 marks]</p></li>
+</ol>
+</div>
+<div id="the-evolutionary-dynamics" class="section level2">
+<h2><span class="header-section-number">21.5</span> The evolutionary dynamics</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Parameter values</span>
+alpha &lt;-<span class="st"> </span><span class="fl">0.001</span>
+p0 &lt;-<span class="st"> </span><span class="fl">0.75</span>
+<span class="co"># Define the allele of the resident:</span>
+E =<span class="st"> </span><span class="fl">0.5</span>
+<span class="co"># Define the allele of the mutant:</span>
+Em =<span class="st"> </span><span class="fl">0.7</span>
+<span class="co"># Functions from top of p499 in text</span>
+b &lt;-<span class="st"> </span>function(E){
+  <span class="kw">exp</span>(E)
+}
+p &lt;-function(E){
+  p0 -<span class="st"> </span>E^<span class="dv">2</span>
+}
+<span class="co"># Initially the mutant is rare</span>
+Nm &lt;-<span class="st"> </span><span class="dv">100</span>
+<span class="co"># Initially resident population is at equilibrium (i.e. see just above equation 12.1.4 on p497 for the equation for equilibrium)</span>
+N &lt;-<span class="st"> </span>(<span class="dv">1</span>/alpha)*(<span class="kw">log</span>(<span class="kw">b</span>(E)/(<span class="dv">1</span>-<span class="kw">p</span>(E))))
+<span class="co">#Preallocate the dataframe</span>
+df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> <span class="dv">0</span>, <span class="dt">res.popn.size =</span> N, <span class="dt">mut.popn.size =</span> Nm)
+for(t in <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">50</span>,<span class="dv">1</span>)){
+  N1 &lt;-<span class="st"> </span>N*(<span class="kw">b</span>(E)*<span class="kw">exp</span>(-alpha*(N+Nm)) +<span class="st"> </span><span class="kw">p</span>(E)) <span class="co"># equation 12.1.1a</span>
+  Nm1 &lt;-<span class="st"> </span>Nm*(<span class="kw">b</span>(Em)*<span class="kw">exp</span>(-alpha*(N+Nm)) +<span class="st"> </span><span class="kw">p</span>(Em)) <span class="co"># equation 12.1.1b</span>
+  new.result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">time =</span> t, <span class="dt">res.popn.size =</span> N1, <span class="dt">mut.popn.size =</span> Nm1)
+  df &lt;-<span class="st"> </span><span class="kw">rbind</span>(df, new.result)
+  N &lt;-<span class="st"> </span>N1 <span class="co"># update the value of N(t) for the next iteration of the loop.</span>
+  Nm &lt;-<span class="st"> </span>Nm1 <span class="co"># update the value of Nm(t) for the next iteration of the loop.</span>
+}
+<span class="kw">plot</span>(df$time, df$res.popn.size, <span class="dt">typ =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;time&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Population size&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1500</span>))
+<span class="kw">lines</span>(df$time, df$mut.popn.size, <span class="dt">lty =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="BIOL-3295_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+</div>
+<div id="questions-1" class="section level2">
+<h2><span class="header-section-number">21.6</span> Questions</h2>
+<ol start="6" style="list-style-type: decimal">
+<li><p>In equations 12.1.1a and 12.1.1b (p496), what is the difference between <span class="math inline">\(N(t)\)</span> and <span class="math inline">\(N_m(t)\)</span>? [1 mark]</p></li>
+<li><p>In considering the evolutionary dynamics, <span class="math inline">\(b\)</span> and <span class="math inline">\(p\)</span> are assumed to be linked by reproductive effort, <span class="math inline">\(E\)</span>, such that <span class="math inline">\(b(E) = e^E\)</span> and <span class="math inline">\(p(E) = p_0 - E^2\)</span> (top of p499). Therefore, when <span class="math inline">\(E\)</span> is small, <span class="math inline">\(b\)</span> is small, but <span class="math inline">\(p\)</span> is large, and visa versa when <span class="math inline">\(E\)</span> is large. In evolutionary biology what name is given to this type of relationship between life history parameters? [1 mark].</p></li>
+<li><p>The default choices of the reproductive effort parameters <span class="math inline">\(E = 0.2\)</span> and <span class="math inline">\(E_m = 0.7\)</span> correspond to no invasion of the mutant. Choose a different value of the mutant reproductive effort parameter such that the mutant <em>can</em> invade. You may wish to look at equation 12.6c on p500. Hand in your figure with a figure caption. Be sure you know if the dashed line or the solid line corresponds to the number of individuals with the mutant allele, and provide this information in your figure caption. [3 marks]</p></li>
+<li><p>If <span class="math inline">\(E = 0.5\)</span> and <span class="math inline">\(E_m = 0.7\)</span>, for the parameter values from the sample code, what are the values of <span class="math inline">\(b(E)\)</span>, <span class="math inline">\(b(E_m)\)</span>, <span class="math inline">\(p(E)\)</span>, and <span class="math inline">\(p(E_m)\)</span>? Does the mutant or resident allele allocate more energy to reproduction? [1 mark]</p></li>
+</ol>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="final-project-ideas.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="fri-nov-6-evolutionary-ecology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="final-project-ideas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>

@@ -698,8 +698,7 @@ console, and you can use \texttt{length(x)} to check the length of
   \emph{protection-island.R} {[}5 marks{]}
 \end{enumerate}
 
-\chapter{Thurs Sept 24: Protection Island
-3}\label{thurs-sept-24-protection-island-3}
+\chapter{Thurs Sept 24: Protection Island 3}\label{PE3}
 
 DUE DATE: Thurs Oct 1
 
@@ -1372,18 +1371,18 @@ the regression.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.60429 -0.16363 -0.01929  0.19167  0.55580 
+## -0.62327 -0.17705 -0.01229  0.19096  0.55852 
 ## 
 ## Coefficients:
 ##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -1.167490   0.448929  -2.601   0.0117 *  
-## since.225    0.029369   0.001763  16.657   <2e-16 ***
+## (Intercept) -0.926524   0.418660  -2.213   0.0306 *  
+## since.225    0.028383   0.001634  17.367   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 0.2425 on 59 degrees of freedom
-## Multiple R-squared:  0.8246, Adjusted R-squared:  0.8217 
-## F-statistic: 277.4 on 1 and 59 DF,  p-value: < 2.2e-16
+## Residual standard error: 0.2415 on 62 degrees of freedom
+## Multiple R-squared:  0.8295, Adjusted R-squared:  0.8267 
+## F-statistic: 301.6 on 1 and 62 DF,  p-value: < 2.2e-16
 \end{verbatim}
 
 From the summary of the linear regression we are interested in the
@@ -2724,8 +2723,154 @@ individuals with the \(A\) and \(a\) alleles over time? {[}1 mark{]}
   \(p(t)\), be understood in terms of \(r_A\) and \(r_a\)? {[}2 marks{]}
 \end{enumerate}
 
-\chapter{Tues Nov 10: Evolutionary
-ecology}\label{tues-nov-10-evolutionary-ecology}
+\chapter{Tues Nov 10: The evolution of reproduction effort in
+plants}\label{tues-nov-10-the-evolution-of-reproduction-effort-in-plants}
+
+DUE DATE: Nov 17
+
+\section{Required reading}\label{required-reading}
+
+Otto, Sarah P., and Troy Day. 2007. A Biologist's Guide to Mathematical
+Modeling in Ecology and Evolution, Princeton University Press.
+p494-p496.
+\href{https://ebookcentral-proquest-com.qe2a-proxy.mun.ca/lib/MUN/detail.action?docID=768551}{Link}.
+\emph{The discussion of reproduction effort in plants continues after
+page 486, however, we haven't covered the necessary math background for
+this to be very easy going}.
+
+\section{Objectives}\label{objectives}
+
+We aim to understand: (1) the population dynamics, and then (2) the
+evolutionary dynamics.
+
+\section{The population dynamics}\label{the-population-dynamics}
+
+Consider equation 12.1:
+
+\begin{equation}
+N(t+1) = N(t)\left(b e^{-\alpha N(t)} + p\right)  \label{eq:plant}
+\end{equation}
+
+This equation can be solved using \texttt{R}. To write the code below, I
+returned to chapter \ref{PE3} and copied, pasted, and modified the
+script.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Parameter values}
+\NormalTok{p <-}\StringTok{ }\FloatTok{0.25}
+\NormalTok{b <-}\StringTok{ }\DecValTok{10}
+\NormalTok{alpha <-}\StringTok{ }\FloatTok{0.001}
+\CommentTok{# Inital population size}
+\NormalTok{Nt <-}\StringTok{ }\DecValTok{1}
+\CommentTok{# Preallocate the dataframe}
+\NormalTok{df <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{time =} \DecValTok{0}\NormalTok{, }\DataTypeTok{popn.size =} \NormalTok{Nt)}
+\NormalTok{for(t in }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{1}\NormalTok{))\{}
+  \NormalTok{Nt1 <-}\StringTok{ }\NormalTok{Nt*(b*}\KeywordTok{exp}\NormalTok{(-alpha*Nt) +}\StringTok{ }\NormalTok{p) }\CommentTok{# equation 12.1 from text}
+  \NormalTok{new.result <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{time =} \NormalTok{t, }\DataTypeTok{popn.size =} \NormalTok{Nt1)}
+  \NormalTok{df <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(df, new.result)}
+  \NormalTok{Nt <-}\StringTok{ }\NormalTok{Nt1 }\CommentTok{# update the value of N(t) for the next iteration of the loop.}
+\NormalTok{\}}
+\CommentTok{# Make the plot}
+\KeywordTok{plot}\NormalTok{(df$time, df$popn.size, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"time"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Population size"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Questions}\label{questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Write out all the parameters (\(b>0\), \(\alpha>0\), and
+  \(0 \leq p \leq 1\)) in equation \eqref{eq:plant} and give their
+  meanings. {[}1 mark{]}
+\item
+  The variable in equation \eqref{eq:plant} is \(N(t)\). What does
+  \(N(t)\) represent? {[}1 mark{]}
+\item
+  If \(N(t) = 0\) what is the value of \(be^{-\alpha N(t)}\)? What is
+  the value of \(be^{-\alpha N(t)}\) if \(N(t)\) is very, very large?
+  {[}1 mark{]}
+\item
+  Does equation \eqref{eq:plant} have density dependence in births,
+  survivorship, or both? {[}1 mark{]}
+\item
+  Hand-in a figure showing the population dynamics (\(N(t)\) on the
+  y-axis and time, \(t\), on the x-axis). Remember to include a brief
+  figure caption. \emph{Note that the population dynamics for the
+  parameter values above show oscillations and convergence to
+  equilibrium.} {[}2 marks{]}
+\end{enumerate}
+
+\section{The evolutionary dynamics}\label{the-evolutionary-dynamics}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Parameter values}
+\NormalTok{alpha <-}\StringTok{ }\FloatTok{0.001}
+\NormalTok{p0 <-}\StringTok{ }\FloatTok{0.75}
+\CommentTok{# Define the allele of the resident:}
+\NormalTok{E =}\StringTok{ }\FloatTok{0.5}
+\CommentTok{# Define the allele of the mutant:}
+\NormalTok{Em =}\StringTok{ }\FloatTok{0.7}
+\CommentTok{# Functions from top of p499 in text}
+\NormalTok{b <-}\StringTok{ }\NormalTok{function(E)\{}
+  \KeywordTok{exp}\NormalTok{(E)}
+\NormalTok{\}}
+\NormalTok{p <-function(E)\{}
+  \NormalTok{p0 -}\StringTok{ }\NormalTok{E^}\DecValTok{2}
+\NormalTok{\}}
+\CommentTok{# Initially the mutant is rare}
+\NormalTok{Nm <-}\StringTok{ }\DecValTok{100}
+\CommentTok{# Initially resident population is at equilibrium (i.e. see just above equation 12.1.4 on p497 for the equation for equilibrium)}
+\NormalTok{N <-}\StringTok{ }\NormalTok{(}\DecValTok{1}\NormalTok{/alpha)*(}\KeywordTok{log}\NormalTok{(}\KeywordTok{b}\NormalTok{(E)/(}\DecValTok{1}\NormalTok{-}\KeywordTok{p}\NormalTok{(E))))}
+\CommentTok{#Preallocate the dataframe}
+\NormalTok{df <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{time =} \DecValTok{0}\NormalTok{, }\DataTypeTok{res.popn.size =} \NormalTok{N, }\DataTypeTok{mut.popn.size =} \NormalTok{Nm)}
+\NormalTok{for(t in }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{50}\NormalTok{,}\DecValTok{1}\NormalTok{))\{}
+  \NormalTok{N1 <-}\StringTok{ }\NormalTok{N*(}\KeywordTok{b}\NormalTok{(E)*}\KeywordTok{exp}\NormalTok{(-alpha*(N+Nm)) +}\StringTok{ }\KeywordTok{p}\NormalTok{(E)) }\CommentTok{# equation 12.1.1a}
+  \NormalTok{Nm1 <-}\StringTok{ }\NormalTok{Nm*(}\KeywordTok{b}\NormalTok{(Em)*}\KeywordTok{exp}\NormalTok{(-alpha*(N+Nm)) +}\StringTok{ }\KeywordTok{p}\NormalTok{(Em)) }\CommentTok{# equation 12.1.1b}
+  \NormalTok{new.result <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{time =} \NormalTok{t, }\DataTypeTok{res.popn.size =} \NormalTok{N1, }\DataTypeTok{mut.popn.size =} \NormalTok{Nm1)}
+  \NormalTok{df <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(df, new.result)}
+  \NormalTok{N <-}\StringTok{ }\NormalTok{N1 }\CommentTok{# update the value of N(t) for the next iteration of the loop.}
+  \NormalTok{Nm <-}\StringTok{ }\NormalTok{Nm1 }\CommentTok{# update the value of Nm(t) for the next iteration of the loop.}
+\NormalTok{\}}
+\KeywordTok{plot}\NormalTok{(df$time, df$res.popn.size, }\DataTypeTok{typ =} \StringTok{"l"}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{"time"}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{"Population size"}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1500}\NormalTok{))}
+\KeywordTok{lines}\NormalTok{(df$time, df$mut.popn.size, }\DataTypeTok{lty =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{BIOL-3295_files/figure-latex/unnamed-chunk-56-1.pdf}
+
+\section{Questions}\label{questions-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  In equations 12.1.1a and 12.1.1b (p496), what is the difference
+  between \(N(t)\) and \(N_m(t)\)? {[}1 mark{]}
+\item
+  In considering the evolutionary dynamics, \(b\) and \(p\) are assumed
+  to be linked by reproductive effort, \(E\), such that \(b(E) = e^E\)
+  and \(p(E) = p_0 - E^2\) (top of p499). Therefore, when \(E\) is
+  small, \(b\) is small, but \(p\) is large, and visa versa when \(E\)
+  is large. In evolutionary biology what name is given to this type of
+  relationship between life history parameters? {[}1 mark{]}.
+\item
+  The default choices of the reproductive effort parameters \(E = 0.2\)
+  and \(E_m = 0.7\) correspond to no invasion of the mutant. Choose a
+  different value of the mutant reproductive effort parameter such that
+  the mutant \emph{can} invade. You may wish to look at equation 12.6c
+  on p500. Hand in your figure with a figure caption. Be sure you know
+  if the dashed line or the solid line corresponds to the number of
+  individuals with the mutant allele, and provide this information in
+  your figure caption. {[}3 marks{]}
+\item
+  If \(E = 0.5\) and \(E_m = 0.7\), for the parameter values from the
+  sample code, what are the values of \(b(E)\), \(b(E_m)\), \(p(E)\),
+  and \(p(E_m)\)? Does the mutant or resident allele allocate more
+  energy to reproduction? {[}1 mark{]}
+\end{enumerate}
 
 \chapter{Final project ideas}\label{final-project-ideas}
 

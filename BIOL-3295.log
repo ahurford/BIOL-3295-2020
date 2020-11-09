@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 NOV 2020 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 NOV 2020 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,6 +897,12 @@ LaTeX Warning: Label `required-reading' multiply defined.
 
 LaTeX Warning: Label `questions' multiply defined.
 
+
+LaTeX Warning: Label `required-reading' multiply defined.
+
+
+LaTeX Warning: Label `questions' multiply defined.
+
 )
 \openout1 = `BIOL-3295.aux'.
 
@@ -1087,31 +1093,31 @@ Chapter 7.
 [19
 
 ] [20] [21]
-<BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf, id=568, 440.64626pt x 251
+<BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf, id=599, 440.64626pt x 251
 .94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf us
-ed on input line 924.
+ed on input line 923.
 (pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 
-<BIOL-3295_files/figure-latex/unnamed-chunk-19-1.pdf, id=569, 436.63126pt x 248
+<BIOL-3295_files/figure-latex/unnamed-chunk-19-1.pdf, id=600, 436.63126pt x 248
 .93pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-19-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-19-1.pdf us
-ed on input line 936.
+ed on input line 935.
 (pdftex.def)             Requested size: 345.00154pt x 196.69052pt.
 [22 <./BIOL-3295_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<BIOL-3295_files/figure-latex/unnamed-chunk-20-1.pdf, id=582, 440.64626pt x 251
+<BIOL-3295_files/figure-latex/unnamed-chunk-20-1.pdf, id=612, 440.64626pt x 251
 .94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-20-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-20-1.pdf us
-ed on input line 952.
+ed on input line 951.
 (pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 [23 <./BIOL-3295_files/figure-latex/unnamed-chunk-19-1.pdf> <./BIOL-3295_files/
 figure-latex/unnamed-chunk-20-1.pdf>] [24]
@@ -1124,10 +1130,10 @@ Overfull \hbox (29.83073pt too wide) has occurred while \output is active
 CONTINUOUS TIME)
  []
 
-[26] <figures/doublingtime.jpg, id=629, 1405.25pt x 1023.825pt>
+[26] <figures/doublingtime.jpg, id=659, 1405.25pt x 1023.825pt>
 File: figures/doublingtime.jpg Graphic file (type jpg)
 <use figures/doublingtime.jpg>
-Package pdftex.def Info: figures/doublingtime.jpg used on input line 1089.
+Package pdftex.def Info: figures/doublingtime.jpg used on input line 1088.
 (pdftex.def)             Requested size: 327.74649pt x 238.78671pt.
 [27 <./figures/doublingtime.jpg>]
 Overfull \hbox (29.83073pt too wide) has occurred while \output is active
@@ -1138,47 +1144,47 @@ CONTINUOUS TIME)
 [28]
 Chapter 9.
 LaTeX Font Info:    Try loading font information for TS1+lmtt on input line 114
-9.
+8.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ##    province date_active cumulative_cases cumulative_recove
 red cumulative_deaths[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ## 1:  Alberta  25-01-2020                0                  
   0                 0[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ## 2:  Alberta  26-01-2020                0                  
   0                 0[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ## 3:  Alberta  27-01-2020                0                  
   0                 0[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ## 4:  Alberta  28-01-2020                0                  
   0                 0[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ## 5:  Alberta  29-01-2020                0                  
   0                 0[] 
  []
 
 
-Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
+Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 []\T1/lmtt/m/n/10 ## 6:  Alberta  30-01-2020                0                  
   0                 0[] 
  []
@@ -1186,80 +1192,80 @@ Overfull \hbox (85.49875pt too wide) in paragraph at lines 1187--1187
 [29
 
 ] [30]
-<BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf, id=658, 440.64626pt x 248
+<BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf, id=688, 448.67625pt x 248
 .93pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf us
-ed on input line 1250.
-(pdftex.def)             Requested size: 345.01381pt x 194.90529pt.
+ed on input line 1249.
+(pdftex.def)             Requested size: 345.00938pt x 191.4146pt.
 
-Overfull \hbox (27.74892pt too wide) in paragraph at lines 1266--1266
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1265--1265
 []\T1/lmtt/m/n/10 ## [1] "25-01-2020" "26-01-2020" "27-01-2020" "28-01-2020" "2
 9-01-2020"[] 
  []
 
 [31 <./BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf>]
-<BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf, id=672, 440.64626pt x 251
+<BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf, id=702, 440.64626pt x 251
 .94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf us
-ed on input line 1301.
+ed on input line 1300.
 (pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 
-<BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf, id=673, 440.64626pt x 251
+<BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf, id=703, 440.64626pt x 251
 .94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-31-1.pdf us
-ed on input line 1316.
+ed on input line 1315.
 (pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 [32 <./BIOL-3295_files/figure-latex/unnamed-chunk-30-1.pdf> <./BIOL-3295_files/
-figure-latex/unnamed-chunk-31-1.pdf>] <figures/ONData.jpg, id=692, 3505.095pt x
+figure-latex/unnamed-chunk-31-1.pdf>] <figures/ONData.jpg, id=723, 3505.095pt x
  2003.485pt>
 File: figures/ONData.jpg Graphic file (type jpg)
 <use figures/ONData.jpg>
-Package pdftex.def Info: figures/ONData.jpg used on input line 1321.
+Package pdftex.def Info: figures/ONData.jpg used on input line 1320.
 (pdftex.def)             Requested size: 413.96132pt x 236.61707pt.
 
-Overfull \hbox (68.96132pt too wide) in paragraph at lines 1321--1322
+Overfull \hbox (68.96132pt too wide) in paragraph at lines 1320--1321
 [][] 
  []
 
 
-<BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf, id=693, 440.64626pt x 251
-.94125pt>
+<BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf, id=724, 440.64626pt x 255
+.95625pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf us
-ed on input line 1332.
-(pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
+ed on input line 1331.
+(pdftex.def)             Requested size: 345.01381pt x 200.40665pt.
 File: figures/doublingtime.jpg Graphic file (type jpg)
 <use figures/doublingtime.jpg>
-Package pdftex.def Info: figures/doublingtime.jpg used on input line 1340.
+Package pdftex.def Info: figures/doublingtime.jpg used on input line 1339.
 (pdftex.def)             Requested size: 327.74649pt x 238.78671pt.
 [33 <./figures/ONData.jpg> <./BIOL-3295_files/figure-latex/unnamed-chunk-32-1.p
 df>]
-<BIOL-3295_files/figure-latex/unnamed-chunk-33-1.pdf, id=706, 440.64626pt x 251
+<BIOL-3295_files/figure-latex/unnamed-chunk-33-1.pdf, id=736, 440.64626pt x 251
 .94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-33-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-33-1.pdf us
-ed on input line 1360.
+ed on input line 1359.
 (pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[34] <figures/regression.png, id=712, 655.44875pt x 416.55624pt>
+[34] <figures/regression.png, id=742, 655.44875pt x 416.55624pt>
 File: figures/regression.png Graphic file (type png)
 <use figures/regression.png>
-Package pdftex.def Info: figures/regression.png used on input line 1394.
+Package pdftex.def Info: figures/regression.png used on input line 1393.
 (pdftex.def)             Requested size: 327.75357pt x 208.29668pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1291,13 +1297,13 @@ Overfull \hbox (77.53654pt too wide) has occurred while \output is active
 N IN R \T1/lmr/m/n/10 41
  []
 
-[41] <figures/function.png, id=777, 670.505pt x 368.37625pt>
+[41] <figures/function.png, id=807, 670.505pt x 368.37625pt>
 File: figures/function.png Graphic file (type png)
 <use figures/function.png>
-Package pdftex.def Info: figures/function.png used on input line 1625.
+Package pdftex.def Info: figures/function.png used on input line 1624.
 (pdftex.def)             Requested size: 414.00021pt x 227.4522pt.
 
-Overfull \hbox (69.00021pt too wide) in paragraph at lines 1625--1626
+Overfull \hbox (69.00021pt too wide) in paragraph at lines 1624--1625
 [][] 
  []
 
@@ -1340,13 +1346,13 @@ Chapter 13.
 Underfull \vbox (badness 5189) has occurred while \output is active []
 
 [49]
-<BIOL-3295_files/figure-latex/unnamed-chunk-48-1.pdf, id=829, 440.64626pt x 250
+<BIOL-3295_files/figure-latex/unnamed-chunk-48-1.pdf, id=859, 440.64626pt x 250
 .9375pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-48-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-48-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-48-1.pdf us
-ed on input line 1930.
+ed on input line 1929.
 (pdftex.def)             Requested size: 345.01381pt x 196.4771pt.
 
 Overfull \hbox (76.3532pt too wide) has occurred while \output is active
@@ -1414,18 +1420,18 @@ CTURED POPULATION DYNAMICS
 
 [64]
 Chapter 18.
-<figures/midterm.jpg, id=947, 2508.37125pt x 3648.63126pt>
+<figures/midterm.jpg, id=977, 2508.37125pt x 3648.63126pt>
 File: figures/midterm.jpg Graphic file (type jpg)
 <use figures/midterm.jpg>
-Package pdftex.def Info: figures/midterm.jpg used on input line 2437.
+Package pdftex.def Info: figures/midterm.jpg used on input line 2436.
 (pdftex.def)             Requested size: 378.11491pt x 549.99908pt.
 
-Overfull \hbox (33.11491pt too wide) in paragraph at lines 2437--2437
+Overfull \hbox (33.11491pt too wide) in paragraph at lines 2436--2436
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 23.94351pt on input line 2438.
+LaTeX Warning: Float too large for page by 23.94351pt on input line 2437.
 
 [65
 
@@ -1441,41 +1447,68 @@ Chapter 20.
 Chapter 21.
 [73
 
-] [74
+]
+Underfull \vbox (badness 1635) has occurred while \output is active []
+
+
+Overfull \hbox (95.5916pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 74 \T1/lmr/m/sl/10 CHAPTER 21.  TUES NOV 10: THE EVOLUTION OF RE
+PRODUCTION EFFORT IN PLANTS
+ []
+
+[74]
+<BIOL-3295_files/figure-latex/unnamed-chunk-56-1.pdf, id=1084, 440.64626pt x 25
+3.94875pt>
+File: BIOL-3295_files/figure-latex/unnamed-chunk-56-1.pdf Graphic file (type pd
+f)
+<use BIOL-3295_files/figure-latex/unnamed-chunk-56-1.pdf>
+Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-56-1.pdf us
+ed on input line 2842.
+(pdftex.def)             Requested size: 345.01381pt x 198.83482pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[75]
+Overfull \hbox (95.5916pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 76 \T1/lmr/m/sl/10 CHAPTER 21.  TUES NOV 10: THE EVOLUTION OF RE
+PRODUCTION EFFORT IN PLANTS
+ []
+
+[76 <./BIOL-3295_files/figure-latex/unnamed-chunk-56-1.pdf>]
+Chapter 22.
+[77
 
 ]
-Chapter 22.
-[75]
 Underfull \vbox (badness 1158) has occurred while \output is active []
 
-[76] [77] [78]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2939.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2939.
+[78] [79] [80]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3084.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3084.
 (./BIOL-3295.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2939.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2939.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3084.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3084.
 
 Package rerunfilecheck Info: File `BIOL-3295.out' has not changed.
-(rerunfilecheck)             Checksum: 68F96D23BD98472FD385B67519B9DF2B;14487.
+(rerunfilecheck)             Checksum: 1AB461534B471D66211C2EAD51B0CAAA;15449.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2939.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3084.
  ) 
 Here is how much of TeX's memory you used:
- 13188 strings out of 492995
- 191854 string characters out of 6132704
- 289063 words of memory out of 5000000
- 16077 multiletter control sequences out of 15000+600000
- 63362 words of font info for 129 fonts, out of 8000000 for 9000
+ 13227 strings out of 492995
+ 192491 string characters out of 6132704
+ 289335 words of memory out of 5000000
+ 16092 multiletter control sequences out of 15000+600000
+ 63705 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,11n,38p,463b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
-cal/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
-17/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist
-/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvi
-ps/lm/lm-mathex.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-m
-athsy.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
+cal/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
+e/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-d
+ist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc
+/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-m
+athex.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
 l/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf
@@ -1486,14 +1519,15 @@ pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/lm/lmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
-lmtti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb>
-Output written on BIOL-3295.pdf (78 pages, 3799088 bytes).
+nts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/lm/lmtk10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/l
+mtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on BIOL-3295.pdf (80 pages, 3819270 bytes).
 PDF statistics:
- 1233 PDF objects out of 1440 (max. 8388607)
- 1092 compressed objects within 11 object streams
- 321 named destinations out of 1000 (max. 500000)
- 10911 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 1304 PDF objects out of 1440 (max. 8388607)
+ 1156 compressed objects within 12 object streams
+ 339 named destinations out of 1000 (max. 500000)
+ 10964 words of extra memory for PDF output out of 12000 (max. 10000000)
 
