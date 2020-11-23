@@ -8,6 +8,8 @@ or,
 
 2. Analysis: Download and visualize a dataset relevant to population and evolutionary ecology. Discuss your graphs in the context of a principle in population and evolutionary ecology.
 
+<span style="color: red;">Your paper/report should be no more than 10 pages single-spaced and excluding figures and references. Your paper does not need to be this long. Aim to make concise, well-argued points that are supported by citations.</span>
+
 ## Option 1: Review paper
 
 Aim to write a final project that is similar in style to a paper that you would read in _Trends in Ecology and Evolution_ (TREE). The concepts that you cover, however, do not need to be as advanced as something that would appear in TREE. Use [Dias et al. 1996](https://www-sciencedirect-com.qe2a-proxy.mun.ca/science/article/pii/0169534796100379?via%3Dihub) _Sources and sinks in population biology_ as a guide for what a final project that is a _Review_ should aspire to look like. 
@@ -74,7 +76,7 @@ Please consult [How to Read a Scientific Paper (2014)](https://www.research4life
 
 1. The last paragraph or section of the report summarizes the main point. [5 points]
 
-1. There is at least one figure or table, and these include a figure caption. [20 marks]
+1. There is at least one figure or table, and these include a figure caption (for Review papers see further instructions below). [20 marks]
 
 ### Grading Rubric: Review only [55 marks]
 
@@ -91,6 +93,8 @@ Please consult [How to Read a Scientific Paper (2014)](https://www.research4life
 1. The report makes a clear point [5 marks]
 
 1. The report provides an insightful narrative - arising from a thorough reading of the relevant peer-reviewed literature. [10 marks]
+
+<span style="color: red;"> For the figure for the Review paper you may wish to illustrate the concepts underpinning your arguments visually. This might be similar to a graphical abstract, conceptual diagram, or an infographic. You may wish to sketch graphs to explain your ideas. Your diagram may be sketched by hand, photographed, and inserted into your write-up, or you might make it in Powerpoint or similar drawing software. You will be graded on how well the idea of the diagram communicates your arguments, not your graphical design skills. See [here](https://www-nature-com.qe2a-proxy.mun.ca/articles/s41467-018-07703-y/figures/1) for an example of a good figure (Figure 1 in Gokhale, S., Conwill, A., Ranjan, T. et al. Migration alters oscillatory dynamics and promotes survival in connected bacterial populations. Nat Commun 9, 5273 (2018). https://doi-org.qe2a-proxy.mun.ca/10.1038/s41467-018-07703-y) </span>
 
 ### Grading Rubric: Analysis only [55 marks]
 

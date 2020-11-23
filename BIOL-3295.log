@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 NOV 2020 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 NOV 2020 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1192,14 +1192,14 @@ Overfull \hbox (85.49875pt too wide) in paragraph at lines 1186--1186
 [29
 
 ] [30]
-<BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf, id=688, 448.67625pt x 248
+<BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf, id=688, 440.64626pt x 248
 .93pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-27-1.pdf us
 ed on input line 1249.
-(pdftex.def)             Requested size: 345.00938pt x 191.4146pt.
+(pdftex.def)             Requested size: 345.01381pt x 194.90529pt.
 
 Overfull \hbox (27.74892pt too wide) in paragraph at lines 1265--1265
 []\T1/lmtt/m/n/10 ## [1] "25-01-2020" "26-01-2020" "27-01-2020" "28-01-2020" "2
@@ -1237,14 +1237,14 @@ Overfull \hbox (68.96132pt too wide) in paragraph at lines 1320--1321
  []
 
 
-<BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf, id=724, 440.64626pt x 255
-.95625pt>
+<BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf, id=724, 440.64626pt x 251
+.94125pt>
 File: BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pd
 f)
 <use BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf>
 Package pdftex.def Info: BIOL-3295_files/figure-latex/unnamed-chunk-32-1.pdf us
 ed on input line 1331.
-(pdftex.def)             Requested size: 345.01381pt x 200.40665pt.
+(pdftex.def)             Requested size: 345.01381pt x 197.26302pt.
 File: figures/doublingtime.jpg Graphic file (type jpg)
 <use figures/doublingtime.jpg>
 Package pdftex.def Info: figures/doublingtime.jpg used on input line 1339.
@@ -1478,22 +1478,19 @@ PRODUCTION EFFORT IN PLANTS
 Chapter 22.
 [77
 
-]
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
-[78] [79] [80]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3084.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3084.
+] [78] [79] [80]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3104.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3104.
 (./BIOL-3295.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3084.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3084.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3104.
 
 Package rerunfilecheck Info: File `BIOL-3295.out' has not changed.
 (rerunfilecheck)             Checksum: 1AB461534B471D66211C2EAD51B0CAAA;15449.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3084.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3104.
  ) 
 Here is how much of TeX's memory you used:
  13227 strings out of 492995
@@ -1524,10 +1521,10 @@ ublic/lm/lmtk10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/l
 mtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on BIOL-3295.pdf (80 pages, 3819270 bytes).
+Output written on BIOL-3295.pdf (80 pages, 3822273 bytes).
 PDF statistics:
- 1304 PDF objects out of 1440 (max. 8388607)
- 1156 compressed objects within 12 object streams
+ 1307 PDF objects out of 1440 (max. 8388607)
+ 1159 compressed objects within 12 object streams
  339 named destinations out of 1000 (max. 500000)
  10964 words of extra memory for PDF output out of 12000 (max. 10000000)
 
